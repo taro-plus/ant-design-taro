@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "build": "gulp build",
-    "clean": "rimraf dist && rimraf node_modules && rimraf lib && yarn workspaces run clean",
+    "clean": "rimraf node_modules && rimraf packages/antd-taro && yarn workspaces run clean",
     "prepare": "husky install",
     "publish": "npm publish ./packages/antd-taro --registry=https://registry.npmjs.org",
     "publish-alpha": "npm publish ./packages/antd-taro --registry=https://registry.npmjs.org --tag alpha"
