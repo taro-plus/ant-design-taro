@@ -1,0 +1,50 @@
+@import './theme.less';
+
+:root {
+  -webkit-tap-highlight-color: rgb(0 0 0 / 0%);
+}
+
+body {
+  font-family: var(--adm-font-family);
+  font-size: var(--adm-font-size-main);
+  color: var(--adm-color-text);
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+a {
+  color: var(--adm-color-primary);
+  transition: opacity ease-in-out 0.2s;
+
+  &:active {
+    opacity: 0.8;
+  }
+}
+
+.adm-plain-anchor {
+  color: unset;
+  transition: none;
+
+  &:active {
+    opacity: unset;
+  }
+}
+
+body.adm-overflow-hidden {
+  overflow: hidden !important;
+}
+
+div.adm-px-tester {
+  --size: 1;
+
+  position: fixed;
+  right: -100vw;
+  bottom: -100vh;
+  width: 0;
+  height: calc(var(--size) / 2 * 2px);
+  pointer-events: none;
+  user-select: none;
+}

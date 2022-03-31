@@ -1,0 +1,29 @@
+{
+  "name": "antd-taro",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "x_x <s.xiuxing@foxmail.com>",
+  "homepage": "https://github.com/sushi-su/ant-design-taro#readme",
+  "license": "MIT",
+  "main": "lib/antd-taro.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmmirror.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sushi-su/ant-design-taro.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/sushi-su/ant-design-taro/issues"
+  }
+}
