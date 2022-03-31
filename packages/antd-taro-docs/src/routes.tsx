@@ -17,7 +17,7 @@ const componentsRoutes = [
   {
     path: 'quickStart',
     element: lazyload(() => import('./pages/guide/quickStart')),
-    name: '按钮',
+    name: 'Button 按钮',
   },
 ];
 
@@ -25,7 +25,6 @@ export const menuRoutes: Route[] = [
   {
     path: '/guide',
     name: '指南',
-    element: <Outlet />,
     routes: guideRoutes,
     children: guideRoutes,
   },

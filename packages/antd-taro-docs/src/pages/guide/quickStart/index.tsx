@@ -1,8 +1,8 @@
-import ReactMarkdown from 'react-markdown';
+import { MarkDown } from '@/components';
 import Md from './index.md?raw';
 
 const QuickStartPage = () => {
-  return <ReactMarkdown>{Md}</ReactMarkdown>;
+  return <MarkDown>{Md}</MarkDown>;
 };
 
 export default QuickStartPage;
