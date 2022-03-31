@@ -7,8 +7,8 @@ const path = require('path');
 const tsconfig = require('./tsconfig.json');
 const through = require('through2');
 
-const dscDir = './lib/';
-const srcDir = './packages/antd-taro/src/ui/';
+const dscDir = './packages/antd-taro/';
+const srcDir = './packages/antd-taro-demo/src/ui/';
 
 task('clean', () => {
   return del([`${dscDir}/**`]);
@@ -64,7 +64,7 @@ task('buildStyle', () => {
   })
     .pipe(
       less({
-        paths: [path.join(__dirname, 'packages/antd-taro/src/ui')],
+        paths: [path.join(__dirname, 'packages/antd-taro-demo/src/ui')],
         relativeUrls: true,
       }),
     )
@@ -73,7 +73,7 @@ task('buildStyle', () => {
 });
 
 task('generatePackageJSON', () => {
-  return src('./packages/antd-taro/package.json')
+  return src('./packages/antd-taro-demo/package.json')
     .pipe(
       through.obj((file, enc, cb) => {
         const rawJSON = file.contents.toString();
@@ -82,6 +82,7 @@ task('generatePackageJSON', () => {
         delete parsed.scripts;
         delete parsed.devDependencies;
         delete parsed.publishConfig;
+        parsed.name = 'antd-taro';
         const stringified = JSON.stringify(parsed, null, 2);
         file.contents = Buffer.from(stringified);
         cb(null, file);

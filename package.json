@@ -2,7 +2,7 @@
   "name": "root",
   "private": true,
   "files": [
-    "./lib"
+    "./packages/antd-taro"
   ],
   "workspaces": [
     "packages/*"
@@ -11,8 +11,8 @@
     "build": "gulp build",
     "clean": "rimraf dist && rimraf node_modules && rimraf lib && yarn workspaces run clean",
     "prepare": "husky install",
-    "publish": "npm publish ./lib --registry=https://registry.npmjs.org",
-    "publish-alpha": "npm publish ./lib --registry=https://registry.npmjs.org --tag alpha"
+    "publish": "npm publish ./packages/antd-taro --registry=https://registry.npmjs.org",
+    "publish-alpha": "npm publish ./packages/antd-taro --registry=https://registry.npmjs.org --tag alpha"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [

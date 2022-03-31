@@ -1,6 +1,6 @@
 {
   "miniprogramRoot": "./",
-  "projectname": "antd-taro",
+  "projectname": "antd-taro-demo",
   "appid": "testAppId",
   "setting": {
     "es6": false,

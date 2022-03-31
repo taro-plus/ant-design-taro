@@ -1,4 +1,3 @@
 .idea
-lib
 node_modules
-
+packages/antd-taro

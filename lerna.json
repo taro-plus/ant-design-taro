@@ -1,5 +1,5 @@
 {
-  "packages": ["./lib/package.json"],
+  "packages": ["./packages/antd-taro"],
   "version": "independent",
   "npmClient": "yarn",
   "useWorkspaces": true
