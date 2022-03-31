@@ -1,4 +1,4 @@
-const { dest, parallel, series, src, task, watch } = require('gulp');
+const { dest, parallel, series, src, task } = require('gulp');
 const ts = require('gulp-typescript');
 const less = require('gulp-less');
 const babel = require('gulp-babel');
@@ -78,6 +78,7 @@ task('generatePackageJSON', () => {
       through.obj((file, enc, cb) => {
         const rawJSON = file.contents.toString();
         const parsed = JSON.parse(rawJSON);
+        delete parsed.private;
         delete parsed.scripts;
         delete parsed.devDependencies;
         delete parsed.publishConfig;

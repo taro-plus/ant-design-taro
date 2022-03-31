@@ -1,13 +1,18 @@
 {
   "name": "root",
   "private": true,
+  "files": [
+    "./lib"
+  ],
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
     "build": "gulp build",
     "clean": "rimraf dist && rimraf node_modules && rimraf lib && yarn workspaces run clean",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "publish": "npm publish ./lib --registry=https://registry.npmjs.org",
+    "publish-alpha": "npm publish ./lib --registry=https://registry.npmjs.org --tag alpha"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
