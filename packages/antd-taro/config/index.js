@@ -1,7 +1,7 @@
 const path = require('path');
 
 const config = {
-  projectName: 'antd-taro-demo',
+  projectName: 'antd-taro',
   date: '2022-3-31',
   designWidth: 750,
   deviceRatio: {

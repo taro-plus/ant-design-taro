@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "build": "tsc && vite build",
+    "clean": "rimraf dist && rimraf node_modules",
     "dev": "vite",
     "preview": "vite preview"
   },

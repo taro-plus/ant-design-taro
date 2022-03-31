@@ -5,12 +5,13 @@ const babel = require('gulp-babel');
 const del = require('del');
 const path = require('path');
 const tsconfig = require('./tsconfig.json');
+const through = require('through2');
 
-const dscDir = './packages/antd-taro/';
-const srcDir = './packages/antd-taro-demo/src/ui/';
+const dscDir = './lib/';
+const srcDir = './packages/antd-taro/src/ui/';
 
 task('clean', () => {
-  return del(`${dscDir}**`);
+  return del([`${dscDir}/**`]);
 });
 
 task('buildES', () => {
@@ -18,8 +19,6 @@ task('buildES', () => {
     ...tsconfig.compilerOptions,
     module: 'ESNext',
   });
-
-  console.log(tsProject);
 
   return src([`${srcDir}**/*.{ts,tsx}`], {
     ignore: ['**/demos/**/*', '**/tests/**/*'],
@@ -59,12 +58,13 @@ task('buildDeclaration', () => {
 });
 
 task('buildStyle', () => {
-  return src([`${srcDir}/**/*.less}`], {
-    base: `${srcDir}`,
+  return src([`${srcDir}**/*.less`], {
+    base: srcDir,
+    ignore: ['**/demos/**/*', '**/tests/**/*'],
   })
     .pipe(
       less({
-        paths: [path.join(__dirname, 'src')],
+        paths: [path.join(__dirname, 'packages/antd-taro/src/ui')],
         relativeUrls: true,
       }),
     )
@@ -72,8 +72,35 @@ task('buildStyle', () => {
     .pipe(dest(`${dscDir}cjs/`));
 });
 
+task('generatePackageJSON', () => {
+  return src('./packages/antd-taro/package.json')
+    .pipe(
+      through.obj((file, enc, cb) => {
+        const rawJSON = file.contents.toString();
+        const parsed = JSON.parse(rawJSON);
+        delete parsed.scripts;
+        delete parsed.devDependencies;
+        delete parsed.publishConfig;
+        const stringified = JSON.stringify(parsed, null, 2);
+        file.contents = Buffer.from(stringified);
+        cb(null, file);
+      }),
+    )
+    .pipe(dest(dscDir));
+});
+
 task('copyMetaFiles', () => {
   return src(['./README.md', './LICENSE']).pipe(dest(dscDir));
 });
 
-task('build', series('clean', 'buildES', 'buildCJS', parallel('buildDeclaration', 'buildStyle'), 'copyMetaFiles'));
+task(
+  'build',
+  series(
+    'clean',
+    'buildES',
+    'buildCJS',
+    parallel('buildDeclaration', 'buildStyle'),
+    'copyMetaFiles',
+    'generatePackageJSON',
+  ),
+);
