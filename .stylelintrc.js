@@ -3,5 +3,11 @@ module.exports = {
   customSyntax: 'postcss-less',
   rules: {
     'string-quotes': 'off',
+    'at-rule-no-unknown': [
+      true,
+      {
+        ignoreAtRules: ['tailwind', 'layer', 'apply', 'variants', 'responsive', 'screen'],
+      },
+    ],
   },
 };

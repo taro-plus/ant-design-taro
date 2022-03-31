@@ -34,7 +34,7 @@
     "compileHotReLoad": true
   },
   "compileType": "miniprogram",
-  "libVersion": "2.23.3",
+  "libVersion": "2.23.2",
   "srcMiniprogramRoot": "dist/",
   "packOptions": {
     "ignore": [],
