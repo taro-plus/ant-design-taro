@@ -9,7 +9,7 @@ const config = {
     750: 1,
     828: 1.81 / 2,
   },
-  sourceRoot: 'src',
+  sourceRoot: 'taro',
   outputRoot: 'dist',
   plugins: [],
   defineConstants: {},
@@ -57,7 +57,7 @@ const config = {
     },
   },
   alias: {
-    'antd-taro': path.resolve(__dirname, '..', 'src/pages/package/index.ts'),
+    'antd-taro': path.resolve(__dirname, '..', 'taro/pages/package/index.ts'),
   },
 };
 

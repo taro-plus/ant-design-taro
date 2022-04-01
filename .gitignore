@@ -8,8 +8,9 @@
 /package-lock.json
 
 # production
-/es
+/lib
 /docs-dist
+/dist
 
 # misc
 .DS_Store
@@ -25,4 +26,7 @@
 /.vscode
 /.idea
 
-packages/antd-taro
+# taro
+.temp/
+.rn_temp/
+project.private.config.json
