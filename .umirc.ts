@@ -1,4 +1,5 @@
 import { defineConfig } from 'dumi';
+import { join } from 'path';
 
 export default defineConfig({
   title: 'Ant Design Taro',
@@ -16,5 +17,8 @@ export default defineConfig({
     },
   ],
   headScripts: [{ src: '/scripts/redirectDemo.js' }],
+  alias: {
+    'antd-taro': join(__dirname, 'packages', 'antd-taro-demo/src/pages/package'),
+  },
   // more config: https://d.umijs.org/config
 });

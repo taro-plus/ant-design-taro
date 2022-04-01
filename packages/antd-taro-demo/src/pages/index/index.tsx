@@ -1,6 +1,6 @@
-import { Button } from '@antd-taro';
 import { View } from '@tarojs/components';
 import { navigateTo } from '@tarojs/taro';
+import { Button } from 'antd-taro';
 import './index.less';
 
 const IndexPage = () => {

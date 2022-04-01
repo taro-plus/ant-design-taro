@@ -21,7 +21,7 @@ task('buildES', () => {
   });
 
   return src([`${srcDir}/**/*.{ts,tsx}`], {
-    ignore: ['**/demos/**/*', '**/tests/**/*'],
+    ignore: ['**/demo/**/*', '**/tests/**/*'],
   })
     .pipe(tsProject)
     .pipe(
@@ -50,7 +50,7 @@ task('buildDeclaration', () => {
     emitDeclarationOnly: true,
   });
   return src([`${srcDir}/**/*.{ts,tsx}`], {
-    ignore: ['**/demos/**/*', '**/tests/**/*'],
+    ignore: ['**/demo/**/*', '**/tests/**/*'],
   })
     .pipe(tsProject)
     .pipe(dest(`${dscDir}/es/`))
@@ -60,7 +60,7 @@ task('buildDeclaration', () => {
 task('buildStyle', () => {
   return src([`${srcDir}/**/*.less`], {
     base: srcDir,
-    ignore: ['**/demos/**/*', '**/tests/**/*'],
+    ignore: ['**/demo/**/*', '**/tests/**/*'],
   })
     .pipe(
       less({
