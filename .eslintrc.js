@@ -1,6 +1,8 @@
 module.exports = {
   extends: ['alloy', 'alloy/react', 'alloy/typescript'],
-  env: {},
+  env: {
+    browser: true,
+  },
   globals: {},
   rules: {
     '@typescript-eslint/no-require-imports': 'off',

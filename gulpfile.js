@@ -4,11 +4,11 @@ const less = require('gulp-less');
 const babel = require('gulp-babel');
 const del = require('del');
 const path = require('path');
-const tsconfig = require('./tsconfig.json');
+const tsconfig = require('./packages/antd-taro-demo/tsconfig.json');
 const through = require('through2');
 
-const dscDir = './packages/antd-taro/';
-const srcDir = './packages/antd-taro-demo/src/ui/';
+const dscDir = './packages/antd-taro';
+const srcDir = './packages/antd-taro-demo/src/pages/package';
 
 task('clean', () => {
   return del([`${dscDir}/**`]);
@@ -20,7 +20,7 @@ task('buildES', () => {
     module: 'ESNext',
   });
 
-  return src([`${srcDir}**/*.{ts,tsx}`], {
+  return src([`${srcDir}/**/*.{ts,tsx}`], {
     ignore: ['**/demos/**/*', '**/tests/**/*'],
   })
     .pipe(tsProject)
@@ -29,17 +29,17 @@ task('buildES', () => {
         plugins: ['./babel-transform-less-to-css'],
       }),
     )
-    .pipe(dest(`${dscDir}es/`));
+    .pipe(dest(`${dscDir}/es/`));
 });
 
 task('buildCJS', () => {
-  return src([`${dscDir}es/**/*.js`])
+  return src([`${dscDir}/es/**/*.js`])
     .pipe(
       babel({
         plugins: ['@babel/plugin-transform-modules-commonjs'],
       }),
     )
-    .pipe(dest(`${dscDir}cjs/`));
+    .pipe(dest(`${dscDir}/cjs/`));
 });
 
 task('buildDeclaration', () => {
@@ -49,27 +49,27 @@ task('buildDeclaration', () => {
     declaration: true,
     emitDeclarationOnly: true,
   });
-  return src([`${srcDir}**/*.{ts,tsx}`], {
+  return src([`${srcDir}/**/*.{ts,tsx}`], {
     ignore: ['**/demos/**/*', '**/tests/**/*'],
   })
     .pipe(tsProject)
-    .pipe(dest(`${dscDir}es/`))
-    .pipe(dest(`${dscDir}cjs/`));
+    .pipe(dest(`${dscDir}/es/`))
+    .pipe(dest(`${dscDir}/cjs/`));
 });
 
 task('buildStyle', () => {
-  return src([`${srcDir}**/*.less`], {
+  return src([`${srcDir}/**/*.less`], {
     base: srcDir,
     ignore: ['**/demos/**/*', '**/tests/**/*'],
   })
     .pipe(
       less({
-        paths: [path.join(__dirname, 'packages/antd-taro-demo/src/ui')],
+        paths: [path.join(__dirname, 'packages/antd-taro-demo/src/pages/package')],
         relativeUrls: true,
       }),
     )
-    .pipe(dest(`${dscDir}es/`))
-    .pipe(dest(`${dscDir}cjs/`));
+    .pipe(dest(`${dscDir}/es/`))
+    .pipe(dest(`${dscDir}/cjs/`));
 });
 
 task('generatePackageJSON', () => {
