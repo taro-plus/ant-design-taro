@@ -2,7 +2,7 @@ const path = require('path');
 
 const config = {
   projectName: 'antd-taro-demo',
-  date: '2022-3-31',
+  date: '2022-4-1',
   designWidth: 750,
   deviceRatio: {
     640: 2.34 / 2,
@@ -57,7 +57,7 @@ const config = {
     },
   },
   alias: {
-    '@antd-taro': path.resolve(__dirname, '..', 'src/ui/index.ts'),
+    'antd-taro': path.resolve(__dirname, '..', 'src/pages/package/index.ts'),
   },
 };
 

@@ -17,11 +17,12 @@
     "rootDir": ".",
     "jsx": "react-jsx",
     "allowJs": true,
+    "skipLibCheck": true,
     "resolveJsonModule": true,
     "typeRoots": ["node_modules/@types"],
     "paths": {
       "@/*": ["src/*"],
-      "@antd-taro": ["src/ui/index.ts"]
+      "antd-taro": ["src/pages/package/index.ts"]
     }
   },
   "include": ["./src", "global.d.ts"],
