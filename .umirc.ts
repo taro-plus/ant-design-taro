@@ -8,17 +8,17 @@ export default defineConfig({
   outputPath: 'docs-dist',
   mode: 'site',
   resolve: {
-    includes: ['docs', 'packages/antd-taro-demo/src/pages/package'],
+    includes: ['docs', 'taro/pages/package'],
   },
   copy: [
     {
-      from: 'scripts/redirectDemo.js',
-      to: 'scripts/redirectDemo.js',
+      from: 'scripts/redirect2demo.js',
+      to: 'scripts/redirect2demo.js',
     },
   ],
-  headScripts: [{ src: '/scripts/redirectDemo.js' }],
+  headScripts: [{ src: '/scripts/redirect2demo.js' }],
   alias: {
-    'antd-taro': join(__dirname, 'packages', 'antd-taro-demo/src/pages/package'),
+    'antd-taro': join(__dirname, '/taro/pages/package'),
   },
   // more config: https://d.umijs.org/config
 });

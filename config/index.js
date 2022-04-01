@@ -57,7 +57,7 @@ const config = {
     },
   },
   alias: {
-    'antd-taro': path.resolve(__dirname, '..', 'taro/pages/package/index.ts'),
+    'antd-taro': path.resolve(__dirname, '/taro/pages/package/index.ts'),
   },
 };
 

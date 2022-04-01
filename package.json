@@ -1,7 +1,7 @@
 {
-  "private": true,
   "name": "antd-taro",
   "version": "0.0.1",
+  "private": true,
   "description": "",
   "bugs": {
     "url": "https://github.com/sushi-su/ant-design-taro/issues"
@@ -16,11 +16,7 @@
   "types": "./es/index.d.ts",
   "typings": "./es/index.d.ts",
   "scripts": {
-    "start": "dumi dev",
-    "docs:build": "dumi build",
     "build": "gulp build",
-    "test": "jest",
-    "test:coverage": "jest --coverage",
     "build:alipay": "taro build --type alipay",
     "build:h5": "taro build --type h5",
     "build:jd": "taro build --type jd",
@@ -30,7 +26,7 @@
     "build:swan": "taro build --type swan",
     "build:tt": "taro build --type tt",
     "build:weapp": "cross-env NODE_ENV=production taro build --type weapp",
-    "clean": "rimraf dist && rimraf node_modules",
+    "clean": "rimraf .umi && rimraf dist && rimraf package-lock.json && rimraf node_modules",
     "dev:alipay": "npm run build:alipay -- --watch",
     "dev:h5": "npm run build:h5 -- --watch",
     "dev:jd": "npm run build:jd -- --watch",
@@ -39,19 +35,23 @@
     "dev:rn": "npm run build:rn -- --watch",
     "dev:swan": "npm run build:swan -- --watch",
     "dev:tt": "npm run build:tt -- --watch",
-    "dev:weapp": "cross-env NODE_ENV=development taro build --type weapp --watch"
+    "dev:weapp": "cross-env NODE_ENV=development taro build --type weapp --watch",
+    "docs:build": "dumi build",
+    "start": "dumi dev",
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
-  "browserslist": [
-    "last 3 versions",
-    "Android >= 4.1",
-    "ios >= 8"
-  ],
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
       "eslint --fix",
       "git add"
     ]
   },
+  "browserslist": [
+    "last 3 versions",
+    "Android >= 4.1",
+    "ios >= 8"
+  ],
   "dependencies": {
     "@babel/runtime": "^7.17.8",
     "@tarojs/components": "3.4.4",
@@ -62,17 +62,24 @@
     "antd-taro": "^0.0.1",
     "classnames": "^2.3.1",
     "lodash": "^4.17.21",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.17.8",
     "@commitlint/cli": "^16.2.3",
     "@commitlint/config-conventional": "^16.2.1",
+    "@tarojs/mini-runner": "3.4.4",
+    "@tarojs/webpack-runner": "3.4.4",
     "@testing-library/jest-dom": "^5.16.3",
-    "@testing-library/react": "^13.0.0",
+    "@testing-library/react": "^12.1.4",
     "@types/jest": "^27.4.1",
+    "@types/react": "^17.0.43",
+    "@types/webpack-env": "^1.16.3",
     "@typescript-eslint/eslint-plugin": "^5.17.0",
     "@typescript-eslint/parser": "^5.17.0",
+    "babel-preset-taro": "3.4.4",
+    "cross-env": "^7.0.3",
     "del": "^6.0.0",
     "dumi": "^1.1.40",
     "dumi-theme-mobile": "^1.1.22",
@@ -99,13 +106,6 @@
     "stylelint-config-recess-order": "^3.0.0",
     "stylelint-config-standard": "^25.0.0",
     "through2": "^4.0.2",
-    "@babel/core": "^7.17.8",
-    "@tarojs/mini-runner": "3.4.4",
-    "@tarojs/webpack-runner": "3.4.4",
-    "@types/react": "^17.0.43",
-    "@types/webpack-env": "^1.16.3",
-    "babel-preset-taro": "3.4.4",
-    "cross-env": "^7.0.3",
     "typescript": "^4.6.3"
   }
 }
