@@ -1,5 +1,6 @@
 import { View } from '@tarojs/components';
 import type { FC } from 'react';
+import React from 'react';
 import ButtonDemo1 from './demo1';
 
 definePageConfig({

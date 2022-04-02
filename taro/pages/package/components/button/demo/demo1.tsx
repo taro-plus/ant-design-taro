@@ -5,6 +5,7 @@
 import { View } from '@tarojs/components';
 import { Button } from 'antd-taro';
 import type { FC } from 'react';
+import React from 'react';
 
 const ButtonDemo1: FC = () => {
   return (

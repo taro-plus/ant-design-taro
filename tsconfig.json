@@ -15,11 +15,20 @@
     "sourceMap": true,
     "baseUrl": ".",
     "rootDir": ".",
-    "jsx": "react-jsx",
+    "skipLibCheck": true,
+    "strict": true,
+    "jsx": "react",
     "allowJs": true,
     "resolveJsonModule": true,
-    "typeRoots": ["node_modules/@types"]
+    "typeRoots": ["global.d.ts", "node_modules/@types"]
   },
-  "include": ["./taro", "global.d.ts"],
-  "compileOnSave": false
+  "include": ["taro"],
+  "compileOnSave": false,
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS",
+      "resolveJsonModule": true,
+      "noImplicitAny": false
+    }
+  }
 }

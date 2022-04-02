@@ -4,11 +4,11 @@ const less = require('gulp-less');
 const babel = require('gulp-babel');
 const del = require('del');
 const path = require('path');
-const tsconfig = require('./packages/antd-taro-demo/tsconfig.json');
+const tsconfig = require('./tsconfig.json');
 const through = require('through2');
 
-const dscDir = './packages/antd-taro';
-const srcDir = './packages/antd-taro-demo/src/pages/package';
+const dscDir = './lib';
+const srcDir = './taro/pages/package';
 
 task('clean', () => {
   return del([`${dscDir}/**`]);
@@ -21,12 +21,12 @@ task('buildES', () => {
   });
 
   return src([`${srcDir}/**/*.{ts,tsx}`], {
-    ignore: ['**/demo/**/*', '**/tests/**/*'],
+    ignore: ['**/demo/**/*', '**/__tests__/**/*'],
   })
     .pipe(tsProject)
     .pipe(
       babel({
-        plugins: ['./babel-transform-less-to-css'],
+        plugins: ['./scripts/babel-transform-less-to-css'],
       }),
     )
     .pipe(dest(`${dscDir}/es/`));
@@ -50,7 +50,7 @@ task('buildDeclaration', () => {
     emitDeclarationOnly: true,
   });
   return src([`${srcDir}/**/*.{ts,tsx}`], {
-    ignore: ['**/demo/**/*', '**/tests/**/*'],
+    ignore: ['**/demo/**/*', '**/__tests__/**/*'],
   })
     .pipe(tsProject)
     .pipe(dest(`${dscDir}/es/`))
@@ -60,11 +60,11 @@ task('buildDeclaration', () => {
 task('buildStyle', () => {
   return src([`${srcDir}/**/*.less`], {
     base: srcDir,
-    ignore: ['**/demo/**/*', '**/tests/**/*'],
+    ignore: ['**/demo/**/*', '**/__tests__/**/*'],
   })
     .pipe(
       less({
-        paths: [path.join(__dirname, 'packages/antd-taro-demo/src/pages/package')],
+        paths: [path.join(__dirname, '/taro/pages/package')],
         relativeUrls: true,
       }),
     )
@@ -73,7 +73,7 @@ task('buildStyle', () => {
 });
 
 task('generatePackageJSON', () => {
-  return src('./packages/antd-taro-demo/package.json')
+  return src('./package.json')
     .pipe(
       through.obj((file, enc, cb) => {
         const rawJSON = file.contents.toString();
@@ -82,7 +82,6 @@ task('generatePackageJSON', () => {
         delete parsed.scripts;
         delete parsed.devDependencies;
         delete parsed.publishConfig;
-        parsed.name = 'antd-taro';
         const stringified = JSON.stringify(parsed, null, 2);
         file.contents = Buffer.from(stringified);
         cb(null, file);
