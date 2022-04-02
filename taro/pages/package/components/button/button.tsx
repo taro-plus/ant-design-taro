@@ -1,6 +1,6 @@
 import * as Components from '@tarojs/components';
-import * as React from 'react';
+import type { FC } from 'react';
 
-export const Button: React.FC = ({ children }) => {
+export const Button: FC = ({ children }) => {
   return <Components.Button>{children}</Components.Button>;
 };

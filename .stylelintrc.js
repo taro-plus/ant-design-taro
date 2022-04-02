@@ -1,5 +1,10 @@
 module.exports = {
-  extends: ['stylelint-config-standard', 'stylelint-config-css-modules', 'stylelint-config-recess-order'],
+  extends: [
+    'stylelint-config-standard',
+    'stylelint-config-css-modules',
+    'stylelint-config-recess-order',
+    'stylelint-config-prettier',
+  ],
   customSyntax: 'postcss-less',
   rules: {
     'color-function-notation': 'off',

@@ -2,15 +2,9 @@
   "compilerOptions": {
     "target": "es2017",
     "module": "commonjs",
-    "moduleResolution": "node",
-    "jsx": "react",
-    "esModuleInterop": true,
-    "types": ["jest"],
-    "strict": true,
-    "skipLibCheck": true,
-    "declaration": true,
     "removeComments": false,
     "preserveConstEnums": true,
+    "moduleResolution": "node",
     "experimentalDecorators": true,
     "noImplicitAny": false,
     "allowSyntheticDefaultImports": true,
@@ -19,16 +13,13 @@
     "noUnusedParameters": true,
     "strictNullChecks": true,
     "sourceMap": true,
-    "baseUrl": "./",
-    "rootDir": "./",
+    "baseUrl": ".",
+    "rootDir": ".",
+    "jsx": "react-jsx",
     "allowJs": true,
     "resolveJsonModule": true,
-    "typeRoots": ["node_modules/@types"],
-    "paths": {
-      "@/*": ["src/*"],
-      "antd-taro": ["src/pages/package/index.ts"]
-    }
+    "typeRoots": ["node_modules/@types"]
   },
-  "include": ["./taro/**/*.{ts,tsx}", "typings.d.ts"],
-  "compileOnSave": true
+  "include": ["./taro", "global.d.ts"],
+  "compileOnSave": false
 }
