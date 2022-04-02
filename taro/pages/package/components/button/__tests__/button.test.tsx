@@ -1,6 +1,5 @@
 import { render } from '@testing-library/react';
 import { Button } from 'antd-taro';
-import * as React from 'react';
 
 const classPrefix = `adm-button`;
 
