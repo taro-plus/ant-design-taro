@@ -1,20 +1,14 @@
-/*
- * For a detailed explanation regarding each configuration property and type check, visit:
- * https://jestjs.io/docs/configuration
- */
+const { jsWithTs } = require('ts-jest/presets');
 
-export default {
+module.exports = {
+  verbose: true,
+  testEnvironment: 'jsdom',
   collectCoverage: true,
-  coverageDirectory: 'coverage',
-  testEnvironment: 'jest-environment-jsdom',
-
-  testMatch: ['<rootDir>/taro/pages/package/**/__tests__/**/*.[jt]s?(x)'],
-  setupFilesAfterEnv: ['@testing-library/jest-dom', '@testing-library/jest-dom/extend-expect'],
-
+  transform: {
+    ...jsWithTs.transform,
+  },
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   globals: {
-    'ts-jest': {
-      tsconfig: 'tsconfig.json',
-    },
     window: true,
     ENABLE_INNER_HTML: true,
     ENABLE_ADJACENT_HTML: true,
@@ -23,11 +17,17 @@ export default {
     ENABLE_CLONE_NODE: true,
     ENABLE_CONTAINS: true,
     ENABLE_MUTATION_OBSERVER: true,
+    'ts-jest': {
+      tsconfig: 'tsconfig.json',
+    },
   },
+  transformIgnorePatterns: ['<rootDir>/node_modules/(?!@taro)', '^.+\\.(css|sass|scss|less)$'],
+  setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
+  testMatch: ['<rootDir>/taro/pages/package/components/**/__tests__/**/*.[jt]s?(x)'],
   moduleNameMapper: {
-    '^@tarojs/taro$': '@tarojs/taro-h5',
-    '^@tarojs/components$': '@tarojs/components/dist-h5/react',
-    '\\.(css|less)$': '<rootDir>/jest/style-mock.js',
+    '@tarojs/taro': '@tarojs/taro-h5',
+    '@tarojs/components': '@tarojs/components/dist-h5/react',
     '^antd-taro$': '<rootDir>/taro/pages/package',
+    '\\.(css|less)$': '<rootDir>/jest/style-mock.js',
   },
 };
