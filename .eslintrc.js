@@ -1,6 +1,8 @@
 module.exports = {
   extends: ['alloy', 'alloy/react', 'alloy/typescript'],
-  env: {},
+  env: {
+    jest: true
+  },
   globals: {
     defineAppConfig: true,
     definePageConfig: true,
