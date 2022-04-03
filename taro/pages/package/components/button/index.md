@@ -1,3 +1,10 @@
+---
+group:
+ path: /
+nav:
+ title: 组件
+ path: /components
+---
 
 # Button 按钮
 

@@ -20,5 +20,20 @@ export default defineConfig({
   alias: {
     'antd-taro': join(__dirname, '/taro/pages/package'),
   },
+  navs: [
+    null, // null 值代表保留约定式生成的导航，只做增量配置
+    {
+      title: 'GitHub',
+      path: 'https://github.com/sushi-su/ant-design-taro',
+    },
+  ],
+  menus: {
+    '/components': [
+      {
+        title: '基础',
+        children: ['components/button/index'],
+      },
+    ],
+  },
   // more config: https://d.umijs.org/config
 });
