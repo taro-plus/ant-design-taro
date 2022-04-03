@@ -44,6 +44,7 @@ const config = {
     staticDirectory: 'static',
     router: {
       basename: '/h5',
+      mode: 'browser',
     },
     postcss: {
       autoprefixer: {
