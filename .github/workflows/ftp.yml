@@ -14,7 +14,8 @@ jobs:
           server: ${{ secrets.SERVER }}
           username: ${{ secrets.SERVER_USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
-        run: |
+
+      - run: |
              ls
              cd ../
              ls
