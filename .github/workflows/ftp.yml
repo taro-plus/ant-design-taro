@@ -14,8 +14,8 @@ jobs:
           host: ${{ secrets.SERVER }}
           username: ${{ secrets.SERVER_USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
-      run: |
-        scp -r taro  ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER }}:/var/www/html/
-        ls
-        cd ../
-        ls
+      - run: |
+          scp -r taro  ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER }}:/var/www/html/
+          ls
+          cd ../
+          ls
