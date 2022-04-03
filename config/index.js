@@ -40,7 +40,7 @@ const config = {
     },
   },
   h5: {
-    publicPath: '/h5-dist',
+    publicPath: '/',
     staticDirectory: 'static',
     router: {
       basename: '/h5',
