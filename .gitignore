@@ -9,6 +9,7 @@
 /lib
 /docs-dist
 /dist
+/h5-dist
 
 # misc
 .DS_Store

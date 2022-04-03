@@ -31,5 +31,5 @@ jobs:
           username: ${{ secrets.SERVER_USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
           rm: true
-          source: "dist,docs-dist"
+          source: "h5-dist,docs-dist"
           target: "/var/www/html"

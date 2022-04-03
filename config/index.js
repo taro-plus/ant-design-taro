@@ -40,8 +40,11 @@ const config = {
     },
   },
   h5: {
-    publicPath: '/',
+    publicPath: '/h5-dist',
     staticDirectory: 'static',
+    router: {
+      basename: '/h5',
+    },
     postcss: {
       autoprefixer: {
         enable: true,
