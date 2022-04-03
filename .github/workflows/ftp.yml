@@ -12,12 +12,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16.x
-          cache: 'yarn'
+          cache: 'npm'
 
       - name: Install dependencies
         run: |
-          yarn install
-          yarn global add @tarojs/cli
+          npm ci
+          npm install @tarojs/cli -g
 
       - name: 🔥 Deploy
         run: |
