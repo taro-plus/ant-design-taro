@@ -55,8 +55,8 @@ jobs:
           secret-key: ${{ secrets.SECRET_KEY }}
           bucketname-appid: ${{ secrets.BUCKET }}
           region: ${{ secrets.REGION }}
-        run: coscmd upload docs-dist /
 
+      - run: coscmd upload docs-dist /
 
       - name: Upload H5
         uses: sushi-su/setup-object-storage@v1.0.0
@@ -66,4 +66,5 @@ jobs:
           secret-key: ${{ secrets.SECRET_KEY }}
           bucketname-appid: ${{ secrets.H5_BUCKET }}
           region: ${{ secrets.REGION }}
-        run: coscmd upload dist /
+
+      - run: coscmd upload dist /
