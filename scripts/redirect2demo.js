@@ -1,5 +1,5 @@
 (function () {
-  const DEMO_HOST_DEV = 'http://localhost:10086/dist';
+  const DEMO_HOST_DEV = 'http://localhost:10086';
   const DEMO_HOST_PROD = 'https://h5.艺蔚.wang';
 
   const { hostname, search } = window.location;
