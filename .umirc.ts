@@ -20,6 +20,7 @@ export default defineConfig({
   alias: {
     'antd-taro': join(__dirname, '/taro/pages/package'),
   },
+  publicPath: '/docs-dist/',
   navs: [
     null, // null 值代表保留约定式生成的导航，只做增量配置
     {

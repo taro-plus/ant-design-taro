@@ -43,6 +43,7 @@ const config = {
     publicPath: '/',
     staticDirectory: 'static',
     router: {
+      basename: '/dist',
       mode: 'browser',
     },
     postcss: {
