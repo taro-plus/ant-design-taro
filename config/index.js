@@ -40,10 +40,9 @@ const config = {
     },
   },
   h5: {
-    publicPath: '/',
+    publicPath: '/dist/',
     staticDirectory: 'static',
     router: {
-      basename: '/dist',
       mode: 'browser',
     },
     postcss: {
