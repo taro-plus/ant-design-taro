@@ -43,7 +43,6 @@ const config = {
     publicPath: '/',
     staticDirectory: 'static',
     router: {
-      basename: '/h5',
       mode: 'browser',
     },
     postcss: {
