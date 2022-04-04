@@ -53,7 +53,7 @@ jobs:
           util-type: coscmd
           secret-id: ${{ secrets.SECRET_ID }}
           secret-key: ${{ secrets.SECRET_KEY }}
-          bucketname-appid: ${{ secrets.BUCKET }}
+          bucketname-appid: ${{ secrets.DOCS_BUCKET }}
           region: ${{ secrets.REGION }}
 
       - run: coscmd upload -r docs-dist /
