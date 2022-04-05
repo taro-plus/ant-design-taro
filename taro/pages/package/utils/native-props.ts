@@ -5,7 +5,7 @@ import React from 'react';
 export interface NativeProps<S extends string = never> {
   className?: string;
   style?: CSSProperties & Partial<Record<S, string>>;
-  tabIndex?: number;
+  // tabIndex?: number;
 }
 
 export function withNativeProps<P extends NativeProps>(props: P, element: ReactElement) {
@@ -21,14 +21,14 @@ export function withNativeProps<P extends NativeProps>(props: P, element: ReactE
       ...props.style,
     };
   }
-  if (props.tabIndex !== undefined) {
-    p.tabIndex = props.tabIndex;
-  }
-  for (const key in props) {
-    if (!props.hasOwnProperty(key)) continue;
-    if (key.startsWith('data-') || key.startsWith('aria-')) {
-      p[key] = props[key];
-    }
-  }
+  // if (props.tabIndex !== undefined) {
+  //   p.tabIndex = props.tabIndex;
+  // }
+  // for (const key in props) {
+  //   if (!props.hasOwnProperty(key)) continue;
+  //   if (key.startsWith('data-') || key.startsWith('aria-')) {
+  //     p[key] = props[key];
+  //   }
+  // }
   return React.cloneElement(element, p);
 }

@@ -11,7 +11,7 @@ const IndexPage = () => {
         await navigateTo({ url: '/pages/demo/index' });
       }}
     >
-      <Button>Button 按钮</Button>
+      <Button loading>Button 按钮</Button>
     </View>
   );
 };
