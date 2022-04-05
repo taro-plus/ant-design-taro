@@ -1,13 +1,15 @@
-@import "theme.less";
+@import 'theme.less';
 
-:root {
+:root,
+page {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0%);
 }
 
-body {
-  font-family: var(--adm-font-family);
-  font-size: var(--adm-font-size-main);
-  color: var(--adm-color-text);
+body,
+page {
+  font-family: var(--adt-font-family);
+  font-size: var(--adt-font-size-main);
+  color: var(--adt-color-text);
 }
 
 a,
@@ -16,7 +18,7 @@ button {
 }
 
 a {
-  color: var(--adm-color-primary);
+  color: var(--adt-color-primary);
   transition: opacity ease-in-out 0.2s;
 
   &:active {
@@ -24,7 +26,7 @@ a {
   }
 }
 
-.adm-plain-anchor {
+.adt-plain-anchor {
   color: unset;
   transition: none;
 
@@ -33,11 +35,11 @@ a {
   }
 }
 
-body.adm-overflow-hidden {
+body.adt-overflow-hidden {
   overflow: hidden !important;
 }
 
-div.adm-px-tester {
+div.adt-px-tester {
   --size: 1;
 
   position: fixed;

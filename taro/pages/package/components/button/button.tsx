@@ -1,5 +1,6 @@
-import type { ButtonProps as TButtonProps } from '@tarojs/components';
-import { Button as TButton } from '@tarojs/components';
+import type { ButtonProps as TaroButtonProps } from '@tarojs/components';
+import { Button as TaroButton } from '@tarojs/components';
+import classNames from 'classnames';
 import type { FC } from 'react';
 import React from 'react';
 import type { NativeProps } from '../../utils/native-props';
@@ -27,8 +28,10 @@ type ButtonProps = {
   block?: boolean;
   loadingText?: string;
   shape?: 'default' | 'rounded' | 'rectangular';
-} & Omit<TButtonProps, OmitProps> &
+} & Omit<TaroButtonProps, OmitProps> &
   NativeProps<Var>;
+
+const classPrefix = `adt-button`;
 
 const defaultProps = {
   color: 'default',
@@ -43,5 +46,31 @@ const defaultProps = {
 export const Button: FC<ButtonProps> = (p) => {
   const props = mergeProps(defaultProps, p);
 
-  return withNativeProps(props, <TButton>{props.children}</TButton>);
+  const disabled = props.disabled || props.loading;
+
+  return withNativeProps(
+    props,
+    <TaroButton
+      formType={props.formType}
+      onClick={props.onClick}
+      disabled={disabled}
+      className={classNames(
+        classPrefix,
+        props.color ? `${classPrefix}-${props.color}` : null,
+        {
+          [`${classPrefix}-block`]: props.block,
+          [`${classPrefix}-disabled`]: disabled,
+          [`${classPrefix}-fill-outline`]: props.fill === 'outline',
+          [`${classPrefix}-fill-none`]: props.fill === 'none',
+          [`${classPrefix}-mini`]: props.size === 'mini',
+          [`${classPrefix}-small`]: props.size === 'small',
+          [`${classPrefix}-large`]: props.size === 'large',
+          [`${classPrefix}-loading`]: props.loading,
+        },
+        `${classPrefix}-shape-${props.shape}`,
+      )}
+    >
+      {props.children}
+    </TaroButton>,
+  );
 };

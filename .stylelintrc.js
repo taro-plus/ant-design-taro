@@ -9,5 +9,6 @@ module.exports = {
   rules: {
     'color-function-notation': 'off',
     'custom-property-no-missing-var-function': 'off',
+    'selector-type-no-unknown': null,
   },
 };
