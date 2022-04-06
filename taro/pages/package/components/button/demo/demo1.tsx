@@ -2,10 +2,10 @@
  * demoUrl: ?redirect=/pages/package/components/button/demo/index
  */
 
-import { DemoBlock } from '@/components';
-import { Button } from 'antd-taro';
 import type { FC } from 'react';
 import React from 'react';
+import { Button } from '../../../index';
+import { DemoBlock } from '../../demo';
 
 const ButtonDemo1: FC = () => {
   return (

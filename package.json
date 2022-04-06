@@ -63,7 +63,6 @@
     "@tarojs/react": "3.4.4",
     "@tarojs/runtime": "3.4.4",
     "@tarojs/taro": "3.4.4",
-    "antd-taro": "^0.0.1",
     "classnames": "^2.3.1",
     "lodash": "^4.17.21",
     "react": "^17.0.2",

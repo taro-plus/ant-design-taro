@@ -21,15 +21,9 @@
     "jsx": "react",
     "allowJs": true,
     "resolveJsonModule": true,
-    "typeRoots": ["node_modules/@types"],
-    "paths": {
-      "@/*": ["taro/*"],
-      "antd-taro": ["taro/pages/package/index.ts"],
-    }
+    "typeRoots": ["node_modules/@types"]
   },
-  "include": ["taro",
-    "global.d.ts"
-  ],
+  "include": ["taro", "global.d.ts"],
   "compileOnSave": false,
   "ts-node": {
     "compilerOptions": {

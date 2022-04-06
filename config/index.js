@@ -59,10 +59,6 @@ const config = {
       },
     },
   },
-  alias: {
-    '@/components': path.resolve(__dirname, '..', '/taro/components/index.ts'),
-    'antd-taro': path.resolve(__dirname, '..', '/taro/pages/package/index.ts'),
-  },
 };
 
 module.exports = function (merge) {
