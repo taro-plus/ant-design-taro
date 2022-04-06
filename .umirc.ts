@@ -19,6 +19,7 @@ export default defineConfig({
   headScripts: [{ src: '/docs-dist/scripts/redirect2demo.js' }],
   alias: {
     'antd-taro': join(__dirname, '/taro/pages/package'),
+    'demo-components': join(__dirname, '/taro/components'),
   },
   publicPath: '/docs-dist/',
   navs: [
