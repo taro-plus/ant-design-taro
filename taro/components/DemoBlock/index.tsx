@@ -3,7 +3,6 @@ import type { FC } from 'react';
 import React from 'react';
 import styles from './index.modules.less';
 
-console.log(styles);
 interface Props {
   title: string;
   padding?: string;

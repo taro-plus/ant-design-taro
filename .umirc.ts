@@ -29,6 +29,15 @@ export default defineConfig({
       path: 'https://github.com/sushi-su/ant-design-taro',
     },
   ],
+  define: {
+    ENABLE_INNER_HTML: true,
+    ENABLE_ADJACENT_HTML: true,
+    ENABLE_CLONE_NODE: true,
+    ENABLE_CONTAINS: true,
+    ENABLE_SIZE_APIS: true,
+    ENABLE_TEMPLATE_CONTENT: true,
+  },
+
   menus: {
     '/components': [
       {

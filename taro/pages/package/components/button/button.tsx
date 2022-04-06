@@ -21,7 +21,7 @@ type Var =
  */
 type OmitProps = 'size' | 'type' | 'plain';
 
-type ButtonProps = {
+export type ButtonProps = {
   color?: 'default' | 'primary' | 'success' | 'warning' | 'danger';
   fill?: 'solid' | 'outline' | 'none';
   size?: 'mini' | 'small' | 'middle' | 'large';
@@ -45,7 +45,7 @@ const defaultProps = {
 
 export const Button: FC<ButtonProps> = (p) => {
   const props = mergeProps(defaultProps, p);
-
+  console.log(props.color ? `${classPrefix}-${props.color}` : null);
   const disabled = props.disabled || props.loading;
 
   return withNativeProps(
