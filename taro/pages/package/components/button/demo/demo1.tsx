@@ -12,7 +12,7 @@ const ButtonDemo1: FC = () => {
   return (
     <>
       <DemoBlock title="不同颜色的按钮">
-        <Space>
+        <Space wrap>
           <Button
             onClick={async () => {
               await showToast({

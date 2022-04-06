@@ -1,0 +1,11 @@
+:root {
+  taro-button-core::after,
+  button::after {
+    border: none;
+  }
+
+  taro-button-core:not([disabled]):active {
+    color: var(--text-color);
+    background-color: var(--background-color);
+  }
+}
