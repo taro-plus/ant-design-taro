@@ -23,7 +23,8 @@
     "resolveJsonModule": true,
     "typeRoots": ["node_modules/@types"],
     "paths": {
-      "antd-taro": ["taro/pages/package/index.ts"],
+      "antd-taro": ["src/index.ts"],
+      "lib-utils/*": ["src/utils/*"],
       "demo-components": ["taro/components/index.ts"]
     }
   },

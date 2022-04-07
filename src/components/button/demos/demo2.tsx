@@ -1,5 +1,5 @@
 /**
- * demoUrl: ?redirect=/pages/package/components/button/demo/index
+ * demoUrl: ?redirect=/pages/button/index
  */
 
 import { Button, Space } from 'antd-taro';

@@ -8,7 +8,7 @@ const IndexPage = () => {
     <View>
       <Text
         onClick={async () => {
-          await navigateTo({ url: '/pages/package/components/button/demo/index' });
+          await navigateTo({ url: '/pages/button/index' });
         }}
       >
         Button 按钮

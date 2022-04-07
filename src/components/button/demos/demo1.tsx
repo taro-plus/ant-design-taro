@@ -1,14 +1,13 @@
 /**
- * demoUrl: ?redirect=/pages/package/components/button/demo/index
+ * demoUrl: ?redirect=/pages/button/index
  */
 
 import { showToast } from '@tarojs/taro';
 import { Button, Space } from 'antd-taro';
 import { DemoBlock } from 'demo-components';
-import type { FC } from 'react';
 import React from 'react';
 
-const ButtonDemo1: FC = () => {
+const ButtonDemo1: React.FC = () => {
   return (
     <>
       <DemoBlock title="不同颜色的按钮">

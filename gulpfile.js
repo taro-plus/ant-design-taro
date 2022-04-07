@@ -1,4 +1,4 @@
-const { dest, parallel, series, src, task } = require('gulp');
+const { dest, parallel, series, src } = require('gulp');
 const ts = require('gulp-typescript');
 const less = require('gulp-less');
 const babel = require('gulp-babel');
@@ -8,31 +8,32 @@ const tsconfig = require('./tsconfig.json');
 const through = require('through2');
 
 const dscDir = './lib';
-const srcDir = './taro/pages/package';
+const srcDir = './src';
+const ignoreFiles = ['**/demos/**/*', '**/tests/**/*'];
 
-task('clean', () => {
+function clean() {
   return del([`${dscDir}/**`]);
-});
+}
 
-task('buildES', () => {
+function buildES() {
   const tsProject = ts({
     ...tsconfig.compilerOptions,
     module: 'ESNext',
   });
 
   return src([`${srcDir}/**/*.{ts,tsx}`], {
-    ignore: ['**/demo/**/*', '**/__tests__/**/*'],
+    ignore: ignoreFiles,
   })
     .pipe(tsProject)
     .pipe(
       babel({
-        plugins: ['./scripts/babel-transform-less-to-css'],
+        plugins: ['./scripts/babel-transform-imports.js'],
       }),
     )
     .pipe(dest(`${dscDir}/es/`));
-});
+}
 
-task('buildCJS', () => {
+function buildCJS() {
   return src([`${dscDir}/es/**/*.js`])
     .pipe(
       babel({
@@ -40,9 +41,9 @@ task('buildCJS', () => {
       }),
     )
     .pipe(dest(`${dscDir}/cjs/`));
-});
+}
 
-task('buildDeclaration', () => {
+function buildDeclaration() {
   const tsProject = ts({
     ...tsconfig.compilerOptions,
     module: 'ESNext',
@@ -50,29 +51,28 @@ task('buildDeclaration', () => {
     emitDeclarationOnly: true,
   });
   return src([`${srcDir}/**/*.{ts,tsx}`], {
-    ignore: ['**/demo/**/*', '**/__tests__/**/*'],
+    ignore: ignoreFiles,
   })
     .pipe(tsProject)
     .pipe(dest(`${dscDir}/es/`))
     .pipe(dest(`${dscDir}/cjs/`));
-});
+}
 
-task('buildStyle', () => {
+function buildStyle() {
   return src([`${srcDir}/**/*.less`], {
     base: srcDir,
-    ignore: ['**/demo/**/*', '**/__tests__/**/*'],
+    ignore: ignoreFiles,
   })
     .pipe(
       less({
-        paths: [path.join(__dirname, '/taro/pages/package')],
-        relativeUrls: true,
+        paths: [path.join(__dirname, '..', '/src')],
       }),
     )
     .pipe(dest(`${dscDir}/es/`))
     .pipe(dest(`${dscDir}/cjs/`));
-});
+}
 
-task('generatePackageJSON', () => {
+function generatePackageJSON() {
   return src('./package.json')
     .pipe(
       through.obj((file, enc, cb) => {
@@ -88,20 +88,15 @@ task('generatePackageJSON', () => {
       }),
     )
     .pipe(dest(dscDir));
-});
+}
 
-task('copyMetaFiles', () => {
+function copyMetaFiles() {
   return src(['./README.md', './LICENSE']).pipe(dest(dscDir));
-});
+}
 
-task(
-  'build',
-  series(
-    'clean',
-    'buildES',
-    'buildCJS',
-    parallel('buildDeclaration', 'buildStyle'),
-    'copyMetaFiles',
-    'generatePackageJSON',
-  ),
+exports.default = series(
+  clean,
+  buildES,
+  buildCJS,
+  parallel(buildDeclaration, buildStyle, copyMetaFiles, generatePackageJSON),
 );

@@ -8,7 +8,7 @@ nav:
 
 # Button 按钮
 
-<code src="./demo/demo1.tsx"></code>
+<code src="./demos/demo1.tsx"></code>
 
 
 ### 属性

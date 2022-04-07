@@ -1,11 +1,11 @@
 import type { ViewProps } from '@tarojs/components';
 import { View } from '@tarojs/components';
 import classNames from 'classnames';
+import type { NativeProps } from 'lib-utils/native-props';
+import { withNativeProps } from 'lib-utils/native-props';
+import { mergeProps } from 'lib-utils/with-default-props';
 import type { FC } from 'react';
 import React from 'react';
-import type { NativeProps } from '../../utils/native-props';
-import { withNativeProps } from '../../utils/native-props';
-import { mergeProps } from '../../utils/with-default-props';
 
 const classPrefix = `adt-space`;
 
@@ -38,8 +38,6 @@ export const Space: FC<SpaceProps> = (p) => {
       onClick={onClick}
     >
       {React.Children.map(props.children, (child) => {
-        console.log(child !== null && child !== undefined);
-
         return child !== null && child !== undefined && <View className={`${classPrefix}-item`}>{child}</View>;
       })}
     </View>,

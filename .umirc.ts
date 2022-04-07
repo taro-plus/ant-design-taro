@@ -8,7 +8,7 @@ export default defineConfig({
   outputPath: 'docs-dist',
   mode: 'site',
   resolve: {
-    includes: ['docs', 'taro/pages/package'],
+    includes: ['docs', 'src/components'],
   },
   copy: [
     {
@@ -18,7 +18,8 @@ export default defineConfig({
   ],
   headScripts: [{ src: '/docs-dist/scripts/redirect2demo.js' }],
   alias: {
-    'antd-taro': join(__dirname, '/taro/pages/package'),
+    'antd-taro': join(__dirname, '/src'),
+    'lib-utils': join(__dirname, '/src/utils'),
     'demo-components': join(__dirname, '/taro/components'),
   },
   publicPath: '/docs-dist/',
@@ -42,7 +43,7 @@ export default defineConfig({
     '/components': [
       {
         title: '基础',
-        children: ['components/button/index'],
+        children: ['/button/index'],
       },
     ],
   },

@@ -1,11 +1,11 @@
 import type { ButtonProps as TaroButtonProps } from '@tarojs/components';
 import { Button as TaroButton } from '@tarojs/components';
 import classNames from 'classnames';
+import type { NativeProps } from 'lib-utils/native-props';
+import { withNativeProps } from 'lib-utils/native-props';
+import { mergeProps } from 'lib-utils/with-default-props';
 import type { FC } from 'react';
 import React from 'react';
-import type { NativeProps } from '../../utils/native-props';
-import { withNativeProps } from '../../utils/native-props';
-import { mergeProps } from '../../utils/with-default-props';
 
 type Var =
   | '--text-color'
@@ -45,7 +45,7 @@ const defaultProps = {
 
 export const Button: FC<ButtonProps> = (p) => {
   const props = mergeProps(defaultProps, p);
-  console.log(props.color ? `${classPrefix}-${props.color}` : null);
+
   const disabled = props.disabled || props.loading;
 
   return withNativeProps(

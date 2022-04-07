@@ -1,4 +1,13 @@
 const { jsWithTs } = require('ts-jest/presets');
+const fs = require('fs');
+const path = require('path');
+
+const dirUtils = path.join(__dirname, '/src/utils');
+const files = fs.readdirSync(dirUtils);
+const moduleNameMapperUtils = files.reduce(
+  (pre, cur) => ({ ...pre, [`lib-utils/${cur.split('.')[0]}`]: path.join(__dirname, '/src/utils/', cur) }),
+  {},
+);
 
 module.exports = {
   verbose: true,
@@ -23,11 +32,12 @@ module.exports = {
   },
   transformIgnorePatterns: ['<rootDir>/node_modules/(?!@taro)', '^.+\\.(css|sass|scss|less)$'],
   setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
-  testMatch: ['<rootDir>/taro/pages/package/components/**/__tests__/**/*.[jt]s?(x)'],
+  testMatch: ['<rootDir>/src/components/**/tests/**/*.[jt]s?(x)'],
   moduleNameMapper: {
     '@tarojs/taro': '@tarojs/taro-h5',
     '@tarojs/components': '@tarojs/components/dist-h5/react',
-    '^antd-taro$': '<rootDir>/taro/pages/package',
+    '^antd-taro$': '<rootDir>/src/index.ts',
     '\\.(css|less)$': '<rootDir>/jest/style-mock.js',
+    ...moduleNameMapperUtils,
   },
 };

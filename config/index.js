@@ -1,7 +1,7 @@
 const path = require('path');
 
 const config = {
-  projectName: 'antd-taro-demo',
+  projectName: 'antd-taro-demos',
   date: '2022-4-1',
   designWidth: 750,
   deviceRatio: {
@@ -60,7 +60,8 @@ const config = {
     },
   },
   alias: {
-    'antd-taro': path.resolve(__dirname, '..', '/taro/pages/package/index.ts'),
+    'antd-taro': path.resolve(__dirname, '..', '/src/index.ts'),
+    'lib-utils': path.resolve(__dirname, '..', '/src/utils'),
     'demo-components': path.resolve(__dirname, '..', '/taro/components/index.ts'),
   },
 };
