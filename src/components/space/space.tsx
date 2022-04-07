@@ -1,4 +1,3 @@
-import type { ViewProps } from '@tarojs/components';
 import { View } from '@tarojs/components';
 import classNames from 'classnames';
 import type { NativeProps } from 'lib-utils/native-props';
@@ -6,16 +5,17 @@ import { withNativeProps } from 'lib-utils/native-props';
 import { mergeProps } from 'lib-utils/with-default-props';
 import type { FC } from 'react';
 import React from 'react';
+import type { TaroViewProps } from '../../global';
 
 const classPrefix = `adt-space`;
 
-export type SpaceProps = {
+type SpaceProps = {
   direction?: 'horizontal' | 'vertical';
   align?: 'start' | 'end' | 'center' | 'baseline';
   justify?: 'start' | 'end' | 'center' | 'between' | 'around' | 'evenly' | 'stretch';
   wrap?: boolean;
   block?: boolean;
-} & ViewProps &
+} & TaroViewProps &
   NativeProps<'--gap' | '--gap-vertical' | '--gap-horizontal'>;
 
 const defaultProps = {

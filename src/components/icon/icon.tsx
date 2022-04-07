@@ -5,9 +5,10 @@ import { withNativeProps } from 'lib-utils/native-props';
 import { mergeProps } from 'lib-utils/with-default-props';
 import type { FC } from 'react';
 import React from 'react';
+import type { IconName } from './IconName';
 
 export type IconProps = {
-  name: string;
+  name: IconName;
   size?: string;
   color?: string;
 } & TextProps;

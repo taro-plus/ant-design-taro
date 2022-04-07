@@ -26,7 +26,9 @@ import { AntOutline } from 'antd-mobile-icons'
 
 ## 图标列表
 
-<code src="./demos/demo1.tsx" ></code>
+<code src="./demos/demo-all.tsx" inline="true" ></code>
 
 ## 使用示例
+
+<code src="./demos/demo1.tsx" ></code>
 

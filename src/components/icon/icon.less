@@ -9,11 +9,12 @@
 .adt-icon {
   display: inline-block;
   font-family: iconfont, serif !important;
-  font-size: 64px;
+  font-size: var(--adt-icon-size, 48px);
   font-style: normal;
   font-weight: 400;
   font-variant: normal;
   line-height: 1;
+  color: var(--adt-icon-color, #000);
   text-transform: none;
   vertical-align: middle;
   -webkit-font-smoothing: antialiased;
@@ -180,7 +181,7 @@
   content: '\e716';
 }
 
-.adt-icon-3column::before {
+.adt-icon-column-3::before {
   content: '\e663';
 }
 

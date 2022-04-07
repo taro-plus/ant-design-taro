@@ -1,5 +1,4 @@
 export const iconNames = [
-  'sorting',
   'column-3',
   'column-4',
   'add',
@@ -182,4 +181,5 @@ export const fillIconNames = [
   'cry-filling',
   'top-filling',
   'home-filling',
+  'sorting',
 ];
