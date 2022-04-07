@@ -8,13 +8,26 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sushi-su/ant-design-taro.git"
+    "url": "git+https://github.com/sushi-su/ant-design-taro.git",
+    "branch": "main",
+    "platform": "github"
   },
   "author": "",
+  "sideEffects": [
+    "**/*.css",
+    "**/*.less",
+    "./es/index.js",
+    "./src/index.ts",
+    "./es/global/index.js",
+    "./src/global/index.ts"
+  ],
   "main": "./lib/cjs/index.js",
   "module": "./lib/es/index.js",
   "types": "./lib/es/index.d.ts",
   "typings": "./lib/es/index.d.ts",
+  "files": [
+    "./lib"
+  ],
   "scripts": {
     "build:alipay": "taro build --type alipay",
     "build:docs": "dumi build",
@@ -27,7 +40,7 @@
     "build:swan": "taro build --type swan",
     "build:tt": "taro build --type tt",
     "build:weapp": "cross-env NODE_ENV=production taro build --type weapp",
-    "clean": "rimraf .umi && rimraf dist && rimraf package-lock.json && rimraf node_modules",
+    "clean": "rimraf src/.umi .umi-production lib coverage dist docs-dist package-lock.json node_modules",
     "dev:alipay": "npm run build:alipay -- --watch",
     "dev:docs": "dumi dev",
     "dev:h5": "npm run build:h5 -- --watch",
@@ -38,6 +51,9 @@
     "dev:swan": "npm run build:swan -- --watch",
     "dev:tt": "npm run build:tt -- --watch",
     "dev:weapp": "cross-env NODE_ENV=development taro build --type weapp --watch",
+    "publish": "npm publish ./lib --registry=https://registry.npmjs.org",
+    "publish:alpha": "npm publish ./lib --registry=https://registry.npmjs.org --tag alpha",
+    "publish:dev": "npm publish ./lib --registry=https://registry.npmjs.org --tag dev",
     "test": "rimraf lib && jest",
     "test:coverage": "rimraf lib && jest --coverage"
   },
@@ -107,11 +123,14 @@
     "rimraf": "^3.0.2",
     "stylelint": "^14.6.1",
     "stylelint-config-css-modules": "^4.1.0",
-    "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-recess-order": "^3.0.0",
     "stylelint-config-standard": "^25.0.0",
     "through2": "^4.0.2",
     "ts-jest": "^27.1.4",
     "typescript": "^4.6.3"
+  },
+  "packageManager": "npm",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
   }
 }

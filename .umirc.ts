@@ -3,12 +3,13 @@ import { join } from 'path';
 
 export default defineConfig({
   title: 'Ant Design Taro',
-  favicon: 'https://gw.alipayobjects.com/zos/bmw-prod/b874caa9-4458-412a-9ac6-a61486180a62.svg',
+  favicon: 'https://gw.alipayobjects.com/zos/bmw-prod/69a27fcc-ce52-4f27-83f1-c44541e9b65d.svg',
   logo: 'https://gw.alipayobjects.com/zos/bmw-prod/b874caa9-4458-412a-9ac6-a61486180a62.svg',
   outputPath: 'docs-dist',
   mode: 'site',
   resolve: {
     includes: ['docs', 'src/components'],
+    passivePreview: true,
   },
   copy: [
     {
@@ -24,7 +25,7 @@ export default defineConfig({
   },
   publicPath: '/docs-dist/',
   navs: [
-    null, // null 值代表保留约定式生成的导航，只做增量配置
+    null,
     {
       title: 'GitHub',
       path: 'https://github.com/sushi-su/ant-design-taro',
@@ -38,7 +39,6 @@ export default defineConfig({
     ENABLE_SIZE_APIS: true,
     ENABLE_TEMPLATE_CONTENT: true,
   },
-
   menus: {
     '/components': [
       {
@@ -47,5 +47,4 @@ export default defineConfig({
       },
     ],
   },
-  // more config: https://d.umijs.org/config
 });
