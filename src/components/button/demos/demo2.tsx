@@ -2,7 +2,7 @@
  * demoUrl: ?redirect=/pages/button/index
  */
 
-import { Button, Space } from 'antd-taro';
+import { Button, Icon, Space } from 'antd-taro';
 import { DemoBlock } from 'demo-components';
 import type { FC } from 'react';
 import React from 'react';
@@ -13,7 +13,7 @@ const ButtonDemo2: FC = () => {
       <DemoBlock title="带图标的按钮">
         <Button>
           <Space>
-            11
+            <Icon name="search" />
             <span>搜索</span>
           </Space>
         </Button>
