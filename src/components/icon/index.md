@@ -24,11 +24,15 @@ import { AntOutline } from 'antd-mobile-icons'
 
 由于主流的构建工具会自动做 Tree-Shaking，所以最终被打包进来的只有你用到的那些图标，不必担心包体积问题。
 
-## 图标列表
-
-<code src="./demos/demo-all.tsx" inline="true" ></code>
 
 ## 使用示例
 
-<code src="./demos/demo1.tsx" ></code>
+<code src="./demos/demo2.tsx" ></code>
+
+## CSS 变量
+
+| 属性           | 说明   | 默认值                          | 全局变量               |
+|--------------|------|------------------------------|--------------------|
+| --text-color | 图标颜色 | `var(--adt-color-text-main)` | `--adt-icon-size`  |
+| --font-size  | 背景颜色 | `var(--adt-font-size-main)`  | `--adt-icon-color` |
 

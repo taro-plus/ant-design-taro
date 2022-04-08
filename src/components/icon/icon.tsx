@@ -1,21 +1,25 @@
-import type { TextProps } from '@tarojs/components';
 import { Text } from '@tarojs/components';
 import classNames from 'classnames';
+import type { NativeProps } from 'lib-utils/native-props';
 import { withNativeProps } from 'lib-utils/native-props';
 import { mergeProps } from 'lib-utils/with-default-props';
 import type { FC } from 'react';
 import React from 'react';
+import type { TaroTextProps } from '../../global';
 import type { IconName } from './IconName';
 
 export type IconProps = {
   name: IconName;
-  size?: string;
+  fontSize?: number | string;
   color?: string;
-} & TextProps;
+} & TaroTextProps &
+  NativeProps<'--adt-icon-size' | '--adt-icon-color'>;
 
 const classPrefix = 'adt-icon';
 
-const defaultProps = {};
+const defaultProps = {
+  name: '',
+};
 
 export const Icon: FC<IconProps> = (p) => {
   const props = mergeProps(defaultProps, p);
@@ -24,7 +28,7 @@ export const Icon: FC<IconProps> = (p) => {
     props,
     <Text
       className={classNames(classPrefix, {
-        [`${classPrefix}-${props.name}`]: props.name,
+        [`${classPrefix}-${props.name}`]: !!props.name,
       })}
     />,
   );
