@@ -1,7 +1,6 @@
 {
   "name": "antd-taro",
   "version": "1.1.0-develop.2",
-  "private": true,
   "description": "",
   "bugs": {
     "url": "https://github.com/sushi-su/ant-design-taro/issues"
