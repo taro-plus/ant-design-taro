@@ -1,3 +1,10 @@
+# [1.1.0-develop.2](https://github.com/sushi-su/ant-design-taro/compare/v1.1.0-develop.1...v1.1.0-develop.2) (2022-04-11)
+
+
+### Features
+
+* icon ([c1bdfae](https://github.com/sushi-su/ant-design-taro/commit/c1bdfae712a20733609c1f39827139235c02c0bf))
+
 # [1.1.0-develop.1](https://github.com/sushi-su/ant-design-taro/compare/v1.0.0...v1.1.0-develop.1) (2022-04-11)
 
 
