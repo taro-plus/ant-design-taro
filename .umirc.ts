@@ -26,7 +26,18 @@ export default defineConfig({
   },
   publicPath: '/docs-dist/',
   navs: [
-    null,
+    {
+      title: '指南',
+      path: '/guide',
+    },
+    {
+      title: '组件',
+      path: '/components',
+    },
+    {
+      title: '发布日志',
+      path: 'https://github.com/sushi-su/ant-design-taro/releases',
+    },
     {
       title: 'GitHub',
       path: 'https://github.com/sushi-su/ant-design-taro',

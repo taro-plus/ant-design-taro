@@ -8,12 +8,14 @@ import React from 'react';
 import type { TaroTextProps } from '../../global';
 import type { IconName } from './IconName';
 
+type IconVar = '--adt-icon-size' | '--adt-icon-color';
+
 export type IconProps = {
   name: IconName;
   fontSize?: number | string;
   color?: string;
 } & TaroTextProps &
-  NativeProps<'--adt-icon-size' | '--adt-icon-color'>;
+  NativeProps<IconVar>;
 
 const classPrefix = 'adt-icon';
 
@@ -27,6 +29,15 @@ export const Icon: FC<IconProps> = (p) => {
   return withNativeProps(
     props,
     <Text
+      // @ts-ignore
+      style={{
+        ...(props.fontSize && {
+          '--adt-icon-size': isNaN(Number(props.fontSize)) ? props.fontSize : `${props.fontSize}px`,
+        }),
+        ...(props.color && {
+          '--adt-icon-color': props.color,
+        }),
+      }}
       className={classNames(classPrefix, {
         [`${classPrefix}-${props.name}`]: !!props.name,
       })}

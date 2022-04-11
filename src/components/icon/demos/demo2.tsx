@@ -1,5 +1,5 @@
 /**
- * demoUrl: ?redirect=/pages/icon/index
+ * demoUrl: ?redirect=/pages/icon/index?id=demo2
  */
 import { Icon, Space } from 'antd-taro';
 import { DemoBlock } from 'demo-components';
@@ -19,19 +19,19 @@ const IconDemo2 = () => {
 
       <DemoBlock title="大小">
         <Space align="center">
-          <Icon name="meh" style={{ '--adt-icon-size': '12px' }} />
+          <Icon name="meh" fontSize="13" />
 
-          <Icon name="meh" style={{ '--adt-icon-size': '24px' }} />
+          <Icon name="meh" fontSize="26px" />
 
-          <Icon name="meh" style={{ '--adt-icon-size': '36px' }} />
+          <Icon name="meh" fontSize="39" />
         </Space>
       </DemoBlock>
 
       <DemoBlock title="颜色">
         <Space className={styles['icon-container']}>
-          <Icon name="meh" style={{ '--adt-icon-color': '#76c6b8' }} />
+          <Icon name="meh" color="#76c6b8" />
 
-          <Icon name="meh" style={{ '--adt-icon-color': 'var(--adt-color-primary)' }} />
+          <Icon name="meh" color="var(--adt-color-primary)" />
 
           <Icon name="meh" style={{ '--adt-icon-color': 'var(--adt-color-weak)' }} />
 

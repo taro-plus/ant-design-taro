@@ -3,20 +3,22 @@
   const DEMO_HOST_PROD = 'https://h5.艺蔚.wang';
 
   const { hostname, search } = window.location;
+  const [, query, queryQuery] = search.split('?');
+  const queryObj = query.split('&').reduce((acc, curr) => {
+    const [key, value] = curr.split('=');
+    acc[key] = value;
+    return acc;
+  }, {});
 
-  const searchObj = search
-    .substr(1)
-    .split('&')
-    .reduce((acc, curr) => {
-      const [key, value] = curr.split('=');
-      acc[key] = value;
-      return acc;
-    }, {});
-
-  const redirectPath = searchObj.redirect;
+  let redirectPath = queryObj.redirect;
 
   if (!redirectPath) {
     return;
+  }
+  console.log(redirectPath);
+
+  if (queryQuery) {
+    redirectPath += `?${queryQuery}`;
   }
 
   if (hostname === 'localhost') {

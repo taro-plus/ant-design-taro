@@ -8,31 +8,22 @@ nav:
 
 # Icon 图标
 
-图标是在一个单独的 npm 包中，如果你想使用图标，需要先安装它：
-
-```bash
-npm install --save antd-mobile-icons
-# or
-yarn add antd-mobile-icons
-```
-
-然后从这个包中引入你所需要的图标即可：
-
-```js
-import { AntOutline } from 'antd-mobile-icons'
-```
-
-由于主流的构建工具会自动做 Tree-Shaking，所以最终被打包进来的只有你用到的那些图标，不必担心包体积问题。
-
+## 图标列表
+<code src="./demos/demo1.tsx" ></code>
 
 ## 使用示例
-
 <code src="./demos/demo2.tsx" ></code>
 
-## CSS 变量
+## 属性
+| 参数       | 说明   | 类型                     | 是否必填 | 默认值 |
+|----------|------|------------------------|------|-----|
+| name     | 图标名称 | string                 | 是    | ''  |
+| fontSize | 图标大小 | number &verbar; string | 否    | -   |
+| color    | 图标颜色 | string                 | 否    | -   |
 
-| 属性           | 说明   | 默认值                          | 全局变量               |
-|--------------|------|------------------------------|--------------------|
-| --text-color | 图标颜色 | `var(--adt-color-text-main)` | `--adt-icon-size`  |
-| --font-size  | 背景颜色 | `var(--adt-font-size-main)`  | `--adt-icon-color` |
+## CSS 变量
+| 属性           | 说明   | 默认值                         | 全局变量               |
+|--------------|------|-----------------------------|--------------------|
+| --font-size  | 图标大小 | `var(--adt-font-size-main)` | `--adt-icon-size`  |
+| --text-color | 图标颜色 | `var(--adt-color-text)`     | `--adt-icon-color` |
 

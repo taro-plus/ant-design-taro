@@ -1,5 +1,5 @@
 /**
- * demoUrl: ?redirect=/pages/icon/index
+ * demoUrl: ?redirect=/pages/icon/index?id=demo1
  */
 import { View } from '@tarojs/components';
 import { setClipboardData, showToast } from '@tarojs/taro';
@@ -23,6 +23,7 @@ const IconItem: FC<IconProps> = ({ name }) => {
       icon: 'none',
     });
   };
+
   return (
     <Space direction="vertical" align="center" justify="center" onClick={onClick} className={styles['icon-item']}>
       <Icon name={name} />

@@ -29,7 +29,7 @@
       "demo-components": ["taro/components/index.ts"]
     }
   },
-  "include": ["taro","src","global.d.ts"],
+  "include": ["taro", "src", "docs", "global.d.ts"],
   "compileOnSave": false,
   "ts-node": {
     "compilerOptions": {
