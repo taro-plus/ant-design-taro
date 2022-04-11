@@ -9,7 +9,7 @@ import type { TaroViewProps } from '../../global';
 
 const classPrefix = `adt-space`;
 
-type SpaceProps = {
+export type SpaceProps = {
   direction?: 'horizontal' | 'vertical';
   align?: 'start' | 'end' | 'center' | 'baseline';
   justify?: 'start' | 'end' | 'center' | 'between' | 'around' | 'evenly' | 'stretch';
