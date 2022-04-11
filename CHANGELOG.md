@@ -1,3 +1,15 @@
+# [1.1.0-develop.1](https://github.com/sushi-su/ant-design-taro/compare/v1.0.0...v1.1.0-develop.1) (2022-04-11)
+
+
+### Bug Fixes
+
+* export type ([a0f4fe4](https://github.com/sushi-su/ant-design-taro/commit/a0f4fe4818a023fc6d633b419bdf02160c946cdc))
+
+
+### Features
+
+* icon ([8b3f361](https://github.com/sushi-su/ant-design-taro/commit/8b3f3618fea413bf8f076709d123c9d220b7bce9))
+
 # 1.0.0 (2022-04-07)
 
 
