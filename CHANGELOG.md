@@ -1,3 +1,10 @@
+# [1.1.0-develop.4](https://github.com/sushi-su/ant-design-taro/compare/v1.1.0-develop.3...v1.1.0-develop.4) (2022-04-11)
+
+
+### Bug Fixes
+
+* ci ([ff94f5d](https://github.com/sushi-su/ant-design-taro/commit/ff94f5de10c6e29ce8db07c1234dd648778272ef))
+
 # [1.1.0-develop.3](https://github.com/sushi-su/ant-design-taro/compare/v1.1.0-develop.2...v1.1.0-develop.3) (2022-04-11)
 
 
