@@ -25,6 +25,7 @@
     "paths": {
       "antd-taro": ["src/index.ts"],
       "lib-utils/*": ["src/utils/*"],
+      "lib-components/*": ["src/components/*"],
       "demo-components": ["taro/components/index.ts"]
     }
   },

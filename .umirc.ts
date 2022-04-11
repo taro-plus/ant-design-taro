@@ -21,6 +21,7 @@ export default defineConfig({
   alias: {
     'antd-taro': join(__dirname, '/src'),
     'lib-utils': join(__dirname, '/src/utils'),
+    'lib-components': join(__dirname, '/src/components'),
     'demo-components': join(__dirname, '/taro/components'),
   },
   publicPath: '/docs-dist/',

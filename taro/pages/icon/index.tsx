@@ -1,7 +1,7 @@
 import { View } from '@tarojs/components';
+import IconDemo1 from 'lib-components/icon/demos/demo1';
+import IconDemo2 from 'lib-components/icon/demos/demo2';
 import React from 'react';
-import IconDemo1 from '../../../src/components/icon/demos/demo1';
-import IconDemo2 from '../../../src/components/icon/demos/demo2';
 
 const IconPage = () => {
   return (
