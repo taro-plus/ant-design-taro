@@ -3,7 +3,7 @@ export default defineAppConfig({
   window: {
     backgroundTextStyle: 'light',
     navigationBarBackgroundColor: '#fff',
-    navigationBarTitleText: 'Ant Design Taro',
     navigationBarTextStyle: 'black',
+    navigationBarTitleText: 'Ant Design Taro',
   },
 });
