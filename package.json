@@ -1,8 +1,8 @@
 {
   "name": "antd-taro",
-  "version": "1.1.0-develop.2",
   "private": true,
   "description": "",
+  "homepage": "https://adt.center",
   "bugs": {
     "url": "https://github.com/sushi-su/ant-design-taro/issues"
   },
@@ -12,22 +12,18 @@
     "branch": "main",
     "platform": "github"
   },
-  "author": "",
-  "sideEffects": [
-    "**/*.css",
-    "**/*.less",
-    "./es/index.js",
-    "./src/index.ts",
-    "./es/global/index.js",
-    "./src/global/index.ts"
-  ],
-  "main": "./cjs/index.js",
-  "module": "./es/index.js",
-  "types": "./es/index.d.ts",
-  "typings": "./es/index.d.ts",
+  "license": "MIT",
+  "author": {
+    "name": "Sushi Su"
+  },
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/es/index.js",
+  "types": "./lib/es/index.d.ts",
+  "typings": "./lib/es/index.d.ts",
   "files": [
-    "./cjs",
-    "./es"
+    "./lib",
+    "LICENSE",
+    "README.md"
   ],
   "scripts": {
     "build:alipay": "taro build --type alipay",
@@ -137,8 +133,7 @@
     "ts-jest": "^27.1.4",
     "typescript": "^4.6.3"
   },
-  "packageManager": "npm",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org"
+    "registry": "https://registry.npmjs.org/"
   }
 }
