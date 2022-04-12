@@ -8,6 +8,7 @@
       "@semantic-release/npm",
       {
         "pkgRoot": "./lib",
+        "tarballDir": "./lib",
       }
     ],
     [
