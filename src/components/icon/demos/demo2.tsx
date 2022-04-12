@@ -6,6 +6,7 @@ import { DemoBlock } from 'demo-components';
 import React from 'react';
 import styles from './demo2.modules.less';
 
+console.log(styles);
 const IconDemo2 = () => {
   return (
     <>
