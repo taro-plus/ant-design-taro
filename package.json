@@ -1,5 +1,6 @@
 {
   "name": "antd-taro",
+  "private": true,
   "description": "",
   "homepage": "https://adt.center",
   "bugs": {
@@ -15,14 +16,15 @@
   "author": {
     "name": "Sushi Su"
   },
-  "main": "./lib/cjs/index.js",
-  "module": "./lib/es/index.js",
-  "types": "./lib/es/index.d.ts",
-  "typings": "./lib/es/index.d.ts",
+  "main": "./cjs/index.js",
+  "module": "./es/index.js",
+  "types": "./es/index.d.ts",
+  "typings": "./es/index.d.ts",
   "files": [
-    "./lib",
-    "LICENSE",
-    "README.md"
+    "./cjs",
+    "./es",
+    "./LICENSE",
+    "./README.md"
   ],
   "scripts": {
     "build:alipay": "taro build --type alipay",
@@ -134,6 +136,5 @@
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
-  },
-  "version": "1.1.0-develop.9"
+  }
 }
