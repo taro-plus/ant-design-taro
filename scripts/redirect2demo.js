@@ -3,6 +3,9 @@
   const DEMO_HOST_PROD = 'https://h5.艺蔚.wang';
 
   const { hostname, search } = window.location;
+
+  if (!search) return;
+
   const [, query, queryQuery] = search.split('?');
   const queryObj = query.split('&').reduce((acc, curr) => {
     const [key, value] = curr.split('=');
@@ -12,10 +15,7 @@
 
   let redirectPath = queryObj.redirect;
 
-  if (!redirectPath) {
-    return;
-  }
-  console.log(redirectPath);
+  if (!redirectPath) return;
 
   if (queryQuery) {
     redirectPath += `?${queryQuery}`;

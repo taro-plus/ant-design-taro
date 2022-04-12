@@ -1,8 +1,8 @@
 import { View } from '@tarojs/components';
+import ButtonDemo1 from 'lib-components/button/demos/demo1';
+import ButtonDemo2 from 'lib-components/button/demos/demo2';
 import type { FC } from 'react';
 import React from 'react';
-import ButtonDemo1 from '../../../src/components/button/demos/demo1';
-import ButtonDemo2 from '../../../src/components/button/demos/demo2';
 
 const ButtonPage: FC = () => {
   return (
