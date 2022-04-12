@@ -68,9 +68,8 @@ export default () => {
           {' | '}
           Copyright © 2022 Sushi Su
           {' | '}
-          Powered by{' '}
-          <a href="http://d.umijs.org" target="_blank">
-            dumi
+          <a href="https://beian.miit.gov.cn" target="_blank">
+            粤ICP备2022026797号
           </a>
         </div>
       </div>
