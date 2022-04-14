@@ -1,5 +1,5 @@
 /**
- * demoUrl: ?redirect=/pages/button/index
+ * demoUrl: ?redirect=/pages/button/index?id=demo1
  */
 
 import { showToast } from '@tarojs/taro';

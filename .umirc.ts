@@ -21,11 +21,23 @@ export default defineConfig({
   alias: {
     'antd-taro': join(__dirname, '/src'),
     'lib-utils': join(__dirname, '/src/utils'),
+    'lib-components': join(__dirname, '/src/components'),
     'demo-components': join(__dirname, '/taro/components'),
   },
   publicPath: '/docs-dist/',
   navs: [
-    null,
+    {
+      title: '指南',
+      path: '/guide',
+    },
+    {
+      title: '组件',
+      path: '/components',
+    },
+    {
+      title: '发布日志',
+      path: 'https://github.com/sushi-su/ant-design-taro/releases',
+    },
     {
       title: 'GitHub',
       path: 'https://github.com/sushi-su/ant-design-taro',
@@ -43,7 +55,7 @@ export default defineConfig({
     '/components': [
       {
         title: '基础',
-        children: ['/button/index'],
+        children: ['/button/index', '/icon/index'],
       },
     ],
   },

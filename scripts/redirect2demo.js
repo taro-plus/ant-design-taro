@@ -4,19 +4,21 @@
 
   const { hostname, search } = window.location;
 
-  const searchObj = search
-    .substr(1)
-    .split('&')
-    .reduce((acc, curr) => {
-      const [key, value] = curr.split('=');
-      acc[key] = value;
-      return acc;
-    }, {});
+  if (!search) return;
 
-  const redirectPath = searchObj.redirect;
+  const [, query, queryQuery] = search.split('?');
+  const queryObj = query.split('&').reduce((acc, curr) => {
+    const [key, value] = curr.split('=');
+    acc[key] = value;
+    return acc;
+  }, {});
 
-  if (!redirectPath) {
-    return;
+  let redirectPath = queryObj.redirect;
+
+  if (!redirectPath) return;
+
+  if (queryQuery) {
+    redirectPath += `?${queryQuery}`;
   }
 
   if (hostname === 'localhost') {
