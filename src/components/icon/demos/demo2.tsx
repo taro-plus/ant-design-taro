@@ -1,5 +1,5 @@
 /**
- * demoUrl: ?redirect=/pages/icon/index?id=demo2
+ * demoUrl: /pages/icon/index?id=demo2
  */
 import { Icon, Space } from 'antd-taro';
 import { DemoBlock } from 'demo-components';

@@ -1,5 +1,5 @@
 /**
- * demoUrl: ?redirect=/pages/button/index?id=demo2
+ * demoUrl: /pages/button/index?id=demo2
  */
 
 import { Text } from '@tarojs/components';

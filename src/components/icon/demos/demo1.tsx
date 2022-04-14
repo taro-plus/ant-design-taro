@@ -1,5 +1,5 @@
 /**
- * demoUrl: ?redirect=/pages/icon/index?id=demo1
+ * demoUrl: /pages/icon/index?id=demo1
  */
 import { View } from '@tarojs/components';
 import { setClipboardData, showToast } from '@tarojs/taro';
