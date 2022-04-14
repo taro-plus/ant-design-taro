@@ -82,6 +82,7 @@ function generatePackageJSON() {
         delete parsed.private;
         delete parsed.scripts;
         delete parsed.devDependencies;
+        delete parsed['lint-staged'];
         const stringified = JSON.stringify(parsed, null, 2);
         file.contents = Buffer.from(stringified);
         cb(null, file);
@@ -94,4 +95,9 @@ function copyMetaFiles() {
   return src(['./README.md', './LICENSE']).pipe(dest(dscDir));
 }
 
-exports.default = series(clean, buildES, buildCJS, parallel(buildDeclaration, buildStyle, generatePackageJSON));
+exports.default = series(
+  clean,
+  buildES,
+  buildCJS,
+  parallel(buildDeclaration, buildStyle, copyMetaFiles, generatePackageJSON),
+);
