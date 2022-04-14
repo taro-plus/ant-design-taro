@@ -38,7 +38,7 @@
     "build:swan": "taro build --type swan",
     "build:tt": "taro build --type tt",
     "build:weapp": "cross-env NODE_ENV=production taro build --type weapp",
-    "clean": "rimraf src/.umi .umi-production lib coverage dist docs-dist package-lock.json node_modules",
+    "clean": "rimraf src/.umi src/.umi-production lib coverage dist docs-dist package-lock.json node_modules",
     "dev:alipay": "npm run build:alipay -- --watch",
     "dev:docs": "dumi dev",
     "dev:h5": "npm run build:h5 -- --watch",

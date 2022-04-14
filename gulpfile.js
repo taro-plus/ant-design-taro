@@ -99,5 +99,5 @@ exports.default = series(
   clean,
   buildES,
   buildCJS,
-  parallel(buildDeclaration, buildStyle, copyMetaFiles, generatePackageJSON),
+  parallel(buildDeclaration, buildStyle, generatePackageJSON, copyMetaFiles),
 );
