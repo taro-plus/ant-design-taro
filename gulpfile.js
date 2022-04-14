@@ -93,9 +93,4 @@ function copyMetaFiles() {
   return src(['./README.md', './LICENSE']).pipe(dest(dscDir));
 }
 
-exports.default = series(
-  clean,
-  buildES,
-  buildCJS,
-  parallel(buildDeclaration, buildStyle, copyMetaFiles, generatePackageJSON),
-);
+exports.default = series(clean, buildES, buildCJS, parallel(buildDeclaration, buildStyle));
