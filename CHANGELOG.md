@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/sushi-su/ant-design-taro/compare/v1.0.0...v1.1.0) (2022-04-14)
+
+
+### Features
+
+* first version ([9c0ff70](https://github.com/sushi-su/ant-design-taro/commit/9c0ff70d5f20f75510a7a78cfe8fe757faa019df))
+
 # 1.0.0 (2022-04-14)
 
 
