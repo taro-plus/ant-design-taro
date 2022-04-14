@@ -78,6 +78,7 @@ function generatePackageJSON() {
       through.obj((file, enc, cb) => {
         const rawJSON = file.contents.toString();
         const parsed = JSON.parse(rawJSON);
+        delete parsed.files;
         delete parsed.private;
         delete parsed.scripts;
         delete parsed.devDependencies;
@@ -93,4 +94,4 @@ function copyMetaFiles() {
   return src(['./README.md', './LICENSE']).pipe(dest(dscDir));
 }
 
-exports.default = series(clean, buildES, buildCJS, parallel(buildDeclaration, buildStyle));
+exports.default = series(clean, buildES, buildCJS, parallel(buildDeclaration, buildStyle, generatePackageJSON));

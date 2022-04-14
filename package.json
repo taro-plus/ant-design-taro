@@ -16,10 +16,10 @@
   "author": {
     "name": "Sushi Su"
   },
-  "main": "lib/cjs/index.js",
-  "module": "lib/es/index.js",
-  "types": "lib/es/index.d.ts",
-  "typings": "lib/es/index.d.ts",
+  "main": "cjs/index.js",
+  "module": "es/index.js",
+  "types": "es/index.d.ts",
+  "typings": "es/index.d.ts",
   "files": [
     "lib",
     "LICENSE",
