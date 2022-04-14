@@ -1,8 +1,8 @@
 {
   "name": "antd-taro",
-  "version": "1.0.0",
   "private": true,
   "description": "",
+  "homepage": "https://adt.center",
   "bugs": {
     "url": "https://github.com/sushi-su/ant-design-taro/issues"
   },
@@ -12,21 +12,19 @@
     "branch": "main",
     "platform": "github"
   },
-  "author": "",
-  "sideEffects": [
-    "**/*.css",
-    "**/*.less",
-    "./es/index.js",
-    "./src/index.ts",
-    "./es/global/index.js",
-    "./src/global/index.ts"
-  ],
-  "main": "./lib/cjs/index.js",
-  "module": "./lib/es/index.js",
-  "types": "./lib/es/index.d.ts",
-  "typings": "./lib/es/index.d.ts",
+  "license": "MIT",
+  "author": {
+    "name": "Sushi Su"
+  },
+  "main": "./cjs/index.js",
+  "module": "./es/index.js",
+  "types": "./es/index.d.ts",
+  "typings": "./es/index.d.ts",
   "files": [
-    "./lib"
+    "./cjs",
+    "./es",
+    "./LICENSE",
+    "./README.md"
   ],
   "scripts": {
     "build:alipay": "taro build --type alipay",
@@ -74,11 +72,11 @@
   ],
   "dependencies": {
     "@babel/runtime": "^7.17.9",
-    "@tarojs/components": "3.4.4",
-    "@tarojs/plugin-framework-react": "3.4.4",
-    "@tarojs/react": "3.4.4",
-    "@tarojs/runtime": "3.4.4",
-    "@tarojs/taro": "3.4.4",
+    "@tarojs/components": "3.4.6",
+    "@tarojs/plugin-framework-react": "3.4.6",
+    "@tarojs/react": "3.4.6",
+    "@tarojs/runtime": "3.4.6",
+    "@tarojs/taro": "3.4.6",
     "classnames": "^2.3.1",
     "lodash": "^4.17.21",
     "react": "^17.0.2",
@@ -89,24 +87,29 @@
     "@commitlint/cli": "^16.2.3",
     "@commitlint/config-conventional": "^16.2.1",
     "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/commit-analyzer": "^9.0.2",
     "@semantic-release/git": "^10.0.1",
-    "@tarojs/mini-runner": "3.4.4",
-    "@tarojs/webpack-runner": "3.4.4",
+    "@semantic-release/github": "^8.0.4",
+    "@semantic-release/npm": "^9.0.1",
+    "@semantic-release/release-notes-generator": "^10.0.3",
+    "@tarojs/mini-runner": "3.4.6",
+    "@tarojs/webpack-runner": "3.4.6",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^12.1.4",
     "@testing-library/react-hooks": "^7.0.2",
     "@testing-library/user-event": "^13.5.0",
     "@types/react": "^17.0.43",
+    "@types/react-dom": "^17.0.15",
     "@types/webpack-env": "^1.16.3",
-    "@typescript-eslint/eslint-plugin": "^5.18.0",
-    "@typescript-eslint/parser": "^5.18.0",
+    "@typescript-eslint/eslint-plugin": "^5.19.0",
+    "@typescript-eslint/parser": "^5.19.0",
     "antd-mobile-icons": "^0.2.2",
-    "babel-preset-taro": "3.4.4",
+    "babel-preset-taro": "3.4.6",
     "cross-env": "^7.0.3",
     "del": "^6.0.0",
     "dumi": "^1.1.40",
     "dumi-theme-mobile": "^1.1.22",
-    "eslint": "^8.12.0",
+    "eslint": "^8.13.0",
     "eslint-config-alloy": "^4.5.1",
     "eslint-plugin-react": "^7.29.4",
     "gulp": "^4.0.2",
@@ -132,8 +135,7 @@
     "ts-jest": "^27.1.4",
     "typescript": "^4.6.3"
   },
-  "packageManager": "npm",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org"
+    "registry": "https://registry.npmjs.org/"
   }
 }

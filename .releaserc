@@ -1,10 +1,16 @@
 {
-  "branches": ["main"],
+  "branches": ["main", {name: 'pre-release', prerelease: true}, {name: 'develop', prerelease: true}],
   "plugins": [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
     "@semantic-release/changelog",
-    "@semantic-release/npm",
+    [
+      "@semantic-release/npm",
+      {
+        "pkgRoot": "./lib",
+        "tarballDir": "./lib",
+      }
+    ],
     [
       "@semantic-release/git",
       {

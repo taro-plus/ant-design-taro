@@ -1,9 +1,10 @@
+import type { ViewProps } from '@tarojs/components';
 import { View } from '@tarojs/components';
 import type { FC } from 'react';
 import React from 'react';
 import styles from './index.modules.less';
 
-interface Props {
+interface Props extends ViewProps {
   title: string;
   padding?: string;
   border?: string;

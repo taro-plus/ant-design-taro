@@ -62,6 +62,7 @@ const config = {
   alias: {
     'antd-taro': path.resolve(__dirname, '..', '/src/index.ts'),
     'lib-utils': path.resolve(__dirname, '..', '/src/utils'),
+    'lib-components': path.resolve(__dirname, '..', '/src/components'),
     'demo-components': path.resolve(__dirname, '..', '/taro/components/index.ts'),
   },
 };
