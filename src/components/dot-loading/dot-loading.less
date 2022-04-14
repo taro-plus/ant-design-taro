@@ -1,0 +1,55 @@
+@class-prefix-dot-loading: ~'adt-dot-loading';
+
+.@{class-prefix-dot-loading} {
+  --adt-dot-loading-color: var(--adt-color-weak);
+  --adt-dot-loading-size: 8px;
+
+  display: flex;
+  gap: calc(var(--adt-dot-loading-size) * 1.5);
+
+  &__dot {
+    width: var(--adt-dot-loading-size);
+    height: var(--adt-dot-loading-size);
+    background-color: var(--adt-dot-loading-color);
+    border-radius: 50%;
+    animation: adt-dot-loading-animation 1s 0s infinite linear;
+
+    &:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    &:nth-child(2) {
+      animation-delay: 150ms;
+    }
+
+    &:nth-child(3) {
+      animation-delay: 300ms;
+    }
+  }
+}
+
+@keyframes adt-dot-loading-animation {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  12% {
+    transform: translate3d(0, -150%, 0);
+  }
+
+  40% {
+    transform: translate3d(0, 110%, 0);
+  }
+
+  55% {
+    transform: translate3d(0, -10%, 0);
+  }
+
+  60% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}

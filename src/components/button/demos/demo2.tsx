@@ -1,7 +1,8 @@
 /**
- * demoUrl: ?redirect=/pages/button/index
+ * demoUrl: ?redirect=/pages/button/index?id=demo2
  */
 
+import { Text } from '@tarojs/components';
 import { Button, Icon, Space } from 'antd-taro';
 import { DemoBlock } from 'demo-components';
 import type { FC } from 'react';
@@ -13,8 +14,8 @@ const ButtonDemo2: FC = () => {
       <DemoBlock title="带图标的按钮">
         <Button>
           <Space>
-            <Icon name="search" />
-            <span>搜索</span>
+            <Icon name="search" fontSize={17} />
+            <Text>搜索</Text>
           </Space>
         </Button>
       </DemoBlock>

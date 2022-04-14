@@ -1,11 +1,12 @@
-import type { ButtonProps as TaroButtonProps } from '@tarojs/components';
-import { Button as TaroButton } from '@tarojs/components';
+import { Button as TaroButton, View } from '@tarojs/components';
 import classNames from 'classnames';
+import DotLoading from 'lib-components/dot-loading';
 import type { NativeProps } from 'lib-utils/native-props';
 import { withNativeProps } from 'lib-utils/native-props';
 import { mergeProps } from 'lib-utils/with-default-props';
 import type { FC } from 'react';
 import React from 'react';
+import type { TaroButtonProps } from '../../global';
 
 type Var =
   | '--text-color'
@@ -53,7 +54,6 @@ export const Button: FC<ButtonProps> = (p) => {
     <TaroButton
       formType={props.formType}
       onClick={props.onClick}
-      disabled={disabled}
       className={classNames(
         classPrefix,
         props.color ? `${classPrefix}-${props.color}` : null,
@@ -69,8 +69,16 @@ export const Button: FC<ButtonProps> = (p) => {
         },
         `${classPrefix}-shape-${props.shape}`,
       )}
+      disabled={disabled}
     >
-      {props.children}
+      {props.loading ? (
+        <View className={`${classPrefix}-loading-wrapper`}>
+          <DotLoading color={props.color} />
+          {props.loadingText}
+        </View>
+      ) : (
+        props.children
+      )}
     </TaroButton>,
   );
 };
