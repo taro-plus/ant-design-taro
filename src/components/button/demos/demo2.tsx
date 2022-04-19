@@ -5,10 +5,9 @@
 import { Text } from '@tarojs/components';
 import { Button, Icon, Space } from 'antd-taro';
 import { DemoBlock } from 'demo-components';
-import type { FC } from 'react';
 import React from 'react';
 
-const ButtonDemo2: FC = () => {
+export default () => {
   return (
     <>
       <DemoBlock title="带图标的按钮">
@@ -54,5 +53,3 @@ const ButtonDemo2: FC = () => {
     </>
   );
 };
-
-export default ButtonDemo2;

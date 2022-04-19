@@ -7,7 +7,7 @@ import { Button, Space } from 'antd-taro';
 import { DemoBlock } from 'demo-components';
 import React from 'react';
 
-const ButtonDemo1: React.FC = () => {
+export default () => {
   return (
     <>
       <DemoBlock title="不同颜色的按钮">
@@ -22,13 +22,9 @@ const ButtonDemo1: React.FC = () => {
           >
             Default
           </Button>
-
           <Button color="primary">Primary</Button>
-
           <Button color="success">Success</Button>
-
           <Button color="danger">Danger</Button>
-
           <Button color="warning">Warning</Button>
         </Space>
       </DemoBlock>
@@ -72,5 +68,3 @@ const ButtonDemo1: React.FC = () => {
     </>
   );
 };
-
-export default ButtonDemo1;

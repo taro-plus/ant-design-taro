@@ -9,6 +9,7 @@ const ButtonPage: FC = () => {
   const {
     params: { id = '' },
   } = useRouter();
+
   if (id === 'demo1') {
     return <ButtonDemo1 />;
   }

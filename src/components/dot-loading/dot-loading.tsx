@@ -8,16 +8,7 @@ import type { TaroViewProps } from '../../global';
 
 const classPrefix = 'adt-dot-loading';
 
-const colorRecord: Record<string, string> = {
-  default: 'var(--adt-color-weak)',
-  primary: 'var(--adt-color-primary)',
-  white: 'var(--adt-color-white)',
-};
-
-export type DotLoadingProps = {
-  color?: 'default' | 'primary' | 'white' | (string & {});
-} & TaroViewProps &
-  NativeProps;
+export type DotLoadingProps = TaroViewProps & NativeProps;
 
 const defaultProps = {
   color: 'default',
@@ -28,8 +19,7 @@ export const DotLoading: FC<DotLoadingProps> = (p) => {
 
   return withNativeProps(
     props,
-    // @ts-ignore
-    <View className={classPrefix} style={{ '--adt-dot-loading-color': colorRecord[props.color] ?? props.color }}>
+    <View className={classPrefix}>
       <Text className={`${classPrefix}__dot`} />
       <Text className={`${classPrefix}__dot`} />
       <Text className={`${classPrefix}__dot`} />

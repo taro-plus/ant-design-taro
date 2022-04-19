@@ -73,7 +73,7 @@ export const Button: FC<ButtonProps> = (p) => {
     >
       {props.loading ? (
         <View className={`${classPrefix}-loading-wrapper`}>
-          <DotLoading color={props.color} />
+          <DotLoading />
           {props.loadingText}
         </View>
       ) : (

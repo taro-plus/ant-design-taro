@@ -153,12 +153,15 @@
 
   &-loading-wrapper {
     display: flex;
+    gap: 14px;
     align-items: center;
     justify-content: center;
     height: 1.4em;
 
-    > .adt-loading {
-      opacity: 0.6;
+    > .adt-dot-loading {
+      --adt-dot-loading-color: var(--text-color);
+
+      opacity: 0.4;
     }
   }
 }
