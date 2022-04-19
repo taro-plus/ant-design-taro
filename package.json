@@ -102,7 +102,7 @@
     "@types/react-dom": "^18.0.1",
     "@types/webpack-env": "^1.16.4",
     "@typescript-eslint/eslint-plugin": "^5.20.0",
-    "@typescript-eslint/parser": "^5.19.0",
+    "@typescript-eslint/parser": "^5.20.0",
     "antd-mobile-icons": "^0.2.2",
     "babel-preset-taro": "3.4.6",
     "cross-env": "^7.0.3",
