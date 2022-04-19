@@ -64,11 +64,11 @@ export default () => {
       {/* 底部导航 */}
       <div className={styles.footer}>
         <div className={styles.copyright}>
-          Open-source MIT Licensed
-          {' | '}
-          Copyright © 2022 Sushi Su
-          {' | '}
-          <a href="https://beian.miit.gov.cn" target="_blank">
+          <span>Open-source MIT Licensed</span>
+
+          <span>Copyright © 2022 Sushi Su </span>
+
+          <a href="https://beian.miit.gov.cn" target="_blank" className={styles.link}>
             粤ICP备2022026797号
           </a>
         </div>

@@ -149,15 +149,25 @@
 
   .footer {
     margin-top: 60px;
-    background: #fff;
-    box-shadow: 0 8px 12px -2px rgb(0, 0, 0, 5%);
 
     .copyright {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      justify-content: center;
       padding: 12px 0;
       font-size: 14px;
       line-height: 22px;
-      color: var(--adt-color-text);
+      color: #bbb;
       text-align: center;
+
+      .link {
+        color: #bbb;
+
+        &:hover {
+          color: #222;
+        }
+      }
     }
   }
 }
