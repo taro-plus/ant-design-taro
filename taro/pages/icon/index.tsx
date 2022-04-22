@@ -16,7 +16,12 @@ const IconPage = () => {
     return <IconDemo2 />;
   }
 
-  return null;
+  return (
+    <>
+      <IconDemo1 />
+      <IconDemo2 />
+    </>
+  );
 };
 
 export default IconPage;
