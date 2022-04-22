@@ -48,7 +48,7 @@ export default defineConfig({
     '/components': [
       {
         title: '基础',
-        children: ['/button/index', '/icon/index', '/space/index'],
+        children: ['/button/index', '/icon/index', '/space/index', '/list/index'],
       },
     ],
   },
