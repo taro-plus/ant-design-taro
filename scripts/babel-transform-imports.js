@@ -7,7 +7,7 @@ module.exports = function () {
         }
 
         if (path.node.source.value.startsWith('lib-components/')) {
-          path.node.source.value = path.node.source.value.replace(/lib-components/, '../');
+          path.node.source.value = path.node.source.value.replace(/lib-components/, '..');
         }
 
         if (path.node.source.value.endsWith('.less')) {
