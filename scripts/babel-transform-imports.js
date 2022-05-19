@@ -6,7 +6,7 @@ module.exports = function () {
           path.node.source.value = path.node.source.value.replace(/lib-utils/, '../../utils');
         }
 
-        if (path.node.source.value.startsWith('lib-utils/')) {
+        if (path.node.source.value.startsWith('lib-components/')) {
           path.node.source.value = path.node.source.value.replace(/lib-components/, '../');
         }
 
