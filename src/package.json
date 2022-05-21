@@ -1,0 +1,36 @@
+{
+  "name": "antd-taro",
+  "version": "0.0.0",
+  "description": "",
+  "author": "",
+  "scripts": {},
+  "browserslist": [
+    "last 3 versions",
+    "Android >= 4.1",
+    "ios >= 8"
+  ],
+  "dependencies": {
+    "@babel/runtime": "^7.18.0",
+    "@tarojs/components": "3.4.9",
+    "@tarojs/plugin-framework-react": "3.4.9",
+    "@tarojs/react": "3.4.9",
+    "@tarojs/runtime": "3.4.9",
+    "@tarojs/taro": "3.4.9",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.0",
+    "@tarojs/mini-runner": "3.4.9",
+    "@tarojs/webpack-runner": "3.4.9",
+    "@types/react": "^18.0.9",
+    "@types/webpack-env": "^1.17.0",
+    "babel-preset-taro": "3.4.9",
+    "eslint-config-taro": "3.4.9"
+  },
+  "templateInfo": {
+    "name": "default",
+    "typescript": true,
+    "css": "less"
+  }
+}
