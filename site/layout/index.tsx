@@ -1,7 +1,14 @@
-import { Button } from 'antd';
+import { PageContainer, ProLayout } from '@ant-design/pro-layout';
+import { Outlet } from 'react-router-dom';
 
 const Layout = () => {
-  return <Button>111</Button>;
+  return (
+    <ProLayout route>
+      <PageContainer>
+        <Outlet />
+      </PageContainer>
+    </ProLayout>
+  );
 };
 
 export default Layout;

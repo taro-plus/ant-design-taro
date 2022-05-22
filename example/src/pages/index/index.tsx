@@ -1,4 +1,5 @@
-import { Text, View } from '@tarojs/components';
+import { View } from '@tarojs/components';
+import { Button } from 'antd-taro';
 import './index.less';
 
 definePageConfig({
@@ -8,7 +9,7 @@ definePageConfig({
 const Index = () => {
   return (
     <View className="index">
-      <Text>Hello world!</Text>
+      <Button>Hello world!</Button>
     </View>
   );
 };
