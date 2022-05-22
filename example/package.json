@@ -14,6 +14,7 @@
     "build:swan": "taro build --type swan",
     "build:tt": "taro build --type tt",
     "build:weapp": "taro build --type weapp",
+    "clean": "rimraf dist node_modules",
     "dev:alipay": "npm run build:alipay -- --watch",
     "dev:h5": "npm run build:h5 -- --watch",
     "dev:jd": "npm run build:jd -- --watch",
@@ -30,23 +31,9 @@
     "ios >= 8"
   ],
   "dependencies": {
-    "@babel/runtime": "^7.18.0",
-    "@tarojs/components": "3.4.9",
-    "@tarojs/plugin-framework-react": "3.4.9",
-    "@tarojs/react": "3.4.9",
-    "@tarojs/runtime": "3.4.9",
-    "@tarojs/taro": "3.4.9",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "antd-taro": "^0.0.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.0",
-    "@tarojs/mini-runner": "3.4.9",
-    "@tarojs/webpack-runner": "3.4.9",
-    "@types/react": "^18.0.9",
-    "@types/webpack-env": "^1.17.0",
-    "babel-preset-taro": "3.4.9",
-    "eslint-config-taro": "3.4.9"
   },
   "templateInfo": {
     "name": "default",

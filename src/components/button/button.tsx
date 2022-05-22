@@ -1,5 +1,7 @@
-import { View } from '@tarojs/components';
+import type { ButtonProps } from '@tarojs/components';
+import { Button as TaroButton } from '@tarojs/components';
+import type { FC } from 'react';
 
-export const Button = () => {
-  return <View>11</View>;
+export const Button: FC<ButtonProps> = (p) => {
+  return <TaroButton {...p} />;
 };

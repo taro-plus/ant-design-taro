@@ -8,5 +8,11 @@ module.exports = {
         ignoreAtRules: ['tailwind', 'layer', 'apply'],
       },
     ],
+    'selector-type-no-unknown': [
+      true,
+      {
+        ignoreTypes: ['page'],
+      },
+    ],
   },
 };
