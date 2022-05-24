@@ -10,9 +10,7 @@ export default defineConfig({
   resolve: {
     alias: [
       { find: /^~antd/, replacement: 'antd' },
-      { find: /^@\/site\/utils/, replacement: path.resolve(__dirname, 'site/utils') },
-      { find: /^@\/docs/, replacement: path.resolve(__dirname, 'site/docs') },
-      { find: /^@\/components-docs/, replacement: path.resolve(__dirname, 'src/components') },
+      { find: /^@site/, replacement: path.resolve(__dirname, 'site/') },
     ],
   },
   css: {

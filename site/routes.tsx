@@ -1,10 +1,11 @@
-import { loadMdFile } from '@/site/utils/index';
 import type { MenuDataItem } from '@ant-design/pro-layout';
+import { MarkDownComponent } from '@site/components';
+import quickStart from '@site/docs/quick-start.md?raw';
 import type { RouteObject } from 'react-router-dom';
 import Layout from './layout';
 
 type Route = RouteObject & MenuDataItem;
-console.log(loadMdFile('@/docs/quick-start'));
+
 export const routes: Route[] = [
   {
     path: '/',
@@ -13,7 +14,7 @@ export const routes: Route[] = [
       {
         path: '/',
         name: 'Home',
-        element: <div>Home</div>,
+        element: <MarkDownComponent content={quickStart} />,
       },
       {
         path: '/about',

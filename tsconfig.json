@@ -17,8 +17,7 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "@/docs/*": ["site/docs/*"],
-      "@/site/utils/*": ["site/utils/*"]
+      "@site/*": ["site/*"],
     }
   },
   "include": ["site"],

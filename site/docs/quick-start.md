@@ -12,9 +12,9 @@ $ yarn add antd-taro
 
 直接引入组件即可，antd-taro 会自动为你加载 css 样式文件：
 
-```js
+```tsx
 import { Button } from 'antd-taro'
 ```
 
-
+<code>Button</code> 
 

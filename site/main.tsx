@@ -1,4 +1,5 @@
 import 'antd/dist/antd.variable.min.css';
+import 'github-markdown-css/github-markdown.css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
