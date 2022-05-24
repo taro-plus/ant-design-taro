@@ -2,6 +2,7 @@
   "name": "antd-taro",
   "version": "0.0.1",
   "description": "",
+  "license": "MIT",
   "author": "",
   "scripts": {
     "clean": "rimraf lib node_modules"
