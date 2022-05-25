@@ -7,7 +7,7 @@
   ],
   "scripts": {
     "build": "tsc && vite build",
-    "clean": "rimraf dist-docs node_modules && yarn workspaces run clean",
+    "clean": "rimraf dist-docs yarn.lock node_modules && yarn workspaces run clean",
     "dev:h5": "yarn workspace antd-taro-demo dev:h5",
     "dev:site": "vite",
     "dev:weapp": "yarn workspace antd-taro-demo dev:weapp",
@@ -32,8 +32,8 @@
     ]
   },
   "dependencies": {
-    "@ant-design/pro-layout": "7.0.1-beta.14",
-    "@babel/runtime": "^7.18.0",
+    "@ant-design/pro-layout": "7.0.1-beta.15",
+    "@babel/runtime": "^7.18.2",
     "@tarojs/components": "3.4.10",
     "@tarojs/plugin-framework-react": "3.4.10",
     "@tarojs/react": "3.4.10",
@@ -49,8 +49,8 @@
     "remark-gfm": "^3.0.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.0",
-    "@commitlint/cli": "^17.0.0",
+    "@babel/core": "^7.18.2",
+    "@commitlint/cli": "^17.0.1",
     "@commitlint/config-conventional": "^17.0.0",
     "@tarojs/mini-runner": "3.4.10",
     "@tarojs/webpack-runner": "3.4.10",
@@ -67,17 +67,17 @@
     "eslint-plugin-react": "^7.30.0",
     "husky": "^8.0.1",
     "less": "^4.1.2",
-    "lint-staged": "^12.4.1",
+    "lint-staged": "^12.4.2",
     "postcss": "^8.4.14",
     "postcss-less": "^6.0.0",
     "prettier": "^2.6.2",
     "prettier-plugin-organize-imports": "^2.3.4",
     "prettier-plugin-packagejson": "^2.2.18",
     "rimraf": "^3.0.2",
-    "stylelint": "^14.8.3",
+    "stylelint": "^14.8.5",
     "stylelint-config-css-modules": "^4.1.0",
     "stylelint-config-standard": "^25.0.0",
-    "typescript": "^4.6.4",
+    "typescript": "^4.7.2",
     "vite": "^2.9.9"
   }
 }
