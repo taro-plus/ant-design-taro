@@ -1,0 +1,17 @@
+{
+  "name": "antd-taro",
+  "version": "0.0.1",
+  "description": "",
+  "license": "MIT",
+  "author": "",
+  "scripts": {
+    "clean": "rimraf lib node_modules"
+  },
+  "browserslist": [
+    "last 3 versions",
+    "Android >= 4.1",
+    "ios >= 8"
+  ],
+  "dependencies": {},
+  "devDependencies": {}
+}
