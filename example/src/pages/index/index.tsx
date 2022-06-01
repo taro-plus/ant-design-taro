@@ -1,6 +1,6 @@
 import { View } from '@tarojs/components';
+import { navigateTo } from '@tarojs/taro';
 import { Button } from 'antd-taro';
-import './index.less';
 
 definePageConfig({
   navigationBarTitleText: '首页',
@@ -8,8 +8,14 @@ definePageConfig({
 
 const Index = () => {
   return (
-    <View className="index">
-      <Button>Hello world!</Button>
+    <View>
+      <Button
+        onClick={async () => {
+          await navigateTo({ url: '/pages/button/index' });
+        }}
+      >
+        Hello world!
+      </Button>
     </View>
   );
 };
