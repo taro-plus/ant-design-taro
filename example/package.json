@@ -31,9 +31,36 @@
     "ios >= 8"
   ],
   "dependencies": {
-    "antd-taro": "^0.0.1"
+    "@babel/runtime": "^7.18.3",
+    "@tarojs/components": "3.5.0-beta.2",
+    "@tarojs/helper": "3.5.0-beta.2",
+    "@tarojs/plugin-framework-react": "3.5.0-beta.2",
+    "@tarojs/plugin-platform-alipay": "3.5.0-beta.2",
+    "@tarojs/plugin-platform-jd": "3.5.0-beta.2",
+    "@tarojs/plugin-platform-qq": "3.5.0-beta.2",
+    "@tarojs/plugin-platform-swan": "3.5.0-beta.2",
+    "@tarojs/plugin-platform-tt": "3.5.0-beta.2",
+    "@tarojs/plugin-platform-weapp": "3.5.0-beta.2",
+    "@tarojs/react": "3.5.0-beta.2",
+    "@tarojs/router": "3.5.0-beta.2",
+    "@tarojs/runtime": "3.5.0-beta.2",
+    "@tarojs/shared": "3.5.0-beta.2",
+    "@tarojs/taro": "3.5.0-beta.2",
+    "@tarojs/taro-h5": "3.5.0-beta.2",
+    "antd-taro": "^0.0.1",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.18.2",
+    "@pmmmwh/react-refresh-webpack-plugin": "0.5.7",
+    "@tarojs/mini-runner": "3.5.0-beta.2",
+    "@tarojs/webpack-runner": "3.5.0-beta.2",
+    "@types/react": "^18.0.10",
+    "@types/webpack-env": "^1.17.0",
+    "babel-preset-taro": "3.5.0-beta.2",
+    "react-refresh": "0.13.0",
+    "webpack": "5.73.0"
   },
   "templateInfo": {
     "name": "default",
