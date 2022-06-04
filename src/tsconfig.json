@@ -7,7 +7,6 @@
     "moduleResolution": "node",
     "experimentalDecorators": true,
     "noImplicitAny": false,
-    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "outDir": "lib",
     "noUnusedLocals": true,
@@ -16,13 +15,13 @@
     "sourceMap": true,
     "baseUrl": ".",
     "rootDir": ".",
-    "skipLibCheck": true,
-    "strict": true,
     "jsx": "react-jsx",
     "allowJs": true,
     "resolveJsonModule": true,
-    "typeRoots": ["node_modules/@types"]
+    "typeRoots": ["node_modules/@types"],
+    "strict": true,
+    "skipLibCheck": true
   },
-  "include": ["./components", "./utils", "./types"],
+  "include": ["./src", "./types"],
   "compileOnSave": false
 }
