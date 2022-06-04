@@ -1,6 +1,8 @@
 import type { ButtonProps as TaroButtonProps } from '@tarojs/components';
 import { Button as TaroButton } from '@tarojs/components';
 import type { FC, ReactNode } from 'react';
+import { withNativeProps } from '../../utils/native-props';
+import { mergeProps } from '../../utils/with-default-props';
 
 type OmitTaroButtonProps = 'size' | 'type' | 'plain';
 
@@ -31,7 +33,7 @@ const defaultProps: ButtonProps = {
 };
 console.log(classPrefix, defaultProps);
 export const Button: FC<ButtonProps> = (p) => {
-  const { size, ...props } = p;
+  const props = mergeProps(defaultProps, p);
 
-  return <TaroButton {...props}>222</TaroButton>;
+  return withNativeProps(p, <TaroButton {...props} />);
 };

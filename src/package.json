@@ -2,8 +2,30 @@
   "name": "antd-taro",
   "version": "0.0.1",
   "description": "",
+  "homepage": "https://adt.center",
+  "bugs": {
+    "url": "https://github.com/sushi-su/ant-design-taro/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sushi-su/ant-design-taro.git",
+    "branch": "main",
+    "platform": "github"
+  },
   "license": "MIT",
-  "author": "",
+  "author": {
+    "name": "Sushi Su"
+  },
+  "main": "lib/cjs/index.js",
+  "module": "lib/es/index.js",
+  "types": "lib/es/index.d.ts",
+  "typings": "lib/es/index.d.ts",
+  "files": [
+    "lib",
+    "utils",
+    "LICENSE",
+    "README.md"
+  ],
   "scripts": {
     "clean": "rimraf lib node_modules"
   },
@@ -13,15 +35,31 @@
     "ios >= 8"
   ],
   "dependencies": {
-    "@tarojs/components": "beta",
-    "@tarojs/taro": "beta",
+    "@tarojs/components": "3.5.0-beta.2",
+    "@tarojs/helper": "3.5.0-beta.2",
+    "@tarojs/plugin-framework-react": "3.5.0-beta.2",
+    "@tarojs/plugin-platform-alipay": "3.5.0-beta.2",
+    "@tarojs/plugin-platform-jd": "3.5.0-beta.2",
+    "@tarojs/plugin-platform-qq": "3.5.0-beta.2",
+    "@tarojs/plugin-platform-swan": "3.5.0-beta.2",
+    "@tarojs/plugin-platform-tt": "3.5.0-beta.2",
+    "@tarojs/plugin-platform-weapp": "3.5.0-beta.2",
+    "@tarojs/react": "3.5.0-beta.2",
+    "@tarojs/router": "3.5.0-beta.2",
+    "@tarojs/runtime": "3.5.0-beta.2",
+    "@tarojs/shared": "3.5.0-beta.2",
+    "@tarojs/taro": "3.5.0-beta.2",
+    "@tarojs/taro-h5": "3.5.0-beta.2",
     "classnames": "^2.3.1",
     "lodash-es": "^4.17.21",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0"
   },
   "devDependencies": {
     "@types/lodash-es": "^4.17.6",
     "@types/react": "^17.0.45"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   }
 }
