@@ -31,9 +31,9 @@ const defaultProps: ButtonProps = {
   shape: 'default',
   size: 'middle',
 };
-console.log(classPrefix, defaultProps);
-export const Button: FC<ButtonProps> = (p) => {
-  const props = mergeProps(defaultProps, p);
 
-  return withNativeProps(p, <TaroButton {...props} />);
+export const Button: FC<ButtonProps> = (p) => {
+  const { size, ...props } = mergeProps(defaultProps, p);
+
+  return withNativeProps(p, <TaroButton {...props} className={classPrefix} />);
 };

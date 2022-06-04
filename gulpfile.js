@@ -1,13 +1,15 @@
 const del = require('del');
 const path = require('path');
-const gulp = require('gulp');
 const babel = require('gulp-babel');
 const ts = require('gulp-typescript');
 const tsconfig = require('./src/tsconfig.json');
+const { src, dest, task, watch, series, parallel } = require('gulp');
 
-const cwd = process.cwd();
-const resolveFile = (filePath) => path.join(cwd, 'src', filePath);
 const ignore = ['**/demos/**/*', '**/tests/**/*'];
+
+function resolveFile(filePath) {
+  return path.resolve(__dirname, 'src', filePath);
+}
 
 function clean() {
   return del(resolveFile('lib/**'));
@@ -19,23 +21,21 @@ function buildES() {
     module: 'ES6',
   });
 
-  return gulp
-    .src([resolveFile('**/*.{ts,tsx}')], {
-      ignore,
-    })
+  return src([resolveFile('**/*.{ts,tsx}')], {
+    ignore,
+  })
     .pipe(tsProject)
-    .pipe(gulp.dest(resolveFile('lib/es/')));
+    .pipe(dest(resolveFile('lib/es/')));
 }
 
 function buildCJS() {
-  return gulp
-    .src([resolveFile('lib/es/**/*.js')])
+  return src([resolveFile('lib/es/**/*.js')])
     .pipe(
       babel({
         plugins: ['@babel/plugin-transform-modules-commonjs'],
       }),
     )
-    .pipe(gulp.dest(resolveFile('lib/cjs/')));
+    .pipe(dest(resolveFile('lib/cjs/')));
 }
 
 function buildDeclaration() {
@@ -45,26 +45,40 @@ function buildDeclaration() {
     declaration: true,
     emitDeclarationOnly: true,
   });
-  return gulp
-    .src([resolveFile('**/*.{ts,tsx}')], {
-      ignore,
-    })
+  return src([resolveFile('**/*.{ts,tsx}')], {
+    ignore,
+  })
     .pipe(tsProject)
-    .pipe(gulp.dest(resolveFile('lib/es/')))
-    .pipe(gulp.dest(resolveFile('lib/cjs/')));
+    .pipe(dest(resolveFile('lib/es/')))
+    .pipe(dest(resolveFile('lib/cjs/')));
 }
 
 function buildStyle() {
-  return gulp
-    .src([resolveFile('**/*.less')], {
-      ignore,
-    })
-    .pipe(gulp.dest(resolveFile('lib/es/')))
-    .pipe(gulp.dest(resolveFile('lib/cjs/')));
+  return src([resolveFile('**/*.less')], {
+    ignore,
+  })
+    .pipe(dest(resolveFile('lib/es/')))
+    .pipe(dest(resolveFile('lib/cjs/')));
 }
 
 function copyMetaFiles() {
-  return gulp.src(['./README.md', './LICENSE']).pipe(gulp.dest(resolveFile('')));
+  return src(['./README.md', './LICENSE']).pipe(dest(resolveFile('')));
 }
 
-exports.default = gulp.series(clean, buildES, buildCJS, gulp.parallel(buildDeclaration, buildStyle), copyMetaFiles);
+function build() {
+  return series(clean, buildES, buildCJS, parallel(buildDeclaration, buildStyle, copyMetaFiles))();
+}
+
+function dev() {
+  return watch(resolveFile('**/*.{ts,tsx,less}'), { ignore, delay: 500 }, build);
+}
+
+task('dev', dev);
+
+task('build', (done) => {
+  build();
+
+  copyMetaFiles();
+
+  done();
+});

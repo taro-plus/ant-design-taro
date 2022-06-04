@@ -3,9 +3,10 @@
   "license": "MIT",
   "scripts": {
     "build:docs": "tsc && vite build",
-    "build:lib": "gulp",
+    "build:lib": "gulp build",
     "clean": "rimraf dist-docs pnpm-lock.yaml node_modules && pnpm --filter ...antd-taro clean",
     "dev:h5": "pnpm --filter antd-taro-demo dev:h5",
+    "dev:lib": "gulp dev",
     "dev:site": "vite",
     "dev:weapp": "pnpm --filter antd-taro-demo dev:weapp",
     "eslint": "eslint site/ --ext .ts,.tsx --fix",
