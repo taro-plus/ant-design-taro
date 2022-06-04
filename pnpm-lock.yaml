@@ -90,30 +90,30 @@ importers:
       '@babel/core': ^7.8.0
       '@babel/runtime': ^7.7.7
       '@pmmmwh/react-refresh-webpack-plugin': 0.5.5
-      '@tarojs/components': 3.5.0-beta.2
-      '@tarojs/helper': 3.5.0-beta.2
-      '@tarojs/plugin-framework-react': 3.5.0-beta.2
-      '@tarojs/plugin-platform-alipay': 3.5.0-beta.2
-      '@tarojs/plugin-platform-jd': 3.5.0-beta.2
-      '@tarojs/plugin-platform-qq': 3.5.0-beta.2
-      '@tarojs/plugin-platform-swan': 3.5.0-beta.2
-      '@tarojs/plugin-platform-tt': 3.5.0-beta.2
-      '@tarojs/plugin-platform-weapp': 3.5.0-beta.2
-      '@tarojs/react': 3.5.0-beta.2
-      '@tarojs/router': 3.5.0-beta.2
-      '@tarojs/runtime': 3.5.0-beta.2
-      '@tarojs/shared': 3.5.0-beta.2
-      '@tarojs/taro': 3.5.0-beta.2
-      '@tarojs/taro-h5': 3.5.0-beta.2
-      '@tarojs/webpack5-runner': 3.5.0-beta.2
+      '@tarojs/components': beta
+      '@tarojs/helper': beta
+      '@tarojs/plugin-framework-react': beta
+      '@tarojs/plugin-platform-alipay': beta
+      '@tarojs/plugin-platform-jd': beta
+      '@tarojs/plugin-platform-qq': beta
+      '@tarojs/plugin-platform-swan': beta
+      '@tarojs/plugin-platform-tt': beta
+      '@tarojs/plugin-platform-weapp': beta
+      '@tarojs/react': beta
+      '@tarojs/router': beta
+      '@tarojs/runtime': beta
+      '@tarojs/shared': beta
+      '@tarojs/taro': beta
+      '@tarojs/taro-h5': beta
+      '@tarojs/webpack5-runner': beta
       '@types/react': ^17.0.2
       '@types/webpack-env': ^1.13.6
       '@typescript-eslint/eslint-plugin': ^5.20.0
       '@typescript-eslint/parser': ^5.20.0
       antd-taro: workspace:*
-      babel-preset-taro: 3.5.0-beta.2
+      babel-preset-taro: beta
       eslint: ^8.12.0
-      eslint-config-taro: 3.5.0-beta.2
+      eslint-config-taro: beta
       eslint-plugin-import: ^2.12.0
       eslint-plugin-react: ^7.8.2
       eslint-plugin-react-hooks: ^4.2.0
@@ -164,21 +164,21 @@ importers:
 
   src:
     specifiers:
-      '@tarojs/components': 3.5.0-beta.2
-      '@tarojs/helper': 3.5.0-beta.2
-      '@tarojs/plugin-framework-react': 3.5.0-beta.2
-      '@tarojs/plugin-platform-alipay': 3.5.0-beta.2
-      '@tarojs/plugin-platform-jd': 3.5.0-beta.2
-      '@tarojs/plugin-platform-qq': 3.5.0-beta.2
-      '@tarojs/plugin-platform-swan': 3.5.0-beta.2
-      '@tarojs/plugin-platform-tt': 3.5.0-beta.2
-      '@tarojs/plugin-platform-weapp': 3.5.0-beta.2
-      '@tarojs/react': 3.5.0-beta.2
-      '@tarojs/router': 3.5.0-beta.2
-      '@tarojs/runtime': 3.5.0-beta.2
-      '@tarojs/shared': 3.5.0-beta.2
-      '@tarojs/taro': 3.5.0-beta.2
-      '@tarojs/taro-h5': 3.5.0-beta.2
+      '@tarojs/components': beta
+      '@tarojs/helper': beta
+      '@tarojs/plugin-framework-react': beta
+      '@tarojs/plugin-platform-alipay': beta
+      '@tarojs/plugin-platform-jd': beta
+      '@tarojs/plugin-platform-qq': beta
+      '@tarojs/plugin-platform-swan': beta
+      '@tarojs/plugin-platform-tt': beta
+      '@tarojs/plugin-platform-weapp': beta
+      '@tarojs/react': beta
+      '@tarojs/router': beta
+      '@tarojs/runtime': beta
+      '@tarojs/shared': beta
+      '@tarojs/taro': beta
+      '@tarojs/taro-h5': beta
       '@types/lodash-es': ^4.17.6
       '@types/react': ^17.0.2
       classnames: ^2.3.1
