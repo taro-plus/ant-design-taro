@@ -13,11 +13,15 @@
     "ios >= 8"
   ],
   "dependencies": {
-    "@tarojs/components": "3.5.0-beta.2",
-    "@tarojs/taro": "3.5.0-beta.2",
-    "lodash-es": "^4.17.21"
+    "@tarojs/components": "beta",
+    "@tarojs/taro": "beta",
+    "classnames": "^2.3.1",
+    "lodash-es": "^4.17.21",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@types/lodash-es": "^4.17.6"
+    "@types/lodash-es": "^4.17.6",
+    "@types/react": "^17.0.45"
   }
 }
