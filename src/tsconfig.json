@@ -20,6 +20,6 @@
     "resolveJsonModule": true,
     "typeRoots": ["node_modules/@types"]
   },
-  "include": ["./components", "./global", "./utils", "global.d.ts"],
+  "include": ["./components", "./utils", "./types"],
   "compileOnSave": false
 }

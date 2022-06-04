@@ -137,7 +137,17 @@ importers:
       webpack: 5.73.0
 
   src:
-    specifiers: {}
+    specifiers:
+      '@tarojs/components': 3.5.0-beta.2
+      '@tarojs/taro': 3.5.0-beta.2
+      '@types/lodash-es': ^4.17.6
+      lodash-es: ^4.17.21
+    dependencies:
+      '@tarojs/components': 3.5.0-beta.2
+      '@tarojs/taro': 3.5.0-beta.2
+      lodash-es: 4.17.21
+    devDependencies:
+      '@types/lodash-es': 4.17.6
 
 packages:
 
@@ -2442,6 +2452,36 @@ packages:
       '@babel/runtime': 7.18.3
       '@tarojs/runtime': 3.5.0-beta.2
 
+  /@tarojs/components/3.5.0-beta.2:
+    resolution: {integrity: sha512-THBYMBF/MkEpSXhp07Nlf3MecpCqeu12O2HQ4SFv0ioEMwUiIv8cQVrYsm5RuiowslVHwPS9tmtQPfxqGqA5TA==}
+    peerDependencies:
+      '@types/react': '*'
+      '@types/react-native': '*'
+      vue: '*'
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      '@types/react-native':
+        optional: true
+      vue:
+        optional: true
+    dependencies:
+      '@stencil/core': 2.13.0
+      '@stencil/sass': 1.5.2_@stencil+core@2.13.0
+      '@tarojs/taro': 3.5.0-beta.2
+      better-scroll: 1.15.2
+      classnames: 2.3.1
+      hls.js: 1.1.5
+      intersection-observer: 0.7.0
+      omit.js: 1.0.2
+      resolve-pathname: 3.0.0
+      swiper: 6.8.0
+      weui: 1.1.3
+    transitivePeerDependencies:
+      - '@types/webpack'
+      - '@types/webpack-dev-server'
+    dev: false
+
   /@tarojs/components/3.5.0-beta.2_@types+react@17.0.45:
     resolution: {integrity: sha512-THBYMBF/MkEpSXhp07Nlf3MecpCqeu12O2HQ4SFv0ioEMwUiIv8cQVrYsm5RuiowslVHwPS9tmtQPfxqGqA5TA==}
     peerDependencies:
@@ -2703,6 +2743,27 @@ packages:
       - vue
     dev: true
 
+  /@tarojs/taro/3.5.0-beta.2:
+    resolution: {integrity: sha512-NeR5rBlGvz01GJEV4GxtqBMDc0wxsNO8asx5/DnoxONlpGCPXQhML8YqkV+0fqvRQhE/a3juhHEbupnzuUgnSA==}
+    peerDependencies:
+      '@types/react': '*'
+      '@types/webpack': '*'
+      '@types/webpack-dev-server': '*'
+      vue: '*'
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      '@types/webpack':
+        optional: true
+      '@types/webpack-dev-server':
+        optional: true
+      vue:
+        optional: true
+    dependencies:
+      '@tarojs/api': 3.5.0-beta.2
+      '@tarojs/runtime': 3.5.0-beta.2
+    dev: false
+
   /@tarojs/taro/3.5.0-beta.2_@types+react@17.0.45:
     resolution: {integrity: sha512-NeR5rBlGvz01GJEV4GxtqBMDc0wxsNO8asx5/DnoxONlpGCPXQhML8YqkV+0fqvRQhE/a3juhHEbupnzuUgnSA==}
     peerDependencies:
@@ -2932,6 +2993,12 @@ packages:
 
   /@types/json-schema/7.0.11:
     resolution: {integrity: sha512-wOuvG1SN4Us4rez+tylwwwCV1psiNVOkJeM3AUWUNWg/jDQY2+HE/444y5gc+jBmRqASOm2Oeh5c1axHobwRKQ==}
+
+  /@types/lodash-es/4.17.6:
+    resolution: {integrity: sha512-R+zTeVUKDdfoRxpAryaQNRKk3105Rrgx2CFRClIgRGaqDTdjsm8h6IYA8ir584W3ePzkZfst5xIgDwYrlh9HLg==}
+    dependencies:
+      '@types/lodash': 4.14.182
+    dev: true
 
   /@types/lodash.debounce/4.0.7:
     resolution: {integrity: sha512-X1T4wMZ+gT000M2/91SYj0d/7JfeNZ9PeeOldSNoE/lunLeQXKvkmIumI29IaKMotU/ln/McOIvgzZcQ/3TrSA==}
