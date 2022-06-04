@@ -1,6 +1,5 @@
-import { View } from '@tarojs/components';
+import { View,Button } from '@tarojs/components';
 import { navigateTo } from '@tarojs/taro';
-import { Button } from 'antd-taro';
 
 definePageConfig({
   navigationBarTitleText: '首页',

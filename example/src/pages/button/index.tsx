@@ -1,5 +1,4 @@
-import { View } from '@tarojs/components';
-import { Button } from 'antd';
+import { Button, View } from '@tarojs/components';
 
 definePageConfig({ navigationBarTitleText: '按钮' });
 
