@@ -48,26 +48,17 @@
     "@tarojs/taro": "beta",
     "@tarojs/taro-h5": "beta",
     "antd-taro": "workspace:*",
-    "react": "^17.0.0",
-    "react-dom": "^17.0.0"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.8.0",
     "@pmmmwh/react-refresh-webpack-plugin": "0.5.5",
     "@tarojs/webpack5-runner": "beta",
-    "@types/react": "^17.0.2",
+    "@types/react": "^17.0.45",
     "@types/webpack-env": "^1.13.6",
-    "@typescript-eslint/eslint-plugin": "^5.20.0",
-    "@typescript-eslint/parser": "^5.20.0",
     "babel-preset-taro": "beta",
-    "eslint": "^8.12.0",
-    "eslint-config-taro": "beta",
-    "eslint-plugin-import": "^2.12.0",
-    "eslint-plugin-react": "^7.8.2",
-    "eslint-plugin-react-hooks": "^4.2.0",
     "react-refresh": "0.11.0",
-    "stylelint": "^14.4.0",
-    "typescript": "^4.1.0",
     "webpack": "5.69.0"
   },
   "templateInfo": {

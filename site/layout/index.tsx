@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 
 const Layout = () => {
   return (
-    <ProLayout route>
+    <ProLayout>
       <Outlet />
     </ProLayout>
   );

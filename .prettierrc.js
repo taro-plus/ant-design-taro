@@ -1,6 +1,4 @@
 module.exports = {
-  plugins: ['prettier-plugin-organize-imports', 'prettier-plugin-packagejson'],
-
   // 一行最多 120 字符
   printWidth: 120,
   // 使用 2 个空格缩进
@@ -40,4 +38,6 @@ module.exports = {
   endOfLine: 'lf',
   // 格式化内嵌代码
   embeddedLanguageFormatting: 'auto',
+
+  plugins: ['prettier-plugin-organize-imports', 'prettier-plugin-packagejson'],
 };

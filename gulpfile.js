@@ -2,7 +2,7 @@ const del = require('del');
 const path = require('path');
 const babel = require('gulp-babel');
 const ts = require('gulp-typescript');
-const tsconfig = require('./src/tsconfig.json');
+const tsconfig = require(resolveFile('tsconfig.json'));
 const { src, dest, task, watch, series, parallel } = require('gulp');
 
 const ignore = ['**/demos/**/*', '**/tests/**/*'];
@@ -18,7 +18,6 @@ function clean() {
 function buildES() {
   const tsProject = ts({
     ...tsconfig.compilerOptions,
-    module: 'ES6',
   });
 
   return src([resolveFile('**/*.{ts,tsx}')], {
@@ -66,7 +65,7 @@ function copyMetaFiles() {
 }
 
 function build() {
-  return series(clean, buildES, buildCJS, parallel(buildDeclaration, buildStyle, copyMetaFiles))();
+  return series(clean, buildES, buildCJS, parallel(buildDeclaration, buildStyle))();
 }
 
 function dev() {

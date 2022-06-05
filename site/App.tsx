@@ -4,13 +4,9 @@ import { useRoutes } from 'react-router-dom';
 import { routes } from './routes';
 
 const App: FC = () => {
-  const Element: FC = () => useRoutes(routes);
+  const element = useRoutes(routes);
 
-  return (
-    <ConfigProvider>
-      <Element />
-    </ConfigProvider>
-  );
+  return <ConfigProvider>{element}</ConfigProvider>;
 };
 
 export default App;
