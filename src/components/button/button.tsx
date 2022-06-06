@@ -1,5 +1,6 @@
 import type { ButtonProps as TaroButtonProps } from '@tarojs/components';
 import { Button as TaroButton } from '@tarojs/components';
+import classNames from 'classnames';
 import type { FC, ReactNode } from 'react';
 import { withNativeProps } from '../../utils/native-props';
 import { mergeProps } from '../../utils/with-default-props';
@@ -35,5 +36,30 @@ const defaultProps: ButtonProps = {
 export const Button: FC<ButtonProps> = (p) => {
   const { size, ...props } = mergeProps(defaultProps, p);
 
-  return withNativeProps(p, <TaroButton {...props} className={classPrefix} />);
+  const loading = props.loading;
+  const disabled = props.disabled || loading;
+
+  return withNativeProps(
+    props,
+    <TaroButton
+      {...props}
+      className={classNames(
+        classPrefix,
+        props.color ? `${classPrefix}-${props.color}` : null,
+        {
+          [`${classPrefix}-block`]: props.block,
+          [`${classPrefix}-disabled`]: disabled,
+          [`${classPrefix}-fill-outline`]: props.fill === 'outline',
+          [`${classPrefix}-fill-none`]: props.fill === 'none',
+          [`${classPrefix}-mini`]: size === 'mini',
+          [`${classPrefix}-small`]: size === 'small',
+          [`${classPrefix}-large`]: size === 'large',
+          [`${classPrefix}-loading`]: loading,
+        },
+        `${classPrefix}-shape-${props.shape}`,
+      )}
+    >
+      {props.children}
+    </TaroButton>,
+  );
 };

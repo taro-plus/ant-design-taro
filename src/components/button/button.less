@@ -1,0 +1,160 @@
+@class-prefix-button: ~"adt-button";
+
+.@{class-prefix-button} {
+  --color: var(--adt-color-white);
+  --text-color: var(--adt-button-text-color, var(--adt-color-text));
+  --background-color:
+    var(
+      --adt-button-background-color,
+      var(--adt-color-white)
+    );
+  --border-radius: var(--adt-button-border-radius, 8px);
+  --border-width: var(--adt-button-border-width, 1px);
+  --border-style: var(--adt-button-border-style, solid);
+  --border-color: var(--adt-button-border-color, var(--adt-border-color));
+
+  color: var(--text-color);
+  background-color: var(--background-color);
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  height: auto;
+  padding: 14px 24px;
+  margin: 0;
+  font-size: 34px;
+  line-height: 1.4;
+  text-align: center;
+  border: var(--border-width) var(--border-style) var(--border-color);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: opacity ease 0.15s;
+  user-select: none;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform:
+      translate(
+        calc(var(--border-width) * -1),
+        calc(var(--border-width) * -1)
+      );
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    border: var(--border-width) var(--border-style) #000;
+    border-radius: var(--border-radius);
+    opacity: 0;
+    content: " ";
+    box-sizing: content-box;
+  }
+
+  &:active::before {
+    opacity: 0.08;
+  }
+
+  &-default {
+    &.@{class-prefix-button}-fill-outline {
+      --background-color: transparent;
+      --border-color: var(--adt-color-text);
+    }
+    &.@{class-prefix-button}-fill-none {
+      --background-color: transparent;
+      --border-width: 0;
+    }
+  }
+
+  &:not(&-default) {
+    --text-color: var(--adt-color-white);
+    --background-color: var(--color);
+    --border-color: var(--color);
+    &.@{class-prefix-button}-fill-outline {
+      --text-color: var(--color);
+      --background-color: transparent;
+    }
+    &.@{class-prefix-button}-fill-none {
+      --text-color: var(--color);
+      --background-color: transparent;
+      --border-width: 0;
+    }
+  }
+
+  &-primary {
+    --color: var(--adt-color-primary);
+  }
+
+  &-success {
+    --color: var(--adt-color-success);
+  }
+
+  &-danger {
+    --color: var(--adt-color-danger);
+  }
+
+  &-warning {
+    --color: var(--adt-color-warning);
+  }
+
+  &-block {
+    display: block;
+    width: 100%;
+  }
+
+  &-disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+
+    &:active::before {
+      display: none;
+    }
+  }
+
+  &&-mini {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    font-size: 26px;
+    &.@{class-prefix-button}-shape-rounded {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+  }
+
+  &&-small {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    font-size: 30px;
+  }
+
+  &&-large {
+    padding-top: 22px;
+    padding-bottom: 22px;
+    font-size: 36px;
+  }
+
+  &&-shape-rounded {
+    --border-radius: 1000px;
+  }
+
+  &&-shape-rectangular {
+    --border-radius: 0;
+  }
+
+  &-loading {
+    vertical-align: bottom;
+  }
+
+  &-loading-wrapper {
+    display: flex;
+    height: 1.4em;
+    align-items: center;
+    justify-content: center;
+
+    > .adt-loading {
+      opacity: 0.6;
+    }
+  }
+}
