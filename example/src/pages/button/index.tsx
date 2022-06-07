@@ -1,11 +1,12 @@
-import { Button, View } from '@tarojs/components';
+import { View } from '@tarojs/components';
+import Demo1 from 'antd-taro/components/button/demos/demo1';
 
 definePageConfig({ navigationBarTitleText: '按钮' });
 
 const ButtonPage = () => {
   return (
     <View>
-      <Button />
+      <Demo1 />
     </View>
   );
 };

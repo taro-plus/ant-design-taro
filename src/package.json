@@ -50,6 +50,7 @@
     "@tarojs/shared": "beta",
     "@tarojs/taro": "beta",
     "@tarojs/taro-h5": "beta",
+    "antd-taro-demo": "workspace:*",
     "classnames": "^2.3.1",
     "lodash-es": "^4.17.21",
     "react": "^17.0.2",
