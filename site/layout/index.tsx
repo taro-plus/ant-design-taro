@@ -1,4 +1,4 @@
-import { ProLayout } from '@ant-design/pro-layout';
+import { ProLayout } from '@ant-design/pro-components';
 import { Outlet } from 'react-router-dom';
 
 const Layout = () => {

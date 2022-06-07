@@ -1,4 +1,4 @@
-import type { MenuDataItem } from '@ant-design/pro-layout';
+import type { MenuDataItem } from '@ant-design/pro-components';
 import { MarkDownComponent } from '@site/components';
 import quickStart from '@site/docs/quick-start.md?raw';
 import type { RouteObject } from 'react-router-dom';
