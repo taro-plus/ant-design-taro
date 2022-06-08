@@ -1,7 +1,8 @@
-import type { ButtonProps as TaroButtonProps } from '@tarojs/components';
 import { Button as TaroButton } from '@tarojs/components';
 import classNames from 'classnames';
 import type { FC, ReactNode } from 'react';
+import type { TaroButtonProps } from '../../types/taro';
+import type { NativeProps } from '../../utils/native-props';
 import { withNativeProps } from '../../utils/native-props';
 import { mergeProps } from '../../utils/with-default-props';
 
@@ -12,7 +13,7 @@ type Fill = 'solid' | 'outline' | 'none';
 type Size = 'mini' | 'small' | 'middle' | 'large';
 type Shape = 'default' | 'rounded' | 'rectangular';
 
-export interface ButtonProps extends Omit<TaroButtonProps, OmitTaroButtonProps> {
+export interface ButtonProps extends Omit<TaroButtonProps, OmitTaroButtonProps>, NativeProps {
   color?: Color;
   fill?: Fill;
   size?: Size;

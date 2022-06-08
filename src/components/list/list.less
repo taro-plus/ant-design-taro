@@ -1,0 +1,121 @@
+.adt-list {
+  --header-font-size: 30px;
+  --prefix-width: "auto";
+  --prefix-padding-right: 24px;
+  --align-items: center;
+  --active-background-color: var(--adt-border-color);
+  --border-inner: solid 1px var(--adt-border-color);
+  --border-top: solid 1px var(--adt-border-color);
+  --border-bottom: solid 1px var(--adt-border-color);
+  --padding-left: 24px;
+  --padding-right: 24px;
+  --font-size: 34px;
+
+  &-header {
+    padding: 16px var(--padding-right) 16px var(--padding-left);
+    font-size: var(--header-font-size);
+    color: var(--adt-color-weak);
+  }
+
+  &-body {
+    overflow: hidden;
+    font-size: var(--font-size);
+    background-color: #fff;
+  }
+
+  &-body-inner {
+    margin-top: -1px;
+  }
+
+  &-default {
+    .adt-list-body {
+      border-top: var(--border-top);
+      border-bottom: var(--border-bottom);
+    }
+  }
+
+  &-card {
+    margin: 24px;
+
+    .adt-list-body {
+      border-radius: 16px;
+    }
+
+    .adt-list-header {
+      padding-left: 0;
+    }
+  }
+}
+
+.adt-list-item {
+  position: relative;
+  display: block;
+  padding-left: var(--padding-left);
+  background-color: #fff;
+
+  &-title,
+  &-description {
+    font-size: 26px;
+    color: var(--adt-color-weak);
+  }
+
+  &-content {
+    display: flex;
+    align-items: var(--align-items);
+    justify-content: flex-start;
+    padding-right: var(--padding-right);
+    border-top: var(--border-inner);
+
+    &-prefix {
+      flex: none;
+      width: var(--prefix-width);
+      padding-right: var(--prefix-padding-right);
+    }
+
+    &-main {
+      flex: auto;
+      padding: 24px 0;
+    }
+
+    &-extra {
+      flex: none;
+      padding-left: 24px;
+      font-size: 30px;
+      color: var(--adt-color-weak);
+    }
+
+    &-arrow {
+      display: flex;
+      flex: none;
+      align-items: center;
+      margin-left: 8px;
+      font-size: 38px;
+      color: var(--adt-color-light);
+    }
+  }
+
+  &-disabled {
+    cursor: not-allowed;
+
+    && > .adt-list-item-content > * {
+      pointer-events: none;
+      opacity: 0.4;
+    }
+  }
+}
+
+a.adt-list-item {
+  &:active:not(.adt-list-item-disabled) {
+    background-color: var(--active-background-color);
+
+    &::after {
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      display: block;
+      width: 100%;
+      content: " ";
+      border-bottom: var(--border-inner);
+    }
+  }
+}

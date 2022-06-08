@@ -1,12 +1,56 @@
+import { View } from '@tarojs/components';
 import { DemoBlock } from 'antd-taro-demo/src/components';
-import Button from '../index';
+import { Button, Space } from '../../../index';
 
-const Demo1 = () => {
+export default function () {
   return (
-    <DemoBlock title="ss">
-      <Button>11</Button>
-    </DemoBlock>
-  );
-};
+    <View>
+      <DemoBlock title="填充模式">
+        <Space wrap>
+          <Button color="primary" fill="solid">
+            Solid
+          </Button>
+          <Button color="primary" fill="outline">
+            Outline
+          </Button>
+          <Button color="primary" fill="none">
+            None
+          </Button>
+        </Space>
+      </DemoBlock>
 
-export default Demo1;
+      <DemoBlock title="块级按钮">
+        <Button block color="primary" size="large">
+          Block Button
+        </Button>
+      </DemoBlock>
+
+      <DemoBlock title="按钮尺寸">
+        <Space wrap direction="horizontal" align="center">
+          <Button size="mini" color="primary">
+            Mini
+          </Button>
+          <Button size="small" color="primary">
+            Small
+          </Button>
+          <Button size="middle" color="primary">
+            Middle
+          </Button>
+          <Button size="large" color="primary">
+            Large
+          </Button>
+        </Space>
+      </DemoBlock>
+
+      <DemoBlock title="语义按钮">
+        <Space wrap>
+          <Button>Default</Button>
+          <Button color="primary">Primary</Button>
+          <Button color="success">Success</Button>
+          <Button color="danger">Danger</Button>
+          <Button color="warning">Warning</Button>
+        </Space>
+      </DemoBlock>
+    </View>
+  );
+}

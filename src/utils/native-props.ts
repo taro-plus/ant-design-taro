@@ -20,6 +20,5 @@ export function withNativeProps<P extends NativeProps>(props: P, element: ReactE
       ...props.style,
     };
   }
-
   return React.cloneElement(element, p);
 }
