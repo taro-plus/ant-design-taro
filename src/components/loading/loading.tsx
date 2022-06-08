@@ -1,21 +1,15 @@
 import { Text, View } from '@tarojs/components';
 import type { FC } from 'react';
-import type { TaroViewProps } from '../../types/taro';
 import type { NativeProps } from '../../utils/native-props';
 import { withNativeProps } from '../../utils/native-props';
-import { mergeProps } from '../../utils/with-default-props';
 
-const classPrefix = 'adt-dot-loading';
+type CSSProperties = '--color' | '--size';
 
-export type DotLoadingProps = TaroViewProps & NativeProps;
+export type DotLoadingProps = NativeProps<CSSProperties>;
 
-const defaultProps = {
-  color: 'default',
-};
+const classPrefix = 'adt-loading';
 
-export const DotLoading: FC<DotLoadingProps> = (p) => {
-  const props = mergeProps(defaultProps, p);
-
+export const Loading: FC<DotLoadingProps> = (props) => {
   return withNativeProps(
     props,
     <View className={classPrefix}>

@@ -1,6 +1,7 @@
 import { Button as TaroButton } from '@tarojs/components';
 import classNames from 'classnames';
 import type { FC, ReactNode } from 'react';
+import { Loading } from '../../index';
 import type { TaroButtonProps } from '../../types/taro';
 import type { NativeProps } from '../../utils/native-props';
 import { withNativeProps } from '../../utils/native-props';
@@ -60,6 +61,7 @@ export const Button: FC<ButtonProps> = (p) => {
         `${classPrefix}-shape-${props.shape}`,
       )}
     >
+      <Loading />
       {props.children}
     </TaroButton>,
   );

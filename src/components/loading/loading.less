@@ -1,18 +1,18 @@
-@class-prefix-dot-loading: ~"adt-dot-loading";
+@class-prefix-loading: ~"adt-loading";
 
-.@{class-prefix-dot-loading} {
-  --adt-dot-loading-color: var(--adt-color-weak);
-  --adt-dot-loading-size: 8px;
+.@{class-prefix-loading} {
+  --color: var(--adt-color-weak);
+  --size: 8px;
 
   display: flex;
-  gap: calc(var(--adt-dot-loading-size) * 1.5);
+  gap: calc(var(--size) * 1.5);
 
   &__dot {
-    width: var(--adt-dot-loading-size);
-    height: var(--adt-dot-loading-size);
-    background-color: var(--adt-dot-loading-color);
+    width: var(--size);
+    height: var(--size);
+    background-color: var(--color);
     border-radius: 50%;
-    animation: adt-dot-loading-animation 1s 0s infinite linear;
+    animation: adt-loading-animation 1s 0s infinite linear;
 
     &:nth-child(1) {
       animation-delay: 0s;
@@ -28,7 +28,7 @@
   }
 }
 
-@keyframes adt-dot-loading-animation {
+@keyframes adt-loading-animation {
   0% {
     transform: translate3d(0, 0, 0);
   }
