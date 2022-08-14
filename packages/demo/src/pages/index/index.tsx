@@ -1,9 +1,10 @@
-import { Text, View } from '@tarojs/components';
+import { View } from '@tarojs/components';
+import Demo1 from 'antd-taro/components/button/demos/demo1';
 
 const IndexPage = () => {
   return (
-    <View className="index">
-      <Text>Hello world!</Text>
+    <View>
+      <Demo1 />
     </View>
   );
 };
