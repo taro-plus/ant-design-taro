@@ -1,5 +1,5 @@
 import { View } from '@tarojs/components';
-import { Block } from '../../../demo';
+import { Block } from '../../../demos';
 import { Button, Space } from '../../../index';
 
 export default function () {

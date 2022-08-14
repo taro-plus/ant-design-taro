@@ -1,5 +1,5 @@
 const config = {
-  projectName: 'antd-taro-demo',
+  projectName: 'antd-taro-demos',
   date: '2022-5-20',
   designWidth: 750,
   deviceRatio: {
