@@ -1,3 +1,4 @@
 packages:
-  - 'example'
-  - 'src'
+  - 'packages/demo'
+  - 'packages/site'
+  - 'packages/ui'
