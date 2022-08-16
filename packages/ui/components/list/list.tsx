@@ -1,7 +1,7 @@
 import { View } from '@tarojs/components';
 import classNames from 'classnames';
 import type { FC, ReactNode } from 'react';
-import type { TaroViewProps } from '../../types/taro';
+import type { TaroViewProps } from '../../typings';
 import type { NativeProps } from '../../utils/native-props';
 import { withNativeProps } from '../../utils/native-props';
 import { mergeProps } from '../../utils/with-default-props';

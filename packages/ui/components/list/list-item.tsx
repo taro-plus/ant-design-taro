@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import type { FC, ReactNode } from 'react';
 import { createElement } from 'react';
 import { Icon } from '../../index';
-import type { TaroViewProps } from '../../types/taro';
+import type { TaroViewProps } from '../../typings';
 import type { NativeProps } from '../../utils/native-props';
 import { withNativeProps } from '../../utils/native-props';
 

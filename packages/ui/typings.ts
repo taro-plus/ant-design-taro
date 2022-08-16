@@ -1,5 +1,5 @@
 import type { ButtonProps, TextProps, ViewProps } from '@tarojs/components';
-import type { NativeProps } from '../utils/native-props';
+import type { NativeProps } from './utils/native-props';
 
 type OmitKey = keyof NativeProps;
 

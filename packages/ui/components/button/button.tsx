@@ -2,7 +2,7 @@ import { Button as TaroButton, View } from '@tarojs/components';
 import classNames from 'classnames';
 import type { FC, ReactNode } from 'react';
 import { Loading } from '../../index';
-import type { TaroButtonProps } from '../../types/taro';
+import type { TaroButtonProps } from '../../typings';
 import type { NativeProps } from '../../utils/native-props';
 import { withNativeProps } from '../../utils/native-props';
 import { mergeProps } from '../../utils/with-default-props';

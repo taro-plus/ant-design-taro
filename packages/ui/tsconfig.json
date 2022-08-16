@@ -8,7 +8,7 @@
     "experimentalDecorators": true,
     "noImplicitAny": false,
     "allowSyntheticDefaultImports": true,
-    "outDir": "lib",
+    "outDir": "dist",
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "strictNullChecks": true,
@@ -18,8 +18,11 @@
     "jsx": "react-jsx",
     "allowJs": true,
     "resolveJsonModule": true,
-    "typeRoots": ["node_modules/@types"]
+    "declaration": true,
+    "typeRoots": ["node_modules/@types"],
+    "skipLibCheck": true
   },
   "include": ["./components", "./demos", "./types"],
+  "exclude": ["node_modules/**", "./dist/**", "**/tests/*", "**/demos/*", "types/**"],
   "compileOnSave": false
 }
