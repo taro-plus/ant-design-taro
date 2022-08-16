@@ -7,44 +7,60 @@ import * as path from 'path';
 
 const basePath = path.join(path.resolve('./'), 'packages', 'ui');
 
-const filePaths = fg.sync([
+const ignorePaths = [
   '!**/node_modules/**',
-  `!${basePath}/**/*.md`,
   `!${basePath}/**/*.d.ts`,
+  `!${basePath}/**/*.md`,
   `!${basePath}/**/demos/*`,
+  `!${basePath}/**/dist/**`,
   `!${basePath}/**/tests/*`,
   `!${basePath}/**/typings.ts`,
-  `${basePath}/**/*.{ts,tsx}`,
-]);
+];
 
-async function transform(filePath: string) {
-  const loader = filePath.endsWith('.ts') ? 'ts' : 'tsx';
+async function transform() {
+  const filePaths = fg.sync([...ignorePaths, `${basePath}/**/*.{ts,tsx}`]);
 
-  const code = esbuild.transformSync(fs.readFileSync(filePath, 'utf8'), { format: 'esm', loader }).code;
+  filePaths.forEach((filePath) => {
+    const loader = filePath.endsWith('.ts') ? 'ts' : 'tsx';
 
-  const targetPath = filePath.replace('/ui/', '/ui/dist/');
+    const code = esbuild.transformSync(fs.readFileSync(filePath, 'utf8'), { format: 'esm', loader }).code;
 
-  const targetPathArr = targetPath.split('/');
+    const targetPath = filePath.replace('/ui/', '/ui/dist/');
 
-  const targetName = targetPathArr.pop().replace(/(ts|tsx)$/, 'js');
+    const targetPathArr = targetPath.split('/');
 
-  const targetDir = targetPathArr.join('/');
+    const targetName = targetPathArr.pop().replace(/(ts|tsx)$/, 'js');
 
-  fs.mkdirSync(targetDir, { recursive: true });
+    const targetDir = targetPathArr.join('/');
 
-  fs.writeFileSync(path.join(targetDir, targetName), code, { flag: 'w', encoding: 'utf8' });
+    fs.mkdirSync(targetDir, { recursive: true });
+
+    fs.writeFileSync(path.join(targetDir, targetName), code, { flag: 'w', encoding: 'utf8' });
+  });
+}
+
+function tsc() {
+  childProcess.execSync('tsc --emitDeclarationOnly', {
+    cwd: basePath,
+  });
+}
+
+function copyLess() {
+  const lessPaths = fg.sync([...ignorePaths, `${basePath}/**/*.less`]);
+
+  lessPaths.forEach((lessPath) => {
+    fs.copyFileSync(lessPath, lessPath.replace('/ui/', '/ui/dist/'));
+  });
 }
 
 async function build() {
   await deleteAsync(path.join(basePath, 'dist/**'));
 
-  childProcess.execSync('tsc --emitDeclarationOnly', {
-    cwd: basePath,
-  });
+  transform();
 
-  filePaths.forEach((filePath) => {
-    transform(filePath);
-  });
+  tsc();
+
+  copyLess();
 }
 
 build();
