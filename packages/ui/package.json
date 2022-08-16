@@ -16,13 +16,12 @@
   "author": {
     "name": "Sushi Su"
   },
-  "main": "dist/cjs/index.js",
-  "module": "dist/es/index.js",
-  "types": "dist/es/index.d.ts",
-  "typings": "dist/es/index.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "typings": "dist/index.d.ts",
   "files": [
     "dist",
-    "utils",
     "LICENSE",
     "README.md"
   ],

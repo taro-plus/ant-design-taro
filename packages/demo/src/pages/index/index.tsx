@@ -1,10 +1,10 @@
 import { View } from '@tarojs/components';
-import Demo1 from 'antd-taro/components/button/demos/demo1';
+import { Button } from 'antd-taro';
 
 const IndexPage = () => {
   return (
     <View>
-      <Demo1 />
+      <Button>111</Button>
     </View>
   );
 };
