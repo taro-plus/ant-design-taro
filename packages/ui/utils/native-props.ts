@@ -13,7 +13,7 @@ export interface NativePropsWithChildren<S extends string = never> extends Nativ
 
 export function withNativeProps<P extends NativeProps>(props: P, element: ReactElement) {
   const p = {
-    ...element.props,
+    ...props,
   };
   if (props.className) {
     p.className = classNames(element.props.className, props.className);

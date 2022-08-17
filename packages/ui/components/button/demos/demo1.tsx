@@ -1,5 +1,5 @@
 import { View } from '@tarojs/components';
-import { Block } from '../../../demos';
+import { Block } from 'antd-taro-demo/src/components';
 import { Button, Space } from '../../../index';
 
 export default function () {

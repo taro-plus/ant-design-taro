@@ -49,6 +49,7 @@
     "@tarojs/shared": "^3.5.0",
     "@tarojs/taro": "^3.5.0",
     "@tarojs/taro-h5": "^3.5.0",
+    "antd-taro-demo": "workspace: *",
     "classnames": "^2.0.0",
     "lodash-es": "^4.0.0",
     "react": "^18.0.0",

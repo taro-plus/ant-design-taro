@@ -22,7 +22,7 @@ importers:
       postcss: ^8.4.16
       postcss-less: ^6.0.0
       prettier: ^2.7.1
-      prettier-plugin-organize-imports: ^3.0.3
+      prettier-plugin-organize-imports: ^3.1.0
       prettier-plugin-packagejson: ^2.2.18
       rimraf: ^3.0.2
       stylelint: ^14.10.0
@@ -49,7 +49,7 @@ importers:
       postcss: 8.4.16
       postcss-less: 6.0.0_postcss@8.4.16
       prettier: 2.7.1
-      prettier-plugin-organize-imports: 3.0.3_gd3y7r3s3evy6b2vthd7dmacga
+      prettier-plugin-organize-imports: 3.1.0_gd3y7r3s3evy6b2vthd7dmacga
       prettier-plugin-packagejson: 2.2.18_prettier@2.7.1
       rimraf: 3.0.2
       stylelint: 14.10.0
@@ -160,6 +160,7 @@ importers:
       '@types/lodash-es': ^4.0.0
       '@types/react': ^18.0.0
       '@types/react-dom': ^18.0.0
+      antd-taro-demo: 'workspace: *'
       classnames: ^2.0.0
       lodash-es: ^4.0.0
       react: ^18.0.0
@@ -180,6 +181,7 @@ importers:
       '@tarojs/shared': 3.5.3
       '@tarojs/taro': 3.5.3_@types+react@18.0.17
       '@tarojs/taro-h5': 3.5.3_@types+react@18.0.17
+      antd-taro-demo: link:../demo
       classnames: 2.3.1
       lodash-es: 4.17.21
       react: 18.2.0
@@ -11027,8 +11029,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /prettier-plugin-organize-imports/3.0.3_gd3y7r3s3evy6b2vthd7dmacga:
-    resolution: {integrity: sha512-eu8PhJR39UZamhRdLEBJhUKG/sg0s+bnjwnN5Lc1TByZUHBtMuS9tBstnyaKGTSiMLhhftRPr0yIWG+PmJ13MA==}
+  /prettier-plugin-organize-imports/3.1.0_gd3y7r3s3evy6b2vthd7dmacga:
+    resolution: {integrity: sha512-eufD78FKdkDTyyY9oKxuwEMrfz4/AXrGeyeyjqiRtSBr01DAdGFTq4SgIKvLeqlLkq+ZPJ2H0+BK0e6flRUwJQ==}
     peerDependencies:
       '@volar/vue-typescript': '>=0.39.0'
       prettier: '>=2.0'

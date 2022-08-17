@@ -1,4 +1,4 @@
-@import "theme.less";
+@import 'theme.less';
 
 :root,
 page {
@@ -7,23 +7,9 @@ page {
 
 body,
 page {
-  font-family: var(--adt-font-family);
-  font-size: var(--adt-font-size-main);
   color: var(--adt-color-text);
-}
-
-a,
-button {
-  cursor: pointer;
-}
-
-a {
-  color: var(--adt-color-primary);
-  transition: opacity ease-in-out 0.2s;
-
-  &:active {
-    opacity: 0.8;
-  }
+  font-size: var(--adt-font-size-main);
+  font-family: var(--adt-font-family);
 }
 
 .adt-plain-anchor {
@@ -35,6 +21,7 @@ a {
   }
 }
 
-body.adt-overflow-hidden {
+body.adt-overflow-hidden,
+page.adt-overflow-hidden {
   overflow: hidden !important;
 }
