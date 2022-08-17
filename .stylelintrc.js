@@ -8,7 +8,7 @@ module.exports = {
     'selector-type-no-unknown': [
       true,
       {
-        ignoreTypes: ['page'],
+        ignoreTypes: ['page', 'taro-button-core'],
       },
     ],
   },

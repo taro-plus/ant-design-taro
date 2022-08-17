@@ -54,6 +54,7 @@ export const Button: FC<ButtonProps> = (p) => {
         },
         `${classPrefix}-shape-${props.shape}`,
       )}
+      onClick={props.onClick}
     >
       {loading ? (
         <View className={`${classPrefix}-loading-wrapper`}>
