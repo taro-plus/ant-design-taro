@@ -32,7 +32,6 @@ const defaultProps: ButtonProps = {
 
 export const Button: FC<ButtonProps> = (p) => {
   const props = mergeProps(defaultProps, p);
-  console.log(props);
   const loading = props.loading;
   const disabled = props.disabled || loading;
 

@@ -47,6 +47,7 @@ export function transform() {
     const commonOptions: TransformOptions = {
       loader,
       color: true,
+      drop: ['console'],
       charset: 'utf8',
       jsx: 'automatic',
     };

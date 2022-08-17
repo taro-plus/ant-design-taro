@@ -1,7 +1,16 @@
 import { render } from '@testing-library/react';
-import { test } from 'vitest';
+import { describe, test } from 'vitest';
 import Button from '../';
 
-test('Link changes the class when hovered', () => {
-  render(<Button>Hello World</Button>);
+describe('Button', () => {
+  test('renders with color', () => {
+    const { getByText } = render(
+      <>
+        <Button color="primary">Primary</Button>
+        <Button color="success">Success</Button>
+        <Button color="danger">Danger</Button>
+        <Button color="warning">Warning</Button>
+      </>,
+    );
+  });
 });

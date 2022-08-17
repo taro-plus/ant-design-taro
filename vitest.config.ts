@@ -8,6 +8,7 @@ export default defineConfig({
   plugins: [react()],
   test: {
     include: [`${path.resolve(__dirname, 'packages', 'ui')}/**/tests/*.{ts,tsx}`],
+    environment: 'happy-dom',
     alias: {
       '@tarojs/taro': '@tarojs/taro-h5',
       '@tarojs/components': '@tarojs/components/dist-h5/react',
