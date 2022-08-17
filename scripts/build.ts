@@ -17,31 +17,48 @@ const ignorePaths = [
   `!${basePath}/**/typings.ts`,
 ];
 
-async function transform() {
+function tsc() {
+  childProcess.execSync('tsc --emitDeclarationOnly', {
+    cwd: basePath,
+  });
+}
+
+function generateFile(destPath: string, content: string) {
+  const destDir = path.dirname(destPath);
+
+  const destFileName = path.basename(destPath).replace(/(ts|tsx)$/, 'js');
+
+  fs.mkdirSync(destDir, { recursive: true });
+
+  fs.writeFileSync(path.join(destDir, destFileName), content, { flag: 'w', encoding: 'utf8' });
+}
+
+function transform() {
   const filePaths = fg.sync([...ignorePaths, `${basePath}/**/*.{ts,tsx}`]);
 
   filePaths.forEach((filePath) => {
     const loader = filePath.endsWith('.ts') ? 'ts' : 'tsx';
+    const content = fs.readFileSync(filePath, { encoding: 'utf8' });
 
-    const code = esbuild.transformSync(fs.readFileSync(filePath, 'utf8'), { format: 'esm', loader }).code;
+    // esm
+    generateFile(
+      filePath.replace('/ui/', '/ui/dist/es/'),
+      esbuild.transformSync(content, {
+        format: 'esm',
+        loader,
+        banner: loader === 'tsx' ? 'import React from "react";' : '',
+      }).code,
+    );
 
-    const targetPath = filePath.replace('/ui/', '/ui/dist/');
-
-    const targetPathArr = targetPath.split('/');
-
-    const targetName = targetPathArr.pop().replace(/(ts|tsx)$/, 'js');
-
-    const targetDir = targetPathArr.join('/');
-
-    fs.mkdirSync(targetDir, { recursive: true });
-
-    fs.writeFileSync(path.join(targetDir, targetName), code, { flag: 'w', encoding: 'utf8' });
-  });
-}
-
-function tsc() {
-  childProcess.execSync('tsc --emitDeclarationOnly', {
-    cwd: basePath,
+    // cjs
+    generateFile(
+      filePath.replace('/ui/', '/ui/dist/cjs/'),
+      esbuild.transformSync(content, {
+        format: 'cjs',
+        loader,
+        banner: loader === 'tsx' ? 'var React = require("react");' : '',
+      }).code,
+    );
   });
 }
 
@@ -49,18 +66,26 @@ function copyLess() {
   const lessPaths = fg.sync([...ignorePaths, `${basePath}/**/*.less`]);
 
   lessPaths.forEach((lessPath) => {
-    fs.copyFileSync(lessPath, lessPath.replace('/ui/', '/ui/dist/'));
+    fs.copyFile(lessPath, lessPath.replace('/ui/', '/ui/dist/es/'), () => {});
+    fs.copyFile(lessPath, lessPath.replace('/ui/', '/ui/dist/cjs/'), () => {});
   });
+}
+
+function copyMetaFiles() {
+  fs.copyFile(path.join(path.resolve('./'), 'README.md'), path.join(basePath, 'dist', 'README.md'), () => {});
+  fs.copyFile(path.join(path.resolve('./'), 'LICENSE'), path.join(basePath, 'dist', 'LICENSE'), () => {});
 }
 
 async function build() {
   await deleteAsync(path.join(basePath, 'dist/**'));
 
-  transform();
-
   tsc();
 
+  transform();
+
   copyLess();
+
+  copyMetaFiles();
 }
 
 build();

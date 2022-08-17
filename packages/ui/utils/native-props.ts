@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import type { CSSProperties, ReactElement, ReactNode } from 'react';
-import React from 'react';
+import { cloneElement } from 'react';
 
 export interface NativeProps<S extends string = never> {
   className?: string;
@@ -24,5 +24,5 @@ export function withNativeProps<P extends NativeProps>(props: P, element: ReactE
       ...props.style,
     };
   }
-  return React.cloneElement(element, p);
+  return cloneElement(element, p);
 }

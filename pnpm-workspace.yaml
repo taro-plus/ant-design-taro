@@ -1,4 +1,4 @@
 packages:
-  - 'packages/demos'
+  - 'packages/demo'
   - 'packages/site'
   - 'packages/ui'

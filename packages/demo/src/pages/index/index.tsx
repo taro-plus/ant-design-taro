@@ -4,7 +4,7 @@ import { Button } from 'antd-taro';
 const IndexPage = () => {
   return (
     <View>
-      <Button>111</Button>
+      <Button color="primary">111</Button>
     </View>
   );
 };
