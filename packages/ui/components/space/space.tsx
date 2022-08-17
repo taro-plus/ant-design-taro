@@ -1,22 +1,20 @@
-import type { ViewProps } from '@tarojs/components';
 import { View } from '@tarojs/components';
 import classNames from 'classnames';
 import type { FC } from 'react';
 import { Children } from 'react';
-import type { NativePropsWithChildren } from '../../utils/native-props';
+import type { TaroViewProps } from '../../typings';
+import type { NativeProps } from '../../utils/native-props';
 import { withNativeProps } from '../../utils/native-props';
 import { mergeProps } from '../../utils/with-default-props';
 
-type CSSVariables = '--gap' | '--gap-vertical' | '--gap-horizontal';
-
-export interface SpaceProps extends NativePropsWithChildren<CSSVariables> {
+export type SpaceProps = {
   direction?: 'horizontal' | 'vertical';
   align?: 'start' | 'end' | 'center' | 'baseline';
   justify?: 'start' | 'end' | 'center' | 'between' | 'around' | 'evenly' | 'stretch';
   wrap?: boolean;
   block?: boolean;
-  onClick?: ViewProps['onClick'];
-}
+} & TaroViewProps &
+  NativeProps<'--gap' | '--gap-vertical' | '--gap-horizontal'>;
 
 const classPrefix = `adt-space`;
 

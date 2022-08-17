@@ -1,15 +1,10 @@
 import classNames from 'classnames';
-import type { CSSProperties, ReactElement, ReactNode } from 'react';
+import type { CSSProperties, ReactElement } from 'react';
 import { cloneElement } from 'react';
 
 export interface NativeProps<S extends string = never> {
   className?: string;
-  style?: CSSProperties & Partial<Record<S, string>>;
-  tabIndex?: number;
-}
-
-export interface NativePropsWithChildren<S extends string = never> extends NativeProps<S> {
-  children?: ReactNode;
+  style?: Partial<Record<S, string>> & CSSProperties;
 }
 
 export function withNativeProps<P extends NativeProps>(props: P, element: ReactElement) {
@@ -24,15 +19,6 @@ export function withNativeProps<P extends NativeProps>(props: P, element: ReactE
       ...p.style,
       ...props.style,
     };
-  }
-  if (props.tabIndex !== undefined) {
-    p.tabIndex = props.tabIndex;
-  }
-  for (const key in props) {
-    if (!props.hasOwnProperty(key)) continue;
-    if (key.startsWith('data-') || key.startsWith('aria-')) {
-      p[key] = props[key];
-    }
   }
   return cloneElement(element, p);
 }
