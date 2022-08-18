@@ -7,7 +7,7 @@ export default defineConfig({
   outputPath: 'docs-dist',
   mode: 'site',
   resolve: {
-    includes: ['docs', 'packages/ui/components'],
+    includes: ['docs', 'packages/ui'],
     passivePreview: true,
   },
   navs: [
@@ -32,7 +32,7 @@ export default defineConfig({
     '/components': [
       {
         title: '基础',
-        children: ['/button/index'],
+        children: ['/components/button'],
       },
     ],
   },
