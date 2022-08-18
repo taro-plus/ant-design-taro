@@ -9,6 +9,7 @@
     "start:h5": "npm-run-all --parallel watch:lib dev:h5",
     "start:weapp": "npm-run-all --parallel watch:lib dev:weapp",
     "build:docs": "dumi build",
+    "build:h5": "pnpm --filter antd-taro-demo build:h5",
     "build:lib": "tsx ./scripts/build.ts",
     "watch:lib": "tsx ./scripts/watch.ts",
     "test": "vitest",
