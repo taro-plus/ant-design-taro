@@ -7,7 +7,7 @@ importers:
       '@commitlint/cli': ^17.0.3
       '@commitlint/config-conventional': ^17.0.3
       '@testing-library/react': ^13.3.0
-      '@types/lodash-es': ^4.0.0
+      '@types/lodash-es': ^4.17.6
       '@types/react': ^18.0.17
       '@types/react-dom': ^18.0.6
       '@typescript-eslint/eslint-plugin': ^5.33.1
@@ -29,7 +29,7 @@ importers:
       husky: ^8.0.1
       less: ^4.1.3
       lint-staged: ^13.0.3
-      lodash-es: ^4.0.0
+      lodash-es: ^4.17.21
       npm-run-all: ^4.1.5
       postcss: ^8.4.16
       postcss-less: ^6.0.0
@@ -3025,7 +3025,7 @@ packages:
   /@types/lodash-es/4.17.6:
     resolution: {integrity: sha512-R+zTeVUKDdfoRxpAryaQNRKk3105Rrgx2CFRClIgRGaqDTdjsm8h6IYA8ir584W3ePzkZfst5xIgDwYrlh9HLg==}
     dependencies:
-      '@types/lodash': 4.14.183
+      '@types/lodash': 4.14.184
     dev: true
 
   /@types/lodash.debounce/4.0.7:
@@ -3036,6 +3036,10 @@ packages:
 
   /@types/lodash/4.14.183:
     resolution: {integrity: sha512-UXavyuxzXKMqJPEpFPri6Ku5F9af6ZJXUneHhvQJxavrEjuHkFp2YnDWHcxJiG7hk8ZkWqjcyNeW1s/smZv5cw==}
+    dev: true
+
+  /@types/lodash/4.14.184:
+    resolution: {integrity: sha512-RoZphVtHbxPZizt4IcILciSWiC6dcn+eZ8oX9IWEYfDMcocdd42f7NPI6fQj+6zI8y4E0L7gu2pcZKLGTRaV9Q==}
     dev: true
 
   /@types/mathjax/0.0.36:
@@ -3126,12 +3130,20 @@ packages:
       '@types/react-router': 5.1.18
     dev: true
 
+  /@types/react-router-config/5.0.6:
+    resolution: {integrity: sha512-db1mx37a1EJDf1XeX8jJN7R3PZABmJQXR8r28yUjVMFSjkmnQo6X6pOEEmNl+Tp2gYQOGPdYbFIipBtdElZ3Yg==}
+    dependencies:
+      '@types/history': 4.7.11
+      '@types/react': 18.0.17
+      '@types/react-router': 5.1.18
+    dev: true
+
   /@types/react-router-dom/5.1.7:
     resolution: {integrity: sha512-D5mHD6TbdV/DNHYsnwBTv+y73ei+mMjrkGrla86HthE4/PVvL1J94Bu3qABU+COXzpL23T1EZapVVpwHuBXiUg==}
     dependencies:
       '@types/history': 5.0.0
       '@types/react': 18.0.17
-      '@types/react-router': 5.1.18
+      '@types/react-router': 5.1.12
     dev: true
 
   /@types/react-router/5.1.12:
@@ -3624,7 +3636,7 @@ packages:
     dependencies:
       '@types/react': 16.14.30
       '@types/react-dom': 16.9.16
-      '@types/react-router-config': 5.0.2
+      '@types/react-router-config': 5.0.6
       '@umijs/runtime': 3.5.32_react@18.2.0
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -3641,7 +3653,7 @@ packages:
     dependencies:
       '@types/react': 16.14.30
       '@types/react-dom': 16.9.16
-      '@types/react-router-config': 5.0.2
+      '@types/react-router-config': 5.0.6
       '@umijs/runtime': 3.5.32_react@16.14.0
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
@@ -3658,7 +3670,7 @@ packages:
     dependencies:
       '@types/react': 16.14.30
       '@types/react-dom': 16.9.16
-      '@types/react-router-config': 5.0.2
+      '@types/react-router-config': 5.0.6
       '@umijs/runtime': 3.5.32_react@16.14.0
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
@@ -4646,6 +4658,8 @@ packages:
       babel-register: 6.26.0
       babylon: 6.18.0
       require-from-string: 2.0.2
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /babel-plugin-syntax-class-properties/6.13.0:
@@ -4757,7 +4771,7 @@ packages:
       babel-plugin-transform-react-jsx-to-rn-stylesheet: 3.5.3
       babel-plugin-transform-taroapi: 3.5.3
       core-js: 3.24.1
-      metro-react-native-babel-preset: 0.67.0_@babel+core@7.18.10
+      metro-react-native-babel-preset: 0.67.0
     transitivePeerDependencies:
       - '@types/react'
       - '@types/webpack'
@@ -5075,7 +5089,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001378
-      electron-to-chromium: 1.4.224
+      electron-to-chromium: 1.4.225
       node-releases: 2.0.6
       update-browserslist-db: 1.0.5_browserslist@4.21.3
 
@@ -7114,8 +7128,8 @@ packages:
       jake: 10.8.5
     dev: true
 
-  /electron-to-chromium/1.4.224:
-    resolution: {integrity: sha512-dOujC5Yzj0nOVE23iD5HKqrRSDj2SD7RazpZS/b/WX85MtO6/LzKDF4TlYZTBteB+7fvSg5JpWh0sN7fImNF8w==}
+  /electron-to-chromium/1.4.225:
+    resolution: {integrity: sha512-ICHvGaCIQR3P88uK8aRtx8gmejbVJyC6bB4LEC3anzBrIzdzC7aiZHY4iFfXhN4st6I7lMO0x4sgBHf/7kBvRw==}
 
   /elliptic/6.5.4:
     resolution: {integrity: sha512-iLhC6ULemrljPZb+QutR5TQGB+pdW6KGD5RSegS+8sorOZT+rdQFbsQFJgvN3eRqNALqJer4oQ16YvJHlU8hzQ==}
@@ -11610,10 +11624,8 @@ packages:
     engines: {node: '>= 0.6'}
     dev: true
 
-  /metro-react-native-babel-preset/0.67.0_@babel+core@7.18.10:
+  /metro-react-native-babel-preset/0.67.0:
     resolution: {integrity: sha512-tgTG4j0SKwLHbLRELMmgkgkjV1biYkWlGGKOmM484/fJC6bpDikdaFhfjsyE+W+qt7I5szbCPCickMTNQ+zwig==}
-    peerDependencies:
-      '@babel/core': '*'
     dependencies:
       '@babel/core': 7.18.10
       '@babel/plugin-proposal-class-properties': 7.18.6_@babel+core@7.18.10
@@ -14430,7 +14442,7 @@ packages:
     dependencies:
       deep-extend: 0.6.0
       ini: 1.3.8
-      minimist: 1.2.5
+      minimist: 1.2.6
       strip-json-comments: 2.0.1
     dev: true
 
