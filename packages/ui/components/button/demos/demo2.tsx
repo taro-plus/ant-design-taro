@@ -5,6 +5,7 @@
 import { View } from '@tarojs/components';
 import { Block } from '../../../demos';
 import { Button, Icon, Space } from '../../../index';
+import { sleep } from '../../../utils/sleep';
 
 export default function () {
   return (
@@ -38,7 +39,14 @@ export default function () {
             Loading
           </Button>
           <Button loading>Loading</Button>
-          <Button>Auto Loading</Button>
+          <Button
+            loading="auto"
+            onClick={async () => {
+              await sleep(1000);
+            }}
+          >
+            Auto Loading
+          </Button>
         </Space>
       </Block>
 
