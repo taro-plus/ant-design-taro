@@ -1,3 +1,5 @@
+import { resolve } from 'path';
+
 const config = {
   projectName: 'antd-taro-demos',
   date: '2022-5-20',
@@ -45,6 +47,7 @@ const config = {
         },
       },
     },
+
     // webpackChain: (chain, webpack) => {
     //   chain.plugin('analyzer').use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin, []);
     // },
@@ -80,6 +83,10 @@ const config = {
         enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
       },
     },
+  },
+  alias: {
+    '@/components': resolve(__dirname, '..', 'src/components'),
+    '@/hooks': resolve(__dirname, '..', 'src/hooks'),
   },
 };
 

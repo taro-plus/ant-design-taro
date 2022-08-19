@@ -6,7 +6,7 @@ import * as fg from 'fast-glob';
 import * as fs from 'fs';
 import * as path from 'path';
 
-export const basePath = path.join(path.resolve('./'), 'packages', 'ui');
+export const basePath = path.resolve('./', 'packages', 'ui');
 
 export const ignorePaths = [
   '!**/node_modules/**',
@@ -86,8 +86,8 @@ export function copyLess() {
 
 export function copyMetaFiles() {
   console.log('Copying meta files...');
-  fs.copyFile(path.join(path.resolve('./'), 'README.md'), path.join(basePath, 'dist', 'README.md'), () => {});
-  fs.copyFile(path.join(path.resolve('./'), 'LICENSE'), path.join(basePath, 'dist', 'LICENSE'), () => {});
+  fs.copyFile(path.resolve('./', 'README.md'), path.join(basePath, 'dist', 'README.md'), () => {});
+  fs.copyFile(path.resolve('./', 'LICENSE'), path.join(basePath, 'dist', 'LICENSE'), () => {});
   console.log('Copied meta files.');
 }
 

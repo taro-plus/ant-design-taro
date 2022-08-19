@@ -2,7 +2,7 @@
   "name": "antd-taro",
   "version": "0.0.1",
   "description": "",
-  "homepage": "https://adt.center",
+  "homepage": "https://antd-taro.vercel.app/",
   "bugs": {
     "url": "https://github.com/sushi-su/ant-design-taro/issues"
   },
@@ -49,7 +49,6 @@
     "@tarojs/shared": "^3.5.0",
     "@tarojs/taro": "^3.5.0",
     "@tarojs/taro-h5": "^3.5.0",
-    "antd-taro-demo": "workspace: *",
     "classnames": "^2.0.0",
     "lodash-es": "^4.0.0",
     "react": "^18.0.0",

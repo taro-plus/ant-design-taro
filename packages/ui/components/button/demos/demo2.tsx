@@ -1,10 +1,10 @@
 /**
- * demoUrl: /pages/button/index
+ * demoUrl: /pages/button/index?id=demo2
  */
 
 import { View } from '@tarojs/components';
-import { Block } from 'antd-taro-demo/src/components';
-import { Button, Space } from '../../../index';
+import { Block } from '../../../demos';
+import { Button, Icon, Space } from '../../../index';
 
 export default function () {
   return (
@@ -12,6 +12,7 @@ export default function () {
       <Block title="自定义图标">
         <Button>
           <Space>
+            <Icon name="search" />
             <span>搜索</span>
           </Space>
         </Button>

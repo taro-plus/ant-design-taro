@@ -1,9 +1,9 @@
 /**
- * demoUrl: /pages/button/index
+ * demoUrl: /pages/button/index?id=demo1
  */
 
 import { View } from '@tarojs/components';
-import { Block } from 'antd-taro-demo/src/components';
+import { Block } from '../../../demos';
 import { Button, Space } from '../../../index';
 
 export default function () {
