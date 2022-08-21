@@ -2,7 +2,7 @@
  * demoUrl: /pages/button/index?id=demo2
  */
 
-import { View } from '@tarojs/components';
+import { Text, View } from '@tarojs/components';
 import { Block } from '../../../demos';
 import { Button, Icon, Space } from '../../../index';
 import { sleep } from '../../../utils/sleep';
@@ -14,7 +14,7 @@ export default function () {
         <Button>
           <Space>
             <Icon name="search" />
-            <span>搜索</span>
+            <Text>搜索</Text>
           </Space>
         </Button>
       </Block>
@@ -41,8 +41,9 @@ export default function () {
           <Button loading>Loading</Button>
           <Button
             loading="auto"
+            loadingText="正在加载"
             onClick={async () => {
-              await sleep(1000);
+              await sleep(1500);
             }}
           >
             Auto Loading

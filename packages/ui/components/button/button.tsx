@@ -39,7 +39,7 @@ export const Button: FC<ButtonProps> = (p) => {
   const [innerLoading, setInnerLoading] = useState(false);
 
   const showLoading = loading === 'auto' ? innerLoading : loading;
-  const showDisabled = disabled || loading;
+  const showDisabled = disabled || showLoading;
 
   const handleClick: TaroButtonProps['onClick'] = async (e) => {
     if (!onClick) return;

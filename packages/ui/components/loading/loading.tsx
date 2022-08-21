@@ -19,9 +19,9 @@ const defaultProps = {
 };
 
 const colorRecord: Record<string, string> = {
-  default: 'var(--adm-color-weak)',
-  primary: 'var(--adm-color-primary)',
-  white: 'var(--adm-color-white)',
+  default: 'var(--adt-color-weak)',
+  primary: 'var(--adt-color-primary)',
+  white: 'var(--adt-color-white)',
 };
 
 export const Loading: FC<DotLoadingProps> = (p) => {
