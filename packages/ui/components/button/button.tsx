@@ -11,7 +11,11 @@ import { mergeProps } from '../../utils/with-default-props';
 
 type OmitTaroButtonProps = 'size' | 'type' | 'plain' | 'loading';
 
-export interface ButtonProps extends Omit<TaroButtonProps, OmitTaroButtonProps>, NativeProps {
+export interface ButtonProps
+  extends Omit<TaroButtonProps, OmitTaroButtonProps>,
+    NativeProps<
+      '--text-color' | '--background-color' | '--border-radius' | '--border-width' | '--border-style' | '--border-color'
+    > {
   color?: 'default' | 'primary' | 'success' | 'warning' | 'danger';
   fill?: 'solid' | 'outline' | 'none';
   size?: 'mini' | 'small' | 'middle' | 'large';
@@ -19,7 +23,6 @@ export interface ButtonProps extends Omit<TaroButtonProps, OmitTaroButtonProps>,
   loading?: boolean | 'auto';
   loadingText?: string;
   loadingIcon?: ReactNode;
-  // type?: 'submit' | 'reset' | 'button';
   shape?: 'default' | 'rounded' | 'rectangular';
 }
 
@@ -28,10 +31,10 @@ const classPrefix = 'adt-button';
 const defaultProps: ButtonProps = {
   color: 'default',
   fill: 'solid',
+  size: 'middle',
   block: false,
   loading: false,
   shape: 'default',
-  size: 'middle',
 };
 
 export const Button: FC<ButtonProps> = (p) => {

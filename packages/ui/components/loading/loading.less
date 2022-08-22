@@ -2,18 +2,30 @@
 
 .@{class-prefix-loading} {
   --color: var(--adt-color-weak);
-  --size: 8px;
+  --size: var(--adt-loading-sise, 8px);
 
   display: flex;
   gap: calc(var(--size) * 1.5);
-  padding-inline: var(--size);
+  padding-inline: calc(var(--size) * 1.5);
+
+  &-mini {
+    --size: 6px;
+  }
+
+  &-small {
+    --size: 7px;
+  }
+
+  &-large {
+    --size: 10px;
+  }
 
   &__dot {
     width: var(--size);
     height: var(--size);
     background-color: var(--color);
     border-radius: 50%;
-    animation: adt-loading-animation 1s 0s infinite linear;
+    animation: adt-loading-animation 1.5s 0s infinite linear;
 
     &:nth-child(1) {
       animation-delay: 0s;
