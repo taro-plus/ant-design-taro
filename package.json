@@ -61,7 +61,7 @@
     "@typescript-eslint/parser": "^5.36.1",
     "@umijs/types": "^3.5.34",
     "@vitejs/plugin-react": "^2.0.1",
-    "@vitest/ui": "^0.22.1",
+    "@vitest/ui": "^0.23.1",
     "chokidar": "^3.5.3",
     "del": "^7.0.0",
     "dumi": "^1.1.47",
