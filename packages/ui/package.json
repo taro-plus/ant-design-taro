@@ -34,33 +34,33 @@
     "ios >= 8"
   ],
   "dependencies": {
-    "@tarojs/components": "^3.5.0",
-    "@tarojs/helper": "^3.5.0",
-    "@tarojs/plugin-framework-react": "^3.5.0",
-    "@tarojs/plugin-platform-alipay": "^3.5.0",
-    "@tarojs/plugin-platform-jd": "^3.5.0",
-    "@tarojs/plugin-platform-qq": "^3.5.0",
-    "@tarojs/plugin-platform-swan": "^3.5.0",
-    "@tarojs/plugin-platform-tt": "^3.5.0",
-    "@tarojs/plugin-platform-weapp": "^3.5.0",
-    "@tarojs/react": "^3.5.0",
-    "@tarojs/router": "^3.5.0",
-    "@tarojs/runtime": "^3.5.0",
-    "@tarojs/shared": "^3.5.0",
-    "@tarojs/taro": "^3.5.0",
-    "@tarojs/taro-h5": "^3.5.0",
-    "classnames": "^2.0.0",
-    "lodash-es": "^4.0.0",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "@tarojs/components": "^3.5.7",
+    "@tarojs/helper": "^3.5.7",
+    "@tarojs/plugin-framework-react": "^3.5.7",
+    "@tarojs/plugin-platform-alipay": "^3.5.7",
+    "@tarojs/plugin-platform-jd": "^3.5.7",
+    "@tarojs/plugin-platform-qq": "^3.5.7",
+    "@tarojs/plugin-platform-swan": "^3.5.7",
+    "@tarojs/plugin-platform-tt": "^3.5.7",
+    "@tarojs/plugin-platform-weapp": "^3.5.7",
+    "@tarojs/react": "^3.5.7",
+    "@tarojs/router": "^3.5.7",
+    "@tarojs/runtime": "^3.5.7",
+    "@tarojs/shared": "^3.5.7",
+    "@tarojs/taro": "^3.5.7",
+    "@tarojs/taro-h5": "^3.5.7",
+    "classnames": "^2.3.2",
+    "lodash-es": "^4.17.21",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/lodash-es": "^4.0.0",
-    "@types/react": "^18.0.0",
-    "@types/react-dom": "^18.0.0"
+    "@types/lodash-es": "^4.17.6",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.8"
   },
   "peerDependencies": {
-    "@tarojs/taro": "^3.5.0"
+    "@tarojs/taro": "^3.5.7"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
