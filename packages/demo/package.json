@@ -60,7 +60,7 @@
     "@types/webpack-env": "^1.18.0",
     "babel-preset-taro": "^3.5.7",
     "react-refresh": "^0.14.0",
-    "webpack": "5.74.0",
+    "webpack": "5.75.0",
     "webpack-bundle-analyzer": "^4.7.0"
   },
   "templateInfo": {
