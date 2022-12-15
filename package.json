@@ -1,100 +1,57 @@
 {
+  "name": "@taro-plus/ant-design-taro-monorepo",
   "private": true,
-  "license": "MIT",
   "workspaces": [
     "./packages/*"
   ],
   "scripts": {
-    "clean": "rimraf .umi .umi-production node_modules pnpm-lock.yaml",
-    "clean:all": "pnpm clean && pnpm --filter './packages/**' clean",
-    "dev:docs": "dumi dev",
-    "dev:lib": "tsx scripts/dev.lib.ts",
-    "dev:h5": "pnpm --filter antd-taro-demo dev:h5",
-    "dev:weapp": "pnpm --filter antd-taro-demo dev:weapp",
     "build:docs": "dumi build",
-    "build:lib": "tsx scripts/build.lib.ts",
-    "build:h5": "pnpm --filter antd-taro-demo build:h5",
-    "build:weapp": "pnpm --filter antd-taro-demo build:weapp",
-    "test": "vitest",
-    "test:ui": "vitest --ui",
-    "coverage": "vitest run --coverage",
-    "eslint": "eslint packages/ --ext .ts,.tsx --fix",
-    "stylelint": "stylelint 'packages/**/*.{css,less}' --fix",
-    "lint": "npm run eslint && npm run stylelint",
-    "prepare": "husky install",
-    "preinstall": "npx only-allow pnpm"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{md,json}": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
-      "prettier --write",
-      "git add"
-    ],
-    "*.{css, less}": [
-      "stylelint --fix",
-      "prettier --write",
-      "git add"
-    ]
+    "build:lib": "tsx scripts/lib.build.ts",
+    "clean": "rimraf ./**/dist ./**/node_modules",
+    "dev:docs": "dumi dev",
+    "dev:h5": "pnpm --filter antd-taro-demo dev:h5",
+    "dev:lib": "tsx scripts/lib.dev.ts",
+    "dev:weapp": "pnpm --filter antd-taro-demo dev:weapp",
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "husky install"
   },
   "dependencies": {
-    "dumi-theme-default": "^1.1.24",
-    "f2-touchemulator": "^0.0.1",
-    "lodash-es": "^4.17.21",
-    "qrcode.react": "^3.1.0",
+    "dumi": "^2.0.14",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "umi-hd": "^5.0.1"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.2.0",
-    "@commitlint/config-conventional": "^17.2.0",
-    "@testing-library/react": "^13.4.0",
-    "@types/lodash-es": "^4.17.6",
-    "@types/react": "^18.0.25",
-    "@types/react-dom": "^18.0.8",
-    "@typescript-eslint/eslint-plugin": "^5.42.1",
-    "@typescript-eslint/parser": "^5.42.1",
-    "@umijs/types": "^3.5.35",
-    "@vitejs/plugin-react": "^2.2.0",
-    "@vitest/ui": "^0.25.1",
+    "@commitlint/cli": "^17.3.0",
+    "@commitlint/config-conventional": "^17.3.0",
+    "@types/react": "^18.0.26",
+    "@types/react-dom": "^18.0.9",
+    "@typescript-eslint/eslint-plugin": "^5.46.1",
+    "@typescript-eslint/parser": "^5.46.1",
     "chokidar": "^3.5.3",
     "del": "^7.0.0",
-    "dumi": "^1.1.49",
-    "esbuild": "^0.15.13",
-    "eslint": "8.27.0",
+    "esbuild": "^0.16.7",
+    "eslint": "^8.29.0",
     "eslint-config-alloy": "^4.7.0",
-    "eslint-plugin-react": "^7.31.10",
+    "eslint-plugin-react": "^7.31.11",
     "fast-glob": "^3.2.12",
-    "happy-dom": "^7.6.7",
     "husky": "^8.0.2",
-    "less": "^4.1.3",
-    "lint-staged": "^13.0.3",
-    "npm-run-all": "^4.1.5",
-    "postcss": "^8.4.18",
+    "lint-staged": "^13.1.0",
+    "postcss": "^8.4.20",
     "postcss-less": "^6.0.0",
-    "prettier": "^2.7.1",
-    "prettier-plugin-organize-imports": "^3.1.1",
+    "prettier": "^2.8.1",
+    "prettier-plugin-organize-imports": "^3.2.1",
     "prettier-plugin-packagejson": "^2.3.0",
-    "react-test-renderer": "^18.2.0",
     "rimraf": "^3.0.2",
-    "stylelint": "^14.14.1",
-    "stylelint-config-css-modules": "^4.1.0",
+    "stylelint": "^14.16.0",
+    "stylelint-config-prettier": "^9.0.4",
+    "stylelint-config-recess-order": "^3.0.0",
+    "stylelint-config-recommended-less": "^1.0.4",
     "stylelint-config-standard": "^29.0.0",
-    "tsx": "^3.11.0",
-    "typescript": "^4.8.4",
-    "vite": "^3.2.3",
-    "vitest": "^0.25.1"
+    "stylelint-order": "^5.0.0",
+    "tsx": "^3.12.1",
+    "typescript": "^4.9.4"
   },
-  "packageManager": "pnpm@7.9.0",
+  "packageManager": "pnpm@7.18.2",
   "engines": {
     "node": "16.x",
     "pnpm": "7.x"

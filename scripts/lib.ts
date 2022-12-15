@@ -6,25 +6,23 @@ import * as fg from 'fast-glob';
 import * as fs from 'fs';
 import * as path from 'path';
 
-export const basePath = path.resolve('./', 'packages', 'ui');
+export const basePath = './packages/ui';
 
-export const ignorePaths = [
+const ignorePaths = [
   '!**/node_modules/**',
   `!${basePath}/**/*.d.ts`,
-  `!${basePath}/**/*.md`,
-  `!${basePath}/**/demos/*`,
+  `!${basePath}/**/demos/**`,
   `!${basePath}/**/dist/**`,
-  `!${basePath}/**/tests/*`,
-  `!${basePath}/**/typings.ts`,
+  `!${basePath}/**/tests/**`,
 ];
 
-export function tsc() {
+function tsc() {
   childProcess.execSync('tsc --emitDeclarationOnly', {
     cwd: basePath,
   });
 }
 
-export function generateFile(destPath: string, content: string) {
+function generateFile(destPath: string, content: string) {
   const destDir = path.dirname(destPath);
 
   const destFileName = path.basename(destPath).replace(/(ts|tsx)$/, 'js');
@@ -34,7 +32,7 @@ export function generateFile(destPath: string, content: string) {
   fs.writeFileSync(path.join(destDir, destFileName), content, { flag: 'w', encoding: 'utf8' });
 }
 
-export function transform() {
+function transform() {
   const filePaths = fg.sync([...ignorePaths, `${basePath}/**/*.{ts,tsx}`]);
 
   filePaths.forEach((filePath) => {
@@ -69,28 +67,19 @@ export function transform() {
   });
 }
 
-export function copyStyleFiles() {
+function copyStyleFiles() {
   const lessPaths = fg.sync([...ignorePaths, `${basePath}/**/*.less`]);
-
   lessPaths.forEach((lessPath) => {
-    fs.copyFile(lessPath, lessPath.replace('/ui/', '/ui/dist/es/'), (e) => {
-      console.log(e);
-    });
-
-    fs.copyFile(lessPath, lessPath.replace('/ui/', '/ui/dist/cjs/'), (e) => {
-      console.log(e);
-    });
+    fs.copyFile(lessPath, lessPath.replace('/ui/', '/ui/dist/es/'), () => {});
+    fs.copyFile(lessPath, lessPath.replace('/ui/', '/ui/dist/cjs/'), () => {});
   });
 }
 
-export function copyMetaFiles() {
-  fs.copyFile(path.resolve(__dirname, 'README.md'), path.join(basePath, 'dist', 'README.md'), (e) => {
-    console.log(e);
-  });
-
-  fs.copyFile(path.resolve(__dirname, 'LICENSE'), path.join(basePath, 'dist', 'LICENSE'), (e) => {
-    console.log(e);
-  });
+async function copyMetaFiles() {
+  await deleteAsync(path.join(basePath, 'README.md'));
+  fs.copyFile(path.resolve(__dirname, '../README.md'), path.join(basePath, 'README.md'), () => {});
+  await deleteAsync(path.join(basePath, 'LICENSE'));
+  fs.copyFile(path.resolve(__dirname, '../LICENSE'), path.join(basePath, 'LICENSE'), () => {});
 }
 
 export async function build() {
@@ -101,16 +90,10 @@ export async function build() {
   transform();
 
   copyStyleFiles();
-
-  copyMetaFiles();
 }
 
-export async function dev() {
-  await deleteAsync(path.join(basePath, 'dist/**'));
+export async function buildWithCopyMetaFiles() {
+  await build();
 
-  tsc();
-
-  transform();
-
-  copyStyleFiles();
+  await copyMetaFiles();
 }

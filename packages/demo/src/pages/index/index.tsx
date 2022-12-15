@@ -3,20 +3,20 @@ import { navigateTo } from '@tarojs/taro';
 import { Button } from 'antd-taro';
 import type { FC } from 'react';
 
-const IndexPage: FC = () => {
+const PageIndex: FC = () => {
   return (
-    <View>
+    <View className="index">
       <Button
-        onClick={() => {
+        onClick={() =>
           navigateTo({
             url: '/pages/button/index',
-          });
-        }}
+          })
+        }
       >
-        Button
+        按钮
       </Button>
     </View>
   );
 };
 
-export default IndexPage;
+export default PageIndex;

@@ -1,7 +1,22 @@
 ---
-title: Ant Design Taro
-full: true
-gapless: true
+hero:
+  title: library
+  description:
+  actions:
+    - text: Hello
+      link: /
+    - text: World
+      link: /
+features:
+  - title: Hello
+    emoji: 💎
+    description: Put hello description here
+  - title: World
+    emoji: 🌈
+    description: Put world description here
+  - title: '!'
+    emoji: 🚀
+    description: Put ! description here
 ---
 
-<code src="./components/home-page.tsx" inline="true"></code>
+@taro-plus/ant-design-taro-monorepo

@@ -1,6 +1,8 @@
 {
   "miniprogramRoot": "dist/",
+  "projectname": "antd-taro-demo",
   "description": "",
+  "appid": "wx846478b752b2093c",
   "setting": {
     "urlCheck": true,
     "es6": false,
@@ -13,24 +15,20 @@
       "disablePlugins": [],
       "outputPath": ""
     },
-    "minifyWXSS": false,
     "minifyWXML": false,
-    "ignoreUploadUnusedFiles": false,
-    "coverView": false,
-    "showShadowRootInWxmlPanel": false,
-    "packNpmRelationList": []
+    "minifyWXSS": false,
+    "ignoreUploadUnusedFiles": false
   },
   "compileType": "miniprogram",
+  "libVersion": "2.28.1",
   "srcMiniprogramRoot": "dist/",
-  "condition": {},
-  "editorSetting": {
-    "tabIndent": "insertSpaces",
-    "tabSize": 2
-  },
-  "libVersion": "2.25.2",
   "packOptions": {
     "ignore": [],
     "include": []
   },
-  "appid": "wx846478b752b2093c"
+  "condition": {},
+  "editorSetting": {
+    "tabIndent": "insertSpaces",
+    "tabSize": 2
+  }
 }

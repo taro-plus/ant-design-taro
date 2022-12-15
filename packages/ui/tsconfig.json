@@ -18,11 +18,10 @@
     "jsx": "react-jsx",
     "allowJs": true,
     "resolveJsonModule": true,
-    "declaration": true,
     "typeRoots": ["node_modules/@types"],
+    "declaration": true,
     "skipLibCheck": true
   },
-  "include": ["./components", "./demos", "./types"],
-  "exclude": ["node_modules/**", "./dist/**", "**/tests/*", "**/demos/*", "types/**"],
+  "include": ["./components", "./types"],
   "compileOnSave": false
 }

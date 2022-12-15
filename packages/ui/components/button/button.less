@@ -1,4 +1,4 @@
-@import 'reset';
+@import url('reset');
 
 @class-prefix-button: ~'adt-button';
 
@@ -11,22 +11,22 @@
   --border-style: var(--adt-button-border-style, solid);
   --border-color: var(--adt-button-border-color, var(--adt-color-border));
 
-  color: var(--text-color);
-  background-color: var(--background-color);
   position: relative;
-  display: inline-block;
   box-sizing: border-box;
+  display: inline-block;
   height: auto;
   padding: 14px 24px;
   margin: 0;
   font-size: var(--adt-font-size-9);
   line-height: 1.4;
+  color: var(--text-color);
   text-align: center;
+  cursor: pointer;
+  user-select: none;
+  background-color: var(--background-color);
   border: var(--border-width) var(--border-style) var(--border-color);
   border-radius: var(--border-radius);
-  cursor: pointer;
   transition: opacity ease 0.15s;
-  user-select: none;
 
   &:focus {
     outline: none;
@@ -36,15 +36,15 @@
     position: absolute;
     top: 0;
     left: 0;
-    transform: translate(calc(var(--border-width) * -1), calc(var(--border-width) * -1));
+    box-sizing: content-box;
     width: 100%;
     height: 100%;
+    content: ' ';
     background-color: #000;
     border: var(--border-width) var(--border-style) #000;
     border-radius: var(--border-radius);
     opacity: 0;
-    content: ' ';
-    box-sizing: content-box;
+    transform: translate(calc(var(--border-width) * -1), calc(var(--border-width) * -1));
   }
 
   &:active::before {
@@ -112,8 +112,8 @@
     padding-bottom: 6px;
     font-size: var(--adt-font-size-main);
     &.@{class-prefix-button}-shape-rounded {
-      padding-left: 18px;
       padding-right: 18px;
+      padding-left: 18px;
     }
   }
 
@@ -143,9 +143,9 @@
 
   &-loading-wrapper {
     display: flex;
-    height: 1.4em;
     align-items: center;
     justify-content: center;
+    height: 1.4em;
 
     > .adt-loading {
       opacity: 0.6;

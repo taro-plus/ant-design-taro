@@ -1,0 +1,5 @@
+**/dist
+
+packages/demo/project.config.json
+packages/demo/project.tt.json
+

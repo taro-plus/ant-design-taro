@@ -1,10 +1,18 @@
 module.exports = {
-  extends: ['stylelint-config-standard', 'stylelint-config-css-modules'],
-  customSyntax: 'postcss-less',
+  extends: [
+    'stylelint-config-standard',
+    'stylelint-config-prettier',
+    'stylelint-config-recommended-less',
+    'stylelint-config-recess-order',
+  ],
+  plugins: ['stylelint-order'],
+  overrides: [
+    {
+      files: ['**/*.(css|less)'],
+      customSyntax: 'postcss-less',
+    },
+  ],
   rules: {
-    'string-quotes': null,
-    'value-list-comma-newline-after': null,
-    'declaration-colon-newline-after': null,
     'selector-type-no-unknown': [
       true,
       {

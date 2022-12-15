@@ -1,16 +1,21 @@
+import { Access } from '@/components';
 import { View } from '@tarojs/components';
-import Demo1 from 'antd-taro/components/button/demos/demo1';
-import Demo2 from 'antd-taro/components/button/demos/demo2';
 import type { FC } from 'react';
+import Demo1 from './demos/demo1';
+import Demo2 from './demos/demo2';
 
-const ButtonPage: FC = () => {
+const PageButton: FC = () => {
   return (
     <View>
-      <Demo1 />
+      <Access demoId="1">
+        <Demo1 />
+      </Access>
 
-      <Demo2 />
+      <Access demoId="2">
+        <Demo2 />
+      </Access>
     </View>
   );
 };
 
-export default ButtonPage;
+export default PageButton;
