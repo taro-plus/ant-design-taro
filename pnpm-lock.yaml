@@ -94,6 +94,7 @@ importers:
       '@tarojs/taro-h5': 3.5.10
       '@tarojs/webpack5-runner': 3.5.10
       '@types/react': ^18.0.26
+      '@types/react-dom': ^18.0.9
       '@types/webpack-env': ^1.18.0
       antd-taro: workspace:*
       babel-preset-taro: 3.5.10
@@ -127,6 +128,7 @@ importers:
       '@tarojs/cli': 3.5.10_@types+react@18.0.26
       '@tarojs/webpack5-runner': 3.5.10_o4mgopr2vf4ecghtndwskzhvzq
       '@types/react': 18.0.26
+      '@types/react-dom': 18.0.9
       '@types/webpack-env': 1.18.0
       babel-preset-taro: 3.5.10_bojq522x43gltlp3o2g2z3fkw4
       react-refresh: 0.14.0
