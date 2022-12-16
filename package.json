@@ -16,7 +16,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "dumi": "^2.0.14",
+    "dumi": "^2.0.15",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

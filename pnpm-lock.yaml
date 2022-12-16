@@ -12,7 +12,7 @@ importers:
       '@typescript-eslint/parser': ^5.46.1
       chokidar: ^3.5.3
       del: ^7.0.0
-      dumi: ^2.0.14
+      dumi: ^2.0.15
       esbuild: ^0.16.7
       eslint: ^8.29.0
       eslint-config-alloy: ^4.7.0
@@ -37,7 +37,7 @@ importers:
       tsx: ^3.12.1
       typescript: ^4.9.4
     dependencies:
-      dumi: 2.0.14_rrmu3vpxmopfh4xzw5a2azognu
+      dumi: 2.0.15_rrmu3vpxmopfh4xzw5a2azognu
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     devDependencies:
@@ -2500,7 +2500,7 @@ packages:
     peerDependencies:
       react: '>=16.3.0'
     dependencies:
-      '@babel/runtime': 7.18.9
+      '@babel/runtime': 7.20.6
       hoist-non-react-statics: 3.3.2
       react: 18.1.0
       react-is: 16.13.1
@@ -2512,7 +2512,7 @@ packages:
     peerDependencies:
       react: '>=16.3.0'
     dependencies:
-      '@babel/runtime': 7.18.9
+      '@babel/runtime': 7.20.6
       hoist-non-react-statics: 3.3.2
       react: 18.2.0
       react-is: 16.13.1
@@ -2779,7 +2779,7 @@ packages:
       postcss: '>=7.0.0'
       postcss-syntax: '>=0.36.2'
     dependencies:
-      '@babel/core': 7.18.9
+      '@babel/core': 7.20.5
       postcss: 8.4.20
       postcss-syntax: 0.36.2_sb7aqtcgsdojn4sqfgupksl5ye
     transitivePeerDependencies:
@@ -3888,7 +3888,7 @@ packages:
   /@types/sax/1.2.4:
     resolution: {integrity: sha512-pSAff4IAxJjfAXUG6tFkO7dsSbTmf8CtUpfhhZ5VhkRpC4628tJhh3+V6H1E+/Gs9piSzYKT5yzHO5M4GG9jkw==}
     dependencies:
-      '@types/node': 17.0.45
+      '@types/node': 18.11.15
     dev: false
 
   /@types/scheduler/0.16.2:
@@ -4327,7 +4327,7 @@ packages:
   /@umijs/history/5.3.1:
     resolution: {integrity: sha512-/e0cEGrR2bIWQD7pRl3dl9dcyRGeC9hoW0OCvUTT/hjY0EfUrkd6G8ZanVghPMpDuY5usxq9GVcvrT8KNXLWvA==}
     dependencies:
-      '@babel/runtime': 7.18.9
+      '@babel/runtime': 7.20.6
       query-string: 6.14.1
     dev: false
 
@@ -7725,8 +7725,8 @@ packages:
     resolution: {integrity: sha512-a/Y5lf0G6gwsEQ9hop/n03CcjmHsGBk384Cz/AEX6mRYrfSpUx/lQvP9HLoXkCzScl9PL1sSmLPnMkgaXDCZLA==}
     dev: false
 
-  /dumi/2.0.14_rrmu3vpxmopfh4xzw5a2azognu:
-    resolution: {integrity: sha512-YPUbPdpTrpFq3oV4pcYxCsGAYRPrh/18zgKrFOSlT2rQwB+IQa3UPXuGRMp6w7OY1cMyLLGimoHHZXE7O0QOaQ==}
+  /dumi/2.0.15_rrmu3vpxmopfh4xzw5a2azognu:
+    resolution: {integrity: sha512-Yp82THnQr0noxXalTMYZSDqMcljEbHv+kXcAHY/oFjVhRIotYBNMvh/0QxD5nBZI3K8jXQCzxqNPydE92mlykA==}
     hasBin: true
     peerDependencies:
       react: '>=16.8'
@@ -15606,7 +15606,7 @@ packages:
       react: ^16.6.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.6.0 || ^17.0.0 || ^18.0.0
     dependencies:
-      '@babel/runtime': 7.18.9
+      '@babel/runtime': 7.20.6
       invariant: 2.2.4
       prop-types: 15.8.1
       react: 18.2.0
@@ -15621,7 +15621,7 @@ packages:
       react: ^16.6.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.6.0 || ^17.0.0 || ^18.0.0
     dependencies:
-      '@babel/runtime': 7.18.9
+      '@babel/runtime': 7.20.6
       invariant: 2.2.4
       prop-types: 15.8.1
       react: 18.1.0

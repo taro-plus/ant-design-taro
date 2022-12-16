@@ -76,24 +76,23 @@ function copyStyleFiles() {
 }
 
 async function copyMetaFiles() {
-  await deleteAsync(path.join(basePath, 'README.md'));
-  fs.copyFile(path.resolve(__dirname, '../README.md'), path.join(basePath, 'README.md'), () => {});
-  await deleteAsync(path.join(basePath, 'LICENSE'));
-  fs.copyFile(path.resolve(__dirname, '../LICENSE'), path.join(basePath, 'LICENSE'), () => {});
+  const destPathREADME = path.join(basePath, 'README.md');
+  await deleteAsync(destPathREADME);
+  fs.copyFile('README.md', destPathREADME, () => {});
+
+  const destPathLICENSE = path.join(basePath, 'LICENSE');
+  await deleteAsync(destPathLICENSE);
+  fs.copyFile('LICENSE', destPathLICENSE, () => {});
 }
 
 export async function build() {
   await deleteAsync(path.join(basePath, 'dist/**'));
-
   tsc();
-
   transform();
-
   copyStyleFiles();
 }
 
 export async function buildWithCopyMetaFiles() {
   await build();
-
   await copyMetaFiles();
 }

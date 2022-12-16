@@ -1,15 +1,9 @@
 import { resolve } from 'path';
 
 const config = {
-  projectName: 'antd-taro-demos',
+  projectName: 'antd-taro-demo',
   date: '2022-5-20',
-  designWidth(input) {
-    if (input.file && input.file.replace(/\\+/g, '/').indexOf('antd-taro') > -1) {
-      return 375;
-    }
-
-    return 750;
-  },
+  designWidth: 375,
   deviceRatio: {
     640: 2.34 / 2,
     750: 1,
