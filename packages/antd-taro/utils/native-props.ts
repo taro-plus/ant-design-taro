@@ -1,11 +1,12 @@
 import classNames from 'classnames';
-import type { CSSProperties, ReactElement } from 'react';
+import type { AriaAttributes, CSSProperties, ReactElement } from 'react';
 import { cloneElement } from 'react';
 
-export interface NativeProps<S extends string = never> {
+export type NativeProps<S extends string = never> = {
   className?: string;
-  style?: Partial<Record<S, string>> & CSSProperties;
-}
+  style?: CSSProperties & Partial<Record<S, string>>;
+  tabIndex?: number;
+} & AriaAttributes;
 
 export function withNativeProps<P extends NativeProps>(props: P, element: ReactElement) {
   const p = {
@@ -19,6 +20,15 @@ export function withNativeProps<P extends NativeProps>(props: P, element: ReactE
       ...p.style,
       ...props.style,
     };
+  }
+  if (props.tabIndex !== undefined) {
+    p.tabIndex = props.tabIndex;
+  }
+  for (const key in props) {
+    if (!props.hasOwnProperty(key)) continue;
+    if (key.startsWith('data-') || key.startsWith('aria-')) {
+      p[key] = props[key];
+    }
   }
   return cloneElement(element, p);
 }

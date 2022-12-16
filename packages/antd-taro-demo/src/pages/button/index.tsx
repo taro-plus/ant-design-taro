@@ -6,7 +6,7 @@ import Demo2 from './demos/demo2';
 
 const PageButton: FC = () => {
   return (
-    <View>
+    <View className="demo-page">
       <Access demoId="1">
         <Demo1 />
       </Access>

@@ -2,29 +2,29 @@
 
 .@{class-prefix-loading} {
   --color: var(--adt-color-weak);
-  --size: var(--adt-loading-sise, 8px);
+  --size: var(--adt-loading-sise, 4px);
 
   display: flex;
   gap: calc(var(--size) * 1.5);
-  padding-inline: calc(var(--size) * 1.5);
+  padding: 0 calc(var(--size) * 1.5);
 
   &-mini {
-    --size: 6px;
+    --size: 3px;
   }
 
   &-small {
-    --size: 7px;
+    --size: 3.5px;
   }
 
   &-large {
-    --size: 10px;
+    --size: 4.5px;
   }
 
   &__dot {
     width: var(--size);
     height: var(--size);
     background-color: var(--color);
-    border-radius: 50%;
+    border-radius: 25%;
     animation: adt-loading-animation 1.5s 0s infinite linear;
 
     &:nth-child(1) {

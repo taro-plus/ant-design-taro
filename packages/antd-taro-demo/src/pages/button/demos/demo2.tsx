@@ -8,7 +8,7 @@ export default function () {
     <View>
       <Block title="自定义图标">
         <Button>
-          <Space>
+          <Space align="center">
             <Icon name="search" />
             <Text>搜索</Text>
           </Space>
