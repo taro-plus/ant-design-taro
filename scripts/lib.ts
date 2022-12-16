@@ -6,7 +6,7 @@ import * as fg from 'fast-glob';
 import * as fs from 'fs';
 import * as path from 'path';
 
-export const basePath = './packages/ui';
+export const basePath = './packages/antd-taro';
 
 const ignorePaths = [
   '!**/node_modules/**',
@@ -49,7 +49,7 @@ function transform() {
 
     // esm
     generateFile(
-      filePath.replace('/ui/', '/ui/dist/es/'),
+      filePath.replace('/antd-taro/', '/antd-taro/dist/es/'),
       esbuild.transformSync(content, {
         format: 'esm',
         ...commonOptions,
@@ -58,7 +58,7 @@ function transform() {
 
     // cjs
     generateFile(
-      filePath.replace('/ui/', '/ui/dist/cjs/'),
+      filePath.replace('/antd-taro/', '/antd-taro/dist/cjs/'),
       esbuild.transformSync(content, {
         format: 'cjs',
         ...commonOptions,
@@ -70,8 +70,8 @@ function transform() {
 function copyStyleFiles() {
   const lessPaths = fg.sync([...ignorePaths, `${basePath}/**/*.less`]);
   lessPaths.forEach((lessPath) => {
-    fs.copyFile(lessPath, lessPath.replace('/ui/', '/ui/dist/es/'), () => {});
-    fs.copyFile(lessPath, lessPath.replace('/ui/', '/ui/dist/cjs/'), () => {});
+    fs.copyFile(lessPath, lessPath.replace('/antd-taro/', '/antd-taro/dist/es/'), () => {});
+    fs.copyFile(lessPath, lessPath.replace('/antd-taro/', '/antd-taro/dist/cjs/'), () => {});
   });
 }
 

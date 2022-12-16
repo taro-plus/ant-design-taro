@@ -3,11 +3,18 @@ import { resolve } from 'path';
 const config = {
   projectName: 'antd-taro-demos',
   date: '2022-5-20',
-  designWidth: 750,
+  designWidth(input) {
+    if (input.file && input.file.replace(/\\+/g, '/').indexOf('antd-taro') > -1) {
+      return 375;
+    }
+
+    return 750;
+  },
   deviceRatio: {
     640: 2.34 / 2,
     750: 1,
     828: 1.81 / 2,
+    375: 2,
   },
   sourceRoot: 'src',
   outputRoot: 'dist',
